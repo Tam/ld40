@@ -21,13 +21,15 @@ public class Traps : MonoBehaviour
 
     private void CheckAttraction()
     {
-        foreach (GameObject obj in GlobFlopsInRange)
+        for(int i = 0; i < GlobFlopsInRange.Count; i++)
         {
-            if (Random.value <= SucessRate / 100)
+            if(GlobFlopsInRange[i] == null)
             {
-                obj.GetComponentInParent<mobs.Globflob>().setTarget(TargetPoint, ResourceAmount);
-
-                GlobFlopsInRange.Remove(obj);
+                GlobFlopsInRange.Remove(GlobFlopsInRange[i]);
+            }
+            else if (Random.value <= SucessRate / 100)
+            {
+                GlobFlopsInRange[i].GetComponentInParent<mobs.Globflob>().setTarget(TargetPoint, ResourceAmount);
             }
         }
     }
@@ -36,15 +38,6 @@ public class Traps : MonoBehaviour
     {
         if(!GlobFlopsInRange.Contains(other.gameObject))
             GlobFlopsInRange.Add(other.gameObject);
-
-        if (Random.value <= SucessRate / 100)
-        {
-            Debug.Log("lol");
-            other.gameObject.GetComponentInParent<mobs.Globflob>().setTarget(TargetPoint, ResourceAmount);
-
-            if (GlobFlopsInRange.Contains(other.gameObject))
-                GlobFlopsInRange.Remove(other.gameObject);
-        }
     }
 
     private void OnTriggerExit(Collider other)
