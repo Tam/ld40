@@ -222,15 +222,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretHead: {fileID: 836708134}
   muzzlePoint: {fileID: 1283193390}
-  headRotationOffset: {x: 0, y: -90, z: 0}
   enemyTag: Protester
   range: 10
-  turnSpeed: 2.5
+  turnSpeed: 10
   findTargetFrequency: 0.75
-  fireType: 0
+  fireType: 2
   bulletPrefab: {fileID: 0}
   fireRate: 1
-  lineRenderer: {fileID: 0}
+  particles: {fileID: 0}
+  lineRenderer: {fileID: 522123795}
   radiusColor: {r: 1, g: 0, b: 0, a: 1}
   showRadius: 1
   showRayToTarget: 1
@@ -256,15 +256,15 @@ LineRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 522123792}
-  m_Enabled: 1
-  m_CastShadows: 1
+  m_Enabled: 0
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: a578ed904336a364ab05e61bbe217244, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -289,7 +289,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 1
+    widthMultiplier: 0.05
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -907,7 +907,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1924768141}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.33, y: 0.5, z: -9.11}
+  m_LocalPosition: {x: 10.154, y: 0.5, z: -2.468}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
