@@ -18,6 +18,8 @@ public class Placement : MonoBehaviour
     public LayerMask TurretMask;
     public LayerMask TrapMask;
 
+    public UpgradePanel upgradePanel;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -69,9 +71,7 @@ public class Placement : MonoBehaviour
 
                     if (Input.GetMouseButtonDown(0))
                     {
-                        GameobjectHolo[GameobjectToPlaceID].transform.position = Default;
-                        Instantiate(GameobjectToPlace[GameobjectToPlaceID], HitPos, Quaternion.identity);
-                        GameobjectToPlaceID = 100;
+                        SpawnPlacable(HitPos);
                     }
                 }
                 else
@@ -92,4 +92,21 @@ public class Placement : MonoBehaviour
             }        
         }
 	}
+
+    void SpawnPlacable(Vector3 _hitPos)
+    {
+        if (GameobjectToPlaceID > numberOfTurrets)
+        {
+            GameobjectHolo[GameobjectToPlaceID].transform.position = Default;
+            Instantiate(GameobjectToPlace[GameobjectToPlaceID], _hitPos, Quaternion.identity);
+            GameobjectToPlaceID = 100;
+        }
+        else
+        {
+            GameobjectHolo[GameobjectToPlaceID].transform.position = Default;
+            GameObject Obj = Instantiate(GameobjectToPlace[GameobjectToPlaceID], _hitPos, Quaternion.identity);
+            Obj.GetComponent<Traps>().upgradePanel = upgradePanel;
+            GameobjectToPlaceID = 100;
+        }
+    }
 }

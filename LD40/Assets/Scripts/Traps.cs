@@ -12,6 +12,7 @@ public class Traps : MonoBehaviour
     public Transform TargetPoint;
 
     public List<GameObject> GlobFlopsInRange = new List<GameObject>();
+    public UpgradePanel upgradePanel; 
 
     bool isUIUp = false;
 
@@ -58,6 +59,7 @@ public class Traps : MonoBehaviour
         GetComponentInChildren<SphereCollider>().radius = AttractRaduis;
 
         //Ui Set
+        upgradePanel.setStat1Text((int)AttractRaduis);
     }
 
     public void SetSucessRate(float _Valve)
@@ -65,6 +67,7 @@ public class Traps : MonoBehaviour
         SucessRate = _Valve;
 
         //Ui Set
+        upgradePanel.setStat2Text((int)SucessRate);
     }
 
     public void SetAttractionTime(int _time)
@@ -72,14 +75,18 @@ public class Traps : MonoBehaviour
         CheckAttractionTime = _time;
 
         //Ui Set
+        upgradePanel.setStat3Text((int)CheckAttractionTime);
     }
 
     void OnMouseOver()
     {
         if (isUIUp != true)
         {
-            MakeUIAppear();
-            isUIUp = true;
+            if(Input.GetMouseButtonDown(0))
+            { 
+                MakeUIAppear();
+                isUIUp = true;
+            }
         }
 
         Debug.Log("fuck");
@@ -97,6 +104,15 @@ public class Traps : MonoBehaviour
 
     void MakeUIAppear()
     {
+        upgradePanel.gameObject.SetActive(true);
 
+        upgradePanel.setStat3Text((int)CheckAttractionTime);
+        upgradePanel.setStat2Text((int)SucessRate);
+        upgradePanel.setStat1Text((int)AttractRaduis);
+    }
+
+    void MakeUIDisappear()
+    {
+        upgradePanel.gameObject.SetActive(false);
     }
 }
