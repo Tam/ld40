@@ -16,7 +16,7 @@ public class GlobalVars : MonoBehaviour
     private int amountGlobFlops;
 
     //Maxuim Amount of GlobFlops Allowed
-    private int maxAmountGlobFlops;
+    public int maxAmountGlobFlops;
 
     //Minium Amount of GlobFlops Allowed
     public int minAmountGlobFlops;
