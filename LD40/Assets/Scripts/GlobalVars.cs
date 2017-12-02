@@ -9,6 +9,43 @@ public class GlobalVars : MonoBehaviour
 
     //Time Playing the game from start to finish.
     public float TimeElapsed;
+    
+    // Mobs
+    // =====================================================================
+    
+    // Globflobs
+    // ---------------------------------------------------------------------
+
+    private int _currentGlobflobs;
+    public int currentGlobflobs
+    {
+        get { return _currentGlobflobs; }
+        set { _currentGlobflobs = value; }
+    }
+
+    private int _maxGlobflobs = 50;
+    public int maxGlobflobs
+    {
+        get { return _maxGlobflobs; }
+        set { _maxGlobflobs = value; }
+    }
+
+    // Protestors
+    // ---------------------------------------------------------------------
+
+    private int _currentProtesters;
+    public int currentProtesters
+    {
+        get { return _currentProtesters; }
+        set { _currentProtesters = value; }
+    }
+
+    private int _maxProtesters = 50;
+    public int maxProtesters
+    {
+        get { return _maxProtesters; }
+        set { _maxProtesters = value; }
+    }
 
     //--------------------------------------------AI------------------------------------------------//
 
