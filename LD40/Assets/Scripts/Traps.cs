@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UI;
 using UnityEngine;
 
@@ -88,7 +87,7 @@ public class Traps : MonoBehaviour
     {
         if (isUIUp)
         {
-            MakeUIDisappear();
+//            MakeUIDisappear();
             isUIUp = false;
         }
     }
@@ -96,6 +95,7 @@ public class Traps : MonoBehaviour
     void MakeUIAppear()
     {
         _globalVars.uiManager.upgradePanel.SetAndShow(
+            transform,
             "Trap Name Here",
             UIStat.Create("Cooldown Duration", CheckAttractionTime),
             UIStat.Create("Success Chance", SucessRate),
