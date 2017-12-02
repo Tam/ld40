@@ -309,6 +309,9 @@ MonoBehaviour:
   - {fileID: 1629537945}
   TurretsToPlace:
   - {fileID: 1711331942089936, guid: a9d9f02bbad136c48ae63dba1fba9493, type: 2}
+  Mask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &406344588
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,7 +960,7 @@ GameObject:
   - component: {fileID: 1750190649}
   - component: {fileID: 1750190648}
   - component: {fileID: 1750190647}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GlobflobGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1263,7 +1266,7 @@ GameObject:
   - component: {fileID: 2068722009}
   - component: {fileID: 2068722008}
   - component: {fileID: 2068722007}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ProtesterGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}

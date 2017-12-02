@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23070343247169558}
   - component: {fileID: 114414467500792530}
   - component: {fileID: 54086857390637838}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlaceableTurretHolo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
