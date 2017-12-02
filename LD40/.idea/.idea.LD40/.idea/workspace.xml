@@ -40,22 +40,22 @@
       <file leaf-file-name="MobSpawner.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/mobs/MobSpawner.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="784">
+            <state relative-caret-position="736">
               <caret line="55" column="86" lean-forward="false" selection-start-line="55" selection-start-column="86" selection-end-line="55" selection-end-column="86" />
               <folding>
-                <marker date="1512217990575" expanded="true" signature="34:1411" ph="{...}" />
-                <marker date="1512217990575" expanded="true" signature="78:1409" ph="{...}" />
-                <marker date="1512217990575" expanded="true" signature="85:172" ph="/* Variables ... */" />
-                <marker date="1512217990575" expanded="true" signature="176:228" ph="/// Name of the mob ... " />
-                <marker date="1512217990575" expanded="true" signature="260:316" ph="/// The prefab to spawn ... " />
-                <marker date="1512217990575" expanded="true" signature="345:412" ph="/// Where the mobs will spawn from ... " />
-                <marker date="1512217990575" expanded="true" signature="470:533" ph="/// Seconds between each spawn ... " />
-                <marker date="1512217990575" expanded="true" signature="569:645" ph="/// The parent (for neatness in the editor) ... " />
-                <marker date="1512217990575" expanded="true" signature="679:762" ph="/* Unity ... */" />
-                <marker date="1512217990575" expanded="true" signature="786:967" ph="{...}" />
-                <marker date="1512217990575" expanded="true" signature="973:1058" ph="/* Actions ... */" />
-                <marker date="1512217990575" expanded="true" signature="1062:1112" ph="/// Spawn the mob ... " />
-                <marker date="1512217990575" expanded="true" signature="1138:1403" ph="{...}" />
+                <marker date="1512219139604" expanded="true" signature="34:1411" ph="{...}" />
+                <marker date="1512219139604" expanded="true" signature="78:1409" ph="{...}" />
+                <marker date="1512219139604" expanded="true" signature="85:172" ph="/* Variables ... */" />
+                <marker date="1512219139604" expanded="true" signature="176:228" ph="/// Name of the mob ... " />
+                <marker date="1512219139604" expanded="true" signature="260:316" ph="/// The prefab to spawn ... " />
+                <marker date="1512219139604" expanded="true" signature="345:412" ph="/// Where the mobs will spawn from ... " />
+                <marker date="1512219139604" expanded="true" signature="470:533" ph="/// Seconds between each spawn ... " />
+                <marker date="1512219139604" expanded="true" signature="569:645" ph="/// The parent (for neatness in the editor) ... " />
+                <marker date="1512219139604" expanded="true" signature="679:762" ph="/* Unity ... */" />
+                <marker date="1512219139604" expanded="true" signature="786:967" ph="{...}" />
+                <marker date="1512219139604" expanded="true" signature="973:1058" ph="/* Actions ... */" />
+                <marker date="1512219139604" expanded="true" signature="1062:1112" ph="/// Spawn the mob ... " />
+                <marker date="1512219139604" expanded="true" signature="1138:1403" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -64,19 +64,19 @@
       <file leaf-file-name="Globflob.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/mobs/Globflob.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="23" column="50" lean-forward="false" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+            <state relative-caret-position="752">
+              <caret line="47" column="48" lean-forward="true" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
               <folding>
-                <marker date="1512217793514" expanded="true" signature="6:40" ph="..." />
-                <marker date="1512217793514" expanded="true" signature="56:1013" ph="{...}" />
-                <marker date="1512217793514" expanded="true" signature="140:1011" ph="{...}" />
-                <marker date="1512217793514" expanded="true" signature="147:234" ph="/* Variables ... */" />
-                <marker date="1512217793514" expanded="true" signature="359:442" ph="/* Unity ... */" />
-                <marker date="1512217793514" expanded="true" signature="466:543" ph="{...}" />
-                <marker date="1512217793514" expanded="true" signature="568:786" ph="{...}" />
-                <marker date="1512217793514" expanded="true" signature="635:782" ph="{...}" />
-                <marker date="1512217793514" expanded="true" signature="790:875" ph="/* Actions ... */" />
-                <marker date="1512217793514" expanded="true" signature="914:1005" ph="{...}" />
+                <marker date="1512219718225" expanded="true" signature="6:40" ph="..." />
+                <marker date="1512219718225" expanded="true" signature="56:1163" ph="{...}" />
+                <marker date="1512219718225" expanded="true" signature="140:1161" ph="{...}" />
+                <marker date="1512219718225" expanded="true" signature="147:234" ph="/* Variables ... */" />
+                <marker date="1512219718225" expanded="true" signature="359:442" ph="/* Unity ... */" />
+                <marker date="1512219718225" expanded="true" signature="466:644" ph="{...}" />
+                <marker date="1512219718225" expanded="true" signature="669:937" ph="{...}" />
+                <marker date="1512219718225" expanded="true" signature="736:933" ph="{...}" />
+                <marker date="1512219718225" expanded="true" signature="941:1026" ph="/* Actions ... */" />
+                <marker date="1512219718225" expanded="true" signature="1065:1155" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -211,12 +211,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1512209121100</updated>
-      <workItem from="1512209123334" duration="9219000" />
+      <workItem from="1512209123334" duration="10574000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9219000" />
+    <option name="totallyTimeSpent" value="10574000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -397,41 +397,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/mobs/MobSpawner.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="784">
+        <state relative-caret-position="736">
           <caret line="55" column="86" lean-forward="false" selection-start-line="55" selection-start-column="86" selection-end-line="55" selection-end-column="86" />
           <folding>
-            <marker date="1512217990575" expanded="true" signature="34:1411" ph="{...}" />
-            <marker date="1512217990575" expanded="true" signature="78:1409" ph="{...}" />
-            <marker date="1512217990575" expanded="true" signature="85:172" ph="/* Variables ... */" />
-            <marker date="1512217990575" expanded="true" signature="176:228" ph="/// Name of the mob ... " />
-            <marker date="1512217990575" expanded="true" signature="260:316" ph="/// The prefab to spawn ... " />
-            <marker date="1512217990575" expanded="true" signature="345:412" ph="/// Where the mobs will spawn from ... " />
-            <marker date="1512217990575" expanded="true" signature="470:533" ph="/// Seconds between each spawn ... " />
-            <marker date="1512217990575" expanded="true" signature="569:645" ph="/// The parent (for neatness in the editor) ... " />
-            <marker date="1512217990575" expanded="true" signature="679:762" ph="/* Unity ... */" />
-            <marker date="1512217990575" expanded="true" signature="786:967" ph="{...}" />
-            <marker date="1512217990575" expanded="true" signature="973:1058" ph="/* Actions ... */" />
-            <marker date="1512217990575" expanded="true" signature="1062:1112" ph="/// Spawn the mob ... " />
-            <marker date="1512217990575" expanded="true" signature="1138:1403" ph="{...}" />
+            <marker date="1512219139604" expanded="true" signature="34:1411" ph="{...}" />
+            <marker date="1512219139604" expanded="true" signature="78:1409" ph="{...}" />
+            <marker date="1512219139604" expanded="true" signature="85:172" ph="/* Variables ... */" />
+            <marker date="1512219139604" expanded="true" signature="176:228" ph="/// Name of the mob ... " />
+            <marker date="1512219139604" expanded="true" signature="260:316" ph="/// The prefab to spawn ... " />
+            <marker date="1512219139604" expanded="true" signature="345:412" ph="/// Where the mobs will spawn from ... " />
+            <marker date="1512219139604" expanded="true" signature="470:533" ph="/// Seconds between each spawn ... " />
+            <marker date="1512219139604" expanded="true" signature="569:645" ph="/// The parent (for neatness in the editor) ... " />
+            <marker date="1512219139604" expanded="true" signature="679:762" ph="/* Unity ... */" />
+            <marker date="1512219139604" expanded="true" signature="786:967" ph="{...}" />
+            <marker date="1512219139604" expanded="true" signature="973:1058" ph="/* Actions ... */" />
+            <marker date="1512219139604" expanded="true" signature="1062:1112" ph="/// Spawn the mob ... " />
+            <marker date="1512219139604" expanded="true" signature="1138:1403" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/mobs/Globflob.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="23" column="50" lean-forward="false" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+        <state relative-caret-position="752">
+          <caret line="47" column="48" lean-forward="true" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
           <folding>
-            <marker date="1512217793514" expanded="true" signature="6:40" ph="..." />
-            <marker date="1512217793514" expanded="true" signature="56:1013" ph="{...}" />
-            <marker date="1512217793514" expanded="true" signature="140:1011" ph="{...}" />
-            <marker date="1512217793514" expanded="true" signature="147:234" ph="/* Variables ... */" />
-            <marker date="1512217793514" expanded="true" signature="359:442" ph="/* Unity ... */" />
-            <marker date="1512217793514" expanded="true" signature="466:543" ph="{...}" />
-            <marker date="1512217793514" expanded="true" signature="568:786" ph="{...}" />
-            <marker date="1512217793514" expanded="true" signature="635:782" ph="{...}" />
-            <marker date="1512217793514" expanded="true" signature="790:875" ph="/* Actions ... */" />
-            <marker date="1512217793514" expanded="true" signature="914:1005" ph="{...}" />
+            <marker date="1512219718225" expanded="true" signature="6:40" ph="..." />
+            <marker date="1512219718225" expanded="true" signature="56:1163" ph="{...}" />
+            <marker date="1512219718225" expanded="true" signature="140:1161" ph="{...}" />
+            <marker date="1512219718225" expanded="true" signature="147:234" ph="/* Variables ... */" />
+            <marker date="1512219718225" expanded="true" signature="359:442" ph="/* Unity ... */" />
+            <marker date="1512219718225" expanded="true" signature="466:644" ph="{...}" />
+            <marker date="1512219718225" expanded="true" signature="669:937" ph="{...}" />
+            <marker date="1512219718225" expanded="true" signature="736:933" ph="{...}" />
+            <marker date="1512219718225" expanded="true" signature="941:1026" ph="/* Actions ... */" />
+            <marker date="1512219718225" expanded="true" signature="1065:1155" ph="{...}" />
           </folding>
         </state>
       </provider>

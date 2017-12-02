@@ -18,6 +18,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="BulletController.cs" t="Include" />
           <e p="GlobalVars.cs" t="Include" />
           <e p="mobs" t="Include">
             <e p="Globflob.cs" t="Include" />

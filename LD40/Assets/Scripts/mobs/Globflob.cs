@@ -22,7 +22,10 @@ namespace mobs
 		private void Awake()
 		{
 			_agent = GetComponent<NavMeshAgent>();
-			PickNewTimeAndTarget();
+			_agent.SetDestination(Vector3.zero);
+			
+			_wanderDelay = Random.Range(10f, 15f);
+			_wanderRadius = Random.Range(5f, 50f);
 		}
 
 		private void Update()
@@ -30,8 +33,8 @@ namespace mobs
 			_timer += Time.deltaTime;
  
 			if (_timer >= _wanderDelay) {
-				Vector3 newPos = Random.insideUnitCircle * _wanderRadius;
-				_agent.SetDestination(newPos);
+				Vector2 newPos = Random.insideUnitCircle * _wanderRadius;
+				_agent.SetDestination(transform.position + new Vector3(newPos.x, 0f, newPos.y));
 				_timer = 0;
 				PickNewTimeAndTarget();
 			}
@@ -42,8 +45,8 @@ namespace mobs
 
 		private void PickNewTimeAndTarget()
 		{
-			_wanderDelay = Random.Range(1f, 20f);
-			_wanderRadius = Random.Range(3f, 10f);
+			_wanderDelay = Random.Range(0f, 5f);
+			_wanderRadius = Random.Range(5f, 50f);
 		}
 		
 	}
