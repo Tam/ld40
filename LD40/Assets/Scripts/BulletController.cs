@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class BulletController : MonoBehaviour {
 
     public float damage;
@@ -12,13 +13,38 @@ public class BulletController : MonoBehaviour {
     [Space]
     public GameObject impactEffect;
 
+    [Space]
+    public bool gravityOnImpact;
+    public float lifeAfterImpact;
+
     private Transform parentTurret;
     private Transform target;
+
+    private Rigidbody rb;
 
     public void Seek(Transform parentTurret, Transform target)
     {
         this.parentTurret = parentTurret;
         this.target = target;
+
+        rb = GetComponent<Rigidbody>();
+        //Vector3 dir = target.position - transform.position;
+        rb.AddForce(transform.TransformDirection(Vector3.right) * speed * 100);
+        rb.AddTorque(Random.insideUnitSphere);
+        Destroy(gameObject, 5f);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        //if(collision.transform.gameObject.tag == target.transform.gameObject.tag)
+        //{
+            if (gravityOnImpact)
+            {
+                rb.useGravity = true;
+            }
+            Destroy(gameObject, lifeAfterImpact);
+        //}
+        
     }
 
     void Update()
@@ -29,17 +55,19 @@ public class BulletController : MonoBehaviour {
             return;
         }
 
-        Vector3 dir = target.position - transform.position;
-        float distanceThisFrame = speed * Time.deltaTime;
 
-        if(dir.magnitude <= distanceThisFrame)
-        {
-            HitTarget();
-            return;
-        }
 
-        transform.Translate(dir.normalized * distanceThisFrame, Space.World);
-        transform.LookAt(target);
+        //Vector3 dir = target.position - transform.position;
+        //float distanceThisFrame = speed * Time.deltaTime;
+
+        //if(dir.magnitude <= distanceThisFrame)
+        //{
+        //    HitTarget();
+        //    return;
+        //}
+
+        //transform.Translate(dir.normalized * distanceThisFrame, Space.World);
+        //transform.LookAt(target);
     }
 
     void HitTarget()

@@ -38,6 +38,7 @@ public class TurretController : MonoBehaviour {
     public int projectilesPerShot = 1;
     public float fireRate = 1f;
     private float fireCountdown = 0f;
+    public float spread;
 
     [Header("Particle Properties")]
     public ParticleSystem particles;
@@ -79,7 +80,7 @@ public class TurretController : MonoBehaviour {
         GameObject[] targets = GameObject.FindGameObjectsWithTag(enemyTag);
         float closestDist = int.MaxValue;
         GameObject closestObj = null;
-
+        
         foreach(var enemy in targets)
         {
             float dist = Vector3.Distance(transform.position, enemy.transform.position);
@@ -114,10 +115,13 @@ public class TurretController : MonoBehaviour {
 
     void ShootProjectile()
     {
-        if(fireCountdown <= 0f)
+        if (IsLookingAtTarget())
         {
-            FireProjectile();
-            fireCountdown = 1f / fireRate;
+            if (fireCountdown <= 0f)
+            {
+                FireProjectile();
+                fireCountdown = 1f / fireRate;
+            }
         }
         fireCountdown -= Time.deltaTime;
     }
@@ -162,7 +166,11 @@ public class TurretController : MonoBehaviour {
     {
         for(int i = 0; i < projectilesPerShot; i++)
         {
-            GameObject bullet = Instantiate(bulletPrefab, muzzlePoint.transform.position, muzzlePoint.transform.rotation) as GameObject;
+
+            Vector3 rot = Random.insideUnitSphere * spread;
+            Quaternion rotation = Quaternion.Euler(rot) * muzzlePoint.transform.rotation;
+
+            GameObject bullet = Instantiate(bulletPrefab, muzzlePoint.transform.position, rotation) as GameObject;
             BulletController bulletController = bullet.GetComponent<BulletController>();
             if(bulletController != null)
             {
