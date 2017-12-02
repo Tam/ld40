@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UI;
 using UnityEngine;
 
 public class Placement : MonoBehaviour
@@ -17,8 +18,6 @@ public class Placement : MonoBehaviour
 
     public LayerMask TurretMask;
     public LayerMask TrapMask;
-
-    public UpgradePanel upgradePanel;
 
 	// Use this for initialization
 	void Start ()
@@ -98,14 +97,13 @@ public class Placement : MonoBehaviour
         if (GameobjectToPlaceID > numberOfTurrets)
         {
             GameobjectHolo[GameobjectToPlaceID].transform.position = Default;
-            GameObject Obj = Instantiate(GameobjectToPlace[GameobjectToPlaceID], _hitPos, Quaternion.identity);
-            Obj.GetComponent<Traps>().upgradePanel = upgradePanel;
+            Instantiate(GameobjectToPlace[GameobjectToPlaceID], _hitPos, Quaternion.identity);
             GameobjectToPlaceID = 100;
         }
         else
         {
             GameobjectHolo[GameobjectToPlaceID].transform.position = Default;
-            GameObject Obj = Instantiate(GameobjectToPlace[GameobjectToPlaceID], _hitPos, Quaternion.identity);
+            Instantiate(GameobjectToPlace[GameobjectToPlaceID], _hitPos, Quaternion.identity);
             GameobjectToPlaceID = 100;
         }
     }
