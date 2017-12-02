@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Traps : MonoBehaviour
 {
-    public float SucessRate = 0;
-    public int AttractRaduis = 0;
-    public int ResourceAmount = 0;
+    public float SucessRate;
+    public int AttractRaduis;
+    public int ResourceAmount;
 
     public float CheckAttractionTime = 10f;
 
@@ -29,20 +29,24 @@ public class Traps : MonoBehaviour
             }
             else if (Random.value <= SucessRate / 100)
             {
-                GlobFlopsInRange[i].GetComponentInParent<mobs.Globflob>().setTarget(TargetPoint, ResourceAmount);
+                mobs.Globflob gf = GlobFlopsInRange[i]
+                    .GetComponentInParent<mobs.Globflob>();
+                
+                if (gf != null)
+                    gf.setTarget(TargetPoint, ResourceAmount);
             }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!GlobFlopsInRange.Contains(other.gameObject))
+        if (!GlobFlopsInRange.Contains(other.gameObject))
             GlobFlopsInRange.Add(other.gameObject);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(GlobFlopsInRange.Contains(other.gameObject))
+        if (GlobFlopsInRange.Contains(other.gameObject))
             GlobFlopsInRange.Remove(other.gameObject);
     }
 }
