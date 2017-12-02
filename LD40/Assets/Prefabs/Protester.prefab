@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23525950669068452}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Protester
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 114161330703023768}
   m_Layer: 0
   m_Name: Protester
-  m_TagString: Untagged
+  m_TagString: Protester
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -384,6 +384,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 918defd62f392894398c9c21cca7f742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 20
+  fearLimit: 20
 --- !u!136 &136706021551307960
 CapsuleCollider:
   m_ObjectHideFlags: 1

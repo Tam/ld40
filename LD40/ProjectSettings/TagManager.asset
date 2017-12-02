@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Protester
   - GlobFlob
+  - Turret
+  - Trap
   layers:
   - Default
   - TransparentFX
