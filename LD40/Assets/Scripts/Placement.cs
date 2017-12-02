@@ -98,14 +98,14 @@ public class Placement : MonoBehaviour
         if (GameobjectToPlaceID > numberOfTurrets)
         {
             GameobjectHolo[GameobjectToPlaceID].transform.position = Default;
-            Instantiate(GameobjectToPlace[GameobjectToPlaceID], _hitPos, Quaternion.identity);
+            GameObject Obj = Instantiate(GameobjectToPlace[GameobjectToPlaceID], _hitPos, Quaternion.identity);
+            Obj.GetComponent<Traps>().upgradePanel = upgradePanel;
             GameobjectToPlaceID = 100;
         }
         else
         {
             GameobjectHolo[GameobjectToPlaceID].transform.position = Default;
             GameObject Obj = Instantiate(GameobjectToPlace[GameobjectToPlaceID], _hitPos, Quaternion.identity);
-            Obj.GetComponent<Traps>().upgradePanel = upgradePanel;
             GameobjectToPlaceID = 100;
         }
     }
