@@ -29,7 +29,7 @@ namespace mobs
 		{
 			PickAndGoToRandomTarget();
 			
-			// Pick a new random target after 20 seconds, every 20 seconds
+			// Pick a new random target after 20 seconds, every 10 seconds
 			InvokeRepeating("ChangeTarget", 20f, 10f);
 		}
 
@@ -61,8 +61,13 @@ namespace mobs
 		{
 			Transform[] targets = _globalVars.ProtestorsTargets;
 			_target = targets[Random.Range(0, targets.Length)];
+
+			Vector3 target = _target.position;
+			float rand = Random.Range(-3f, 3f);
+			target.x += rand;
+			target.z += rand;
 			
-			_agent.SetDestination(_target.position);
+			_agent.SetDestination(target);
 		}
 
 		/// <summary>

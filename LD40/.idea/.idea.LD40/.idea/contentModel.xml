@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="PlacementTest" t="Include">
           <e p="Placement.cs" t="Include" />
+          <e p="PlacementCollision.cs" t="Include" />
         </e>
         <e p="Plugins" t="Include">
           <e p="Editor" t="Include">
@@ -23,6 +24,7 @@
             <e p="Protester.cs" t="Include" />
           </e>
           <e p="PlayerStats.cs" t="Include" />
+          <e p="TurretController.cs" t="Include" />
         </e>
       </e>
       <e p="LD40.sln" t="IncludeFlat" />
