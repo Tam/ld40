@@ -35,9 +35,9 @@ public class Placement : MonoBehaviour
 
             Debug.DrawRay(ray.origin, ray.direction * 100, Color.green);
 
-            if (Physics.Raycast(ray, out Hit, 100))
+            if (Physics.Raycast(ray, out Hit, 100, 1 << 3))
             {
-                Vector3 HitPos = new Vector3(Hit.point.x, 1, Hit.point.z);
+                Vector3 HitPos = new Vector3(Hit.point.x, 0.5f, Hit.point.z);
 
                 if (PC == null)
                 {
