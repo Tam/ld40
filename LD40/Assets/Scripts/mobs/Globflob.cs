@@ -12,11 +12,12 @@ namespace mobs
 		private float _wanderDelay;
 		private float _wanderRadius;
 
+		private GlobalVars _globalVars;
 		private NavMeshAgent _agent;
 
 		private float _timer;
 
-        private bool Attracted = false;
+        private bool Attracted;
 
         private int AmountOfResoucre = 1;
 		
@@ -30,6 +31,11 @@ namespace mobs
 			
 			_wanderDelay = Random.Range(10f, 15f);
 			_wanderRadius = Random.Range(5f, 50f);
+		}
+
+		private void Start()
+		{
+			_globalVars = GlobalVars.instance;
 		}
 
 		private void Update()
@@ -51,15 +57,19 @@ namespace mobs
                 if (!_agent.pathPending)
                     if (_agent.remainingDistance <= _agent.stoppingDistance)
                         if (!_agent.hasPath || _agent.velocity.sqrMagnitude == 0f)
-                        {
-                            GlobalVars.instance.NumUnporcessedGlobFlops += AmountOfResoucre;
-                            Destroy(gameObject);
-                        }
+	                        Capture();
             }
 		}
 
 		// Actions
 		// =====================================================================
+
+		public void setTarget(Transform _transform, int _Amount)
+		{
+			Attracted = true;
+			AmountOfResoucre += _Amount;
+			_agent.SetDestination(_transform.position);
+		}
 
 		private void PickNewTimeAndTarget()
 		{
@@ -67,11 +77,12 @@ namespace mobs
 			_wanderRadius = Random.Range(5f, 50f);
 		}
 
-        public void setTarget(Transform _transform, int _Amount)
-        {
-            Attracted = true;
-            AmountOfResoucre += _Amount;
-            _agent.SetDestination(_transform.position);
-        }	
+		private void Capture()
+		{
+			_globalVars.NumUnporcessedGlobFlops += AmountOfResoucre;
+			_globalVars.DecreaseCurrentMobsBy(MobTypes.Globflob, 1);
+			Destroy(gameObject);
+		}
+		
 	}  
 }
