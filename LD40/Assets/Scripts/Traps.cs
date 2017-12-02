@@ -56,16 +56,22 @@ public class Traps : MonoBehaviour
     {
         AttractRaduis = _raduis;
         GetComponentInChildren<SphereCollider>().radius = AttractRaduis;
+
+        //Ui Set
     }
 
     public void SetSucessRate(float _Valve)
     {
         SucessRate = _Valve;
+
+        //Ui Set
     }
 
     public void SetAttractionTime(int _time)
     {
         CheckAttractionTime = _time;
+
+        //Ui Set
     }
 
     void OnMouseOver()
