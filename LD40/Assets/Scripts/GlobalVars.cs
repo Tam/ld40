@@ -5,7 +5,7 @@ using UnityEngine;
 public class GlobalVars : MonoBehaviour
 {
     //Singleton
-    public static GlobalVars GlobalVarsSingleton;
+    public static GlobalVars instance;
 
     //Time Playing the game from start to finish.
     public float TimeElapsed;
@@ -52,9 +52,9 @@ public class GlobalVars : MonoBehaviour
 
     void Awake()
     {
-        if(GlobalVarsSingleton == null)
+        if(instance == null)
         {
-            GlobalVarsSingleton = this;
+            instance = this;
         }
     }
 }

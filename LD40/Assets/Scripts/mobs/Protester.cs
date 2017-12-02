@@ -9,7 +9,9 @@ namespace mobs
 		// Variables
 		// =====================================================================
 
-		public Transform target;
+		private GlobalVars _globalVars;
+		
+		private Transform _target;
 		
 		private NavMeshAgent _agent;
 		
@@ -18,12 +20,68 @@ namespace mobs
 
 		private void Awake()
 		{
+			_globalVars = GlobalVars.instance;
 			_agent = GetComponent<NavMeshAgent>();
+
 		}
 
 		private void Start()
 		{
-			_agent.SetDestination(target.position);
+			PickAndGoToRandomTarget();
+			
+			// Pick a new random target after 20 seconds, every 20 seconds
+			InvokeRepeating("ChangeTarget", 20f, 10f);
+		}
+
+		private void Update()
+		{
+			// If we're not pathing, face the centre
+			if (!_agent.pathPending)
+				if (_agent.remainingDistance <= _agent.stoppingDistance)
+					if (!_agent.hasPath || _agent.velocity.sqrMagnitude == 0f)
+						FaceTarget();
+		}
+		
+		// Actions
+		// =====================================================================
+
+		/// <summary>
+		/// 50% chance to randomly change target
+		/// </summary>
+		private void ChangeTarget()
+		{
+			if (Random.value >= 0.5f)
+				PickAndGoToRandomTarget();
+		}
+
+		/// <summary>
+		/// Picks a random target from the pre-defined list
+		/// </summary>
+		private void PickAndGoToRandomTarget()
+		{
+			Transform[] targets = _globalVars.ProtestorsTargets;
+			_target = targets[Random.Range(0, targets.Length)];
+			
+			_agent.SetDestination(_target.position);
+		}
+
+		/// <summary>
+		/// Face the centre (the position of GlobalVars)
+		/// </summary>
+		private void FaceTarget()
+		{
+			Vector3 direction = 
+				(_globalVars.transform.position - transform.position).normalized;
+			
+			Quaternion lookRotation = Quaternion.LookRotation(
+				new Vector3(direction.x, 0, direction.z)
+			);
+			
+			transform.rotation = Quaternion.Slerp(
+				transform.rotation, 
+				lookRotation,
+				Time.deltaTime * 10f
+			);
 		}
 		
 	}
