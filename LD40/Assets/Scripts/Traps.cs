@@ -12,11 +12,11 @@ public class Traps : MonoBehaviour
 
     public Transform TargetPoint;
 
-    public List<GameObject> GlobFlopsInRange;
+    public List<GameObject> GlobFlopsInRange = new List<GameObject>();
 
     private void Start()
     {
-        InvokeRepeating("CheckAttraction", 0, CheckAttractionTime);
+        InvokeRepeating("CheckAttraction", 5, CheckAttractionTime);
     }
 
     private void CheckAttraction()
