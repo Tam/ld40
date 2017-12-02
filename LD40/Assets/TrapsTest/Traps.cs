@@ -25,7 +25,7 @@ public class Traps : MonoBehaviour
         {
             if (Random.value <= SucessRate / 100)
             {
-                obj.GetComponentInParent<mobs.Globflob>().setTarget(TargetPoint);
+                obj.GetComponentInParent<mobs.Globflob>().setTarget(TargetPoint, ResourceAmount);
 
                 GlobFlopsInRange.Remove(obj);
             }
@@ -40,7 +40,7 @@ public class Traps : MonoBehaviour
         if (Random.value <= SucessRate / 100)
         {
             Debug.Log("lol");
-            other.gameObject.GetComponentInParent<mobs.Globflob>().setTarget(TargetPoint);
+            other.gameObject.GetComponentInParent<mobs.Globflob>().setTarget(TargetPoint, ResourceAmount);
 
             if (GlobFlopsInRange.Contains(other.gameObject))
                 GlobFlopsInRange.Remove(other.gameObject);

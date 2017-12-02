@@ -17,6 +17,8 @@ namespace mobs
 		private float _timer;
 
         private bool Attracted = false;
+
+        private int AmountOfResoucre = 1;
 		
 		// Unity
 		// =====================================================================
@@ -50,7 +52,7 @@ namespace mobs
                     if (_agent.remainingDistance <= _agent.stoppingDistance)
                         if (!_agent.hasPath || _agent.velocity.sqrMagnitude == 0f)
                         {
-                            GlobalVars.instance.NumUnporcessedGlobFlops += 1;
+                            GlobalVars.instance.NumUnporcessedGlobFlops += AmountOfResoucre;
                             Destroy(gameObject);
                         }
             }
@@ -65,9 +67,10 @@ namespace mobs
 			_wanderRadius = Random.Range(5f, 50f);
 		}
 
-        public void setTarget(Transform _transform)
+        public void setTarget(Transform _transform, int _Amount)
         {
             Attracted = true;
+            AmountOfResoucre += _Amount;
             _agent.SetDestination(_transform.position);
         }	
 	}  
