@@ -44,8 +44,11 @@ public class BulletController : MonoBehaviour {
 
     void HitTarget()
     {
-        GameObject effect = Instantiate(impactEffect, transform.position, transform.rotation) as GameObject;
-        Destroy(effect, 5f);
+        if (impactEffect != null)
+        {
+            GameObject effect = Instantiate(impactEffect, transform.position, transform.rotation) as GameObject;
+            Destroy(effect, 5f);
+        }
 
         Protester protester = target.GetComponent<Protester>();
         if(protester != null)

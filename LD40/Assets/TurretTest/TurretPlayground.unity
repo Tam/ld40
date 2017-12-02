@@ -230,8 +230,9 @@ MonoBehaviour:
   fear: 0
   damagePerTick: 0.1
   fearPerTick: 0
-  fireType: 2
-  bulletPrefab: {fileID: 0}
+  fireType: 0
+  bulletPrefab: {fileID: 1742843886475454, guid: 833e97e19e34be84caba6bfb06896e62,
+    type: 2}
   projectilesPerShot: 1
   fireRate: 1
   particles: {fileID: 0}
