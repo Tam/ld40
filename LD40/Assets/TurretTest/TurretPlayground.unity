@@ -232,6 +232,7 @@ MonoBehaviour:
   fearPerTick: 0
   fireType: 2
   bulletPrefab: {fileID: 0}
+  projectilesPerShot: 1
   fireRate: 1
   particles: {fileID: 0}
   lineRenderer: {fileID: 522123795}

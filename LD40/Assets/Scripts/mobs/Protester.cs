@@ -104,14 +104,18 @@ namespace mobs
             }
         }
 
-        public void Scare(float amount)
+        public void Scare(float amount, Transform fearLocation)
         {
             currentFear += amount;
 
             if(currentFear >= fearLimit)
             {
                 //Scare the protester
-                //Run away?
+
+                if(fearLocation != null)
+                {
+                    // Run away from feat location
+                }
             }
         }
 		

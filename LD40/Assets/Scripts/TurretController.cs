@@ -22,25 +22,28 @@ public class TurretController : MonoBehaviour {
     public float range = 10f;
     public float turnSpeed = 2.5f;
     public float findTargetFrequency = 0.75f;
-
+    
+    [Space]
     public float damage = 1f;
     public float fear;
 
     public float damagePerTick = 0.1f;
     public float fearPerTick;
-
+    
+    [Space]
     public FireType fireType;
 
     [Header("Projectile Properties")]
     public GameObject bulletPrefab;
+    public int projectilesPerShot = 1;
     public float fireRate = 1f;
+    private float fireCountdown = 0f;
 
     [Header("Particle Properties")]
     public ParticleSystem particles;
     
     [Header("Line Renderer Properties")]
     public LineRenderer lineRenderer;
-    // TODO: Other stats
 
     [Header("Debug")]
     public Color radiusColor = Color.red;
@@ -48,12 +51,29 @@ public class TurretController : MonoBehaviour {
     public bool showRadius = true;
     public bool showRayToTarget = true;
 
-	// Use this for initialization
 	void Start ()
     {
         InvokeRepeating("FindTarget", 0, findTargetFrequency);
 	}
 	
+
+	void Update ()
+    {
+		if(target != null)
+        {
+            TrackTarget();
+
+            Shoot();
+        }
+        else
+        {
+            if(particles != null)
+            {
+                particles.Stop();
+            }
+        }
+	}
+
     void FindTarget()
     {
         GameObject[] targets = GameObject.FindGameObjectsWithTag(enemyTag);
@@ -72,24 +92,6 @@ public class TurretController : MonoBehaviour {
 
         target = (closestObj != null) && (closestDist <= range) ? closestObj : null;
     }
-
-	// Update is called once per frame
-	void Update ()
-    {
-		if(target != null)
-        {
-            TrackTarget();
-
-            Shoot();
-        }
-        else
-        {
-            if(particles != null)
-            {
-                particles.Stop();
-            }
-        }
-	}
 
     void Shoot()
     {
@@ -112,7 +114,12 @@ public class TurretController : MonoBehaviour {
 
     void ShootProjectile()
     {
-
+        if(fireCountdown <= 0f)
+        {
+            FireProjectile();
+            fireCountdown = 1f / fireRate;
+        }
+        fireCountdown -= Time.deltaTime;
     }
 
     void ShootParticle()
@@ -149,6 +156,19 @@ public class TurretController : MonoBehaviour {
             lineRenderer.enabled = false;
         }
        
+    }
+
+    void FireProjectile()
+    {
+        for(int i = 0; i < projectilesPerShot; i++)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, muzzlePoint.transform.position, muzzlePoint.transform.rotation) as GameObject;
+            BulletController bulletController = bullet.GetComponent<BulletController>();
+            if(bulletController != null)
+            {
+                bulletController.Seek(gameObject.transform, target.transform);
+            }
+        }
     }
 
     bool IsLookingAtTarget()
