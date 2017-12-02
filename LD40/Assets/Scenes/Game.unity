@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 257546683}
   - component: {fileID: 257546682}
   - component: {fileID: 257546681}
+  - component: {fileID: 257546685}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -291,6 +292,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &257546685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 257546680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8c0ec6190b098049a3060ca36eb289b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Placing: 0
+  TurretToPlaceID: 100
+  TurretHolo:
+  - {fileID: 1629537945}
+  TurretsToPlace:
+  - {fileID: 1711331942089936, guid: a9d9f02bbad136c48ae63dba1fba9493, type: 2}
 --- !u!1 &406344588
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,6 +454,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &740866111
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1082338596}
+    m_Modifications:
+    - target: {fileID: 4951457594804036, guid: c16145638a0731d4c80aacfbc51f3b38, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951457594804036, guid: c16145638a0731d4c80aacfbc51f3b38, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951457594804036, guid: c16145638a0731d4c80aacfbc51f3b38, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951457594804036, guid: c16145638a0731d4c80aacfbc51f3b38, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951457594804036, guid: c16145638a0731d4c80aacfbc51f3b38, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951457594804036, guid: c16145638a0731d4c80aacfbc51f3b38, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951457594804036, guid: c16145638a0731d4c80aacfbc51f3b38, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951457594804036, guid: c16145638a0731d4c80aacfbc51f3b38, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c16145638a0731d4c80aacfbc51f3b38, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &783784770
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +523,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 737138344}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &799076238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 799076239}
+  m_Layer: 0
+  m_Name: TrapHolos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &799076239
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 799076238}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &838828571
 GameObject:
@@ -580,6 +668,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 838828572}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1082338595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1082338596}
+  m_Layer: 0
+  m_Name: TurrentHolos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1082338596
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1082338595}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1629537946}
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1086289387
 GameObject:
@@ -819,6 +936,16 @@ Transform:
   m_Father: {fileID: 737138344}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1629537945 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1495767309465210, guid: c16145638a0731d4c80aacfbc51f3b38,
+    type: 2}
+  m_PrefabInternal: {fileID: 740866111}
+--- !u!4 &1629537946 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4951457594804036, guid: c16145638a0731d4c80aacfbc51f3b38,
+    type: 2}
+  m_PrefabInternal: {fileID: 740866111}
 --- !u!1 &1750190646
 GameObject:
   m_ObjectHideFlags: 0
