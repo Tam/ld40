@@ -30,7 +30,7 @@ public class GlobalVars : MonoBehaviour
     //Maxuim Amount Of Protestors
     public int MaxAmountProtestor;
 
-    //Default Target Positions for Protestors
+    // Default Target Positions for Protestors
     public Transform[] ProtestorsTargets = new Transform[5];
 
     //------------------------------------------Mechcanics------------------------------------------//

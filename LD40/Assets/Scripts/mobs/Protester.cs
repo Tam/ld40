@@ -50,7 +50,7 @@ namespace mobs
 		/// </summary>
 		private void ChangeTarget()
 		{
-			if (Random.value >= 0.5f)
+			if (Random.value >= 0.75f)
 				PickAndGoToRandomTarget();
 		}
 
