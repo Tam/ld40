@@ -2,15 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+public class PlayerStats : MonoBehaviour
+{
+    
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
