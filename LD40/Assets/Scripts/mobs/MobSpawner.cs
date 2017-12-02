@@ -8,6 +8,11 @@ namespace mobs
 		// =====================================================================
 
 		/// <summary>
+		/// Name of the mob
+		/// </summary>
+		public new string name;
+		
+		/// <summary>
 		/// The prefab to spawn
 		/// </summary>
 		public GameObject mob;
@@ -33,7 +38,7 @@ namespace mobs
 		private void Start()
 		{
 			// Create the parent
-			_parent = new GameObject("Protesters");
+			_parent = new GameObject(name);
 			
 			// Run SpawnMob immediately, then every spawnDelay seconds
 			InvokeRepeating("SpawnMob", 0f, spawnDelay);

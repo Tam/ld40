@@ -20,6 +20,7 @@
         <e p="Scripts" t="Include">
           <e p="GlobalVars.cs" t="Include" />
           <e p="mobs" t="Include">
+            <e p="Globflob.cs" t="Include" />
             <e p="MobSpawner.cs" t="Include" />
             <e p="Protester.cs" t="Include" />
           </e>
