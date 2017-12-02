@@ -8,13 +8,13 @@ public class PlacementCollision : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if(collider.gameObject.tag == "GlobFlob" || collider.gameObject.tag == "Protestor" || collider.gameObject.tag == "Trap" || collider.gameObject.tag == "Turret")
+        if(collider.gameObject.tag == "GlobFlob" || collider.gameObject.tag == "Protester" || collider.gameObject.tag == "Trap" || collider.gameObject.tag == "Turret")
             IsColliding = true;
     }
 
     void OnTriggerExit(Collider collider)
     {
-        if (collider.gameObject.tag == "GlobFlob" || collider.gameObject.tag == "Protestor" || collider.gameObject.tag == "Trap" || collider.gameObject.tag == "Turret")
+        if (collider.gameObject.tag == "GlobFlob" || collider.gameObject.tag == "Protester" || collider.gameObject.tag == "Trap" || collider.gameObject.tag == "Turret")
             IsColliding = false;
     }
 }
