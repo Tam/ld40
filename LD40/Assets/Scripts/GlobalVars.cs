@@ -6,6 +6,11 @@ public enum MobTypes
     Globflob,
 }
 
+public enum AvailableStats
+{
+    NumUnprocessedGlobflobs,
+}
+
 public class GlobalVars : MonoBehaviour
 {
     //Singleton
@@ -13,6 +18,12 @@ public class GlobalVars : MonoBehaviour
 
     //Time Playing the game from start to finish.
     public float TimeElapsed;
+    
+    // Events
+    // =====================================================================
+    
+    public delegate void OnStatChange(AvailableStats stat, int value);
+    public OnStatChange OnStatChangeCallback;
     
     // Mobs
     // =====================================================================
@@ -219,6 +230,10 @@ public class GlobalVars : MonoBehaviour
         set
         {
             numUnporcessedGlobFlops = value;
+            OnStatChangeCallback.Invoke(
+                AvailableStats.NumUnprocessedGlobflobs, 
+                value
+            );
         }
     }
 

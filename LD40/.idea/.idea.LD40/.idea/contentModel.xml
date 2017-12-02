@@ -6,10 +6,6 @@
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="PlacementTest" t="Include">
-          <e p="Placement.cs" t="Include" />
-          <e p="PlacementCollision.cs" t="Include" />
-        </e>
         <e p="Plugins" t="Include">
           <e p="Editor" t="Include">
             <e p="JetBrains" t="Include">
@@ -25,9 +21,13 @@
             <e p="MobSpawner.cs" t="Include" />
             <e p="Protester.cs" t="Include" />
           </e>
+          <e p="Placement.cs" t="Include" />
+          <e p="PlacementCollision.cs" t="Include" />
           <e p="TurretController.cs" t="Include" />
+          <e p="UI" t="Include">
+            <e p="UIHud.cs" t="Include" />
+          </e>
         </e>
-        <e p="TEST.cs" t="Include" />
         <e p="TrapsTest" t="Include">
           <e p="Traps.cs" t="Include" />
         </e>
