@@ -37,13 +37,9 @@ namespace mobs
 		// Unity
 		// =====================================================================
 
-		private void Awake()
-		{
-			_globalVars = GlobalVars.instance;
-		}
-
 		private void Start()
 		{
+            _globalVars = GlobalVars.instance;
 			// Create the parent
 			_parent = new GameObject(type + "s");
 			

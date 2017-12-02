@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Traps : MonoBehaviour
 {
-    public int SucessRate = 0;
+    public float SucessRate = 0;
     public int AttractRaduis = 0;
     public int ResourceAmount = 0;
 
