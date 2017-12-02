@@ -65,7 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Protester.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Protester.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/mobs/Protester.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="688">
@@ -91,26 +91,6 @@
                 <marker date="1512233871614" expanded="true" signature="2559:2851" ph="{...}" />
                 <marker date="1512233871614" expanded="true" signature="2646:2841" ph="{...}" />
                 <marker date="1512233871614" expanded="true" signature="2740:2827" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Traps.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Traps.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-              <folding>
-                <marker date="1512234429750" expanded="false" signature="6:78" ph="..." />
-                <marker date="1512234429750" expanded="true" signature="114:1377" ph="{...}" />
-                <marker date="1512234429750" expanded="true" signature="384:464" ph="{...}" />
-                <marker date="1512234429750" expanded="true" signature="500:1032" ph="{...}" />
-                <marker date="1512234429750" expanded="true" signature="562:1026" ph="{...}" />
-                <marker date="1512234429750" expanded="true" signature="616:706" ph="{...}" />
-                <marker date="1512234429750" expanded="true" signature="761:1016" ph="{...}" />
-                <marker date="1512234429750" expanded="true" signature="1081:1203" ph="{...}" />
-                <marker date="1512234429750" expanded="true" signature="1251:1375" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -272,12 +252,12 @@
       <option name="presentableId" value="Default" />
       <updated>1512209121100</updated>
       <workItem from="1512209123334" duration="19004000" />
-      <workItem from="1512234089046" duration="422000" />
+      <workItem from="1512234089046" duration="439000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19426000" />
+    <option name="totallyTimeSpent" value="19443000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -547,35 +527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/mobs/Protester.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="110" column="40" lean-forward="false" selection-start-line="110" selection-start-column="40" selection-end-line="110" selection-end-column="40" />
-          <folding>
-            <marker date="1512233871614" expanded="false" signature="6:40" ph="..." />
-            <marker date="1512233871614" expanded="true" signature="56:2859" ph="{...}" />
-            <marker date="1512233871614" expanded="true" signature="141:2857" ph="{...}" />
-            <marker date="1512233871614" expanded="true" signature="148:235" ph="/* Variables ... */" />
-            <marker date="1512233871614" expanded="true" signature="489:572" ph="/* Unity ... */" />
-            <marker date="1512233871614" expanded="true" signature="596:723" ph="{...}" />
-            <marker date="1512233871614" expanded="true" signature="747:901" ph="{...}" />
-            <marker date="1512233871614" expanded="true" signature="926:1151" ph="{...}" />
-            <marker date="1512233871614" expanded="true" signature="1157:1242" ph="/* Actions ... */" />
-            <marker date="1512233871614" expanded="true" signature="1246:1319" ph="/// 50% chance to randomly change target ... " />
-            <marker date="1512233871614" expanded="true" signature="1349:1418" ph="{...}" />
-            <marker date="1512233871614" expanded="true" signature="1422:1506" ph="/// Picks a random target from the pre-defined list ... " />
-            <marker date="1512233871614" expanded="true" signature="1547:1826" ph="{...}" />
-            <marker date="1512233871614" expanded="true" signature="1830:1911" ph="/// Face the centre (the position of GlobalVars) ... " />
-            <marker date="1512233871614" expanded="true" signature="1939:2269" ph="{...}" />
-            <marker date="1512233871614" expanded="true" signature="2311:2494" ph="{...}" />
-            <marker date="1512233871614" expanded="true" signature="2392:2484" ph="{...}" />
-            <marker date="1512233871614" expanded="true" signature="2559:2851" ph="{...}" />
-            <marker date="1512233871614" expanded="true" signature="2646:2841" ph="{...}" />
-            <marker date="1512233871614" expanded="true" signature="2740:2827" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/mobs/Globflob.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -602,8 +553,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Traps.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        <state relative-caret-position="368">
+          <caret line="26" column="13" lean-forward="true" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
           <folding>
             <marker date="1512234429750" expanded="false" signature="6:78" ph="..." />
             <marker date="1512234429750" expanded="true" signature="114:1377" ph="{...}" />
@@ -614,6 +565,35 @@
             <marker date="1512234429750" expanded="true" signature="761:1016" ph="{...}" />
             <marker date="1512234429750" expanded="true" signature="1081:1203" ph="{...}" />
             <marker date="1512234429750" expanded="true" signature="1251:1375" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/mobs/Protester.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="688">
+          <caret line="110" column="40" lean-forward="false" selection-start-line="110" selection-start-column="40" selection-end-line="110" selection-end-column="40" />
+          <folding>
+            <marker date="1512233871614" expanded="false" signature="6:40" ph="..." />
+            <marker date="1512233871614" expanded="true" signature="56:2859" ph="{...}" />
+            <marker date="1512233871614" expanded="true" signature="141:2857" ph="{...}" />
+            <marker date="1512233871614" expanded="true" signature="148:235" ph="/* Variables ... */" />
+            <marker date="1512233871614" expanded="true" signature="489:572" ph="/* Unity ... */" />
+            <marker date="1512233871614" expanded="true" signature="596:723" ph="{...}" />
+            <marker date="1512233871614" expanded="true" signature="747:901" ph="{...}" />
+            <marker date="1512233871614" expanded="true" signature="926:1151" ph="{...}" />
+            <marker date="1512233871614" expanded="true" signature="1157:1242" ph="/* Actions ... */" />
+            <marker date="1512233871614" expanded="true" signature="1246:1319" ph="/// 50% chance to randomly change target ... " />
+            <marker date="1512233871614" expanded="true" signature="1349:1418" ph="{...}" />
+            <marker date="1512233871614" expanded="true" signature="1422:1506" ph="/// Picks a random target from the pre-defined list ... " />
+            <marker date="1512233871614" expanded="true" signature="1547:1826" ph="{...}" />
+            <marker date="1512233871614" expanded="true" signature="1830:1911" ph="/// Face the centre (the position of GlobalVars) ... " />
+            <marker date="1512233871614" expanded="true" signature="1939:2269" ph="{...}" />
+            <marker date="1512233871614" expanded="true" signature="2311:2494" ph="{...}" />
+            <marker date="1512233871614" expanded="true" signature="2392:2484" ph="{...}" />
+            <marker date="1512233871614" expanded="true" signature="2559:2851" ph="{...}" />
+            <marker date="1512233871614" expanded="true" signature="2646:2841" ph="{...}" />
+            <marker date="1512233871614" expanded="true" signature="2740:2827" ph="{...}" />
           </folding>
         </state>
       </provider>
