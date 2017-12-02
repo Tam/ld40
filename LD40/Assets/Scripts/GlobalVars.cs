@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UI;
+using UnityEngine;
 
 public enum MobTypes
 {
@@ -11,11 +12,16 @@ public enum AvailableStats
     NumUnprocessedGlobflobs,
 }
 
+[RequireComponent(typeof(UIManager))]
 public class GlobalVars : MonoBehaviour
 {
+    public Transform FUCKBOI;
+    
     //Singleton
     public static GlobalVars instance;
 
+    public UIManager uiManager;
+    
     //Time Playing the game from start to finish.
     public float TimeElapsed;
     
@@ -233,14 +239,18 @@ public class GlobalVars : MonoBehaviour
             TriggerStatChange(AvailableStats.NumUnprocessedGlobflobs, value);
         }
     }
+    
+    // Unity
+    // =====================================================================
 
     void Awake()
     {
-        if(instance == null)
-        {
+        if (instance == null)
             instance = this;
-        }
     }
+    
+    // Events
+    // =====================================================================
 
     private void TriggerStatChange(AvailableStats stat, int value)
     {

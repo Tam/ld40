@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UI;
 using UnityEngine;
 
 public class Traps : MonoBehaviour
@@ -12,12 +13,14 @@ public class Traps : MonoBehaviour
     public Transform TargetPoint;
 
     public List<GameObject> GlobFlopsInRange = new List<GameObject>();
-    public UpgradePanel upgradePanel; 
 
-    bool isUIUp = false;
+    private bool isUIUp;
+
+    private GlobalVars _globalVars;
 
     private void Start()
     {
+        _globalVars = GlobalVars.instance;
         GetComponentInChildren<SphereCollider>().radius = AttractRaduis;
         InvokeRepeating("CheckAttraction", 5, CheckAttractionTime);
     }
@@ -57,25 +60,16 @@ public class Traps : MonoBehaviour
     {
         AttractRaduis = _raduis;
         GetComponentInChildren<SphereCollider>().radius = AttractRaduis;
-
-        //Ui Set
-        upgradePanel.setStat1Text((int)AttractRaduis);
     }
 
     public void SetSucessRate(float _Valve)
     {
         SucessRate = _Valve;
-
-        //Ui Set
-        upgradePanel.setStat2Text((int)SucessRate);
     }
 
     public void SetAttractionTime(int _time)
     {
         CheckAttractionTime = _time;
-
-        //Ui Set
-        upgradePanel.setStat3Text((int)CheckAttractionTime);
     }
 
     void OnMouseOver()
@@ -88,32 +82,32 @@ public class Traps : MonoBehaviour
                 isUIUp = true;
             }
         }
-
-        Debug.Log("fuck");
     }
 
     void OnMouseExit()
     {
+<<<<<<< HEAD
         if (isUIUp == true)
         {
             MakeUIDisappear();
+=======
+        if (isUIUp)
+>>>>>>> 2842be3520c766f48a520395d2aa9027c0702d37
             isUIUp = false;
-        }
-
-        Debug.Log("Doublefuck");
     }
 
     void MakeUIAppear()
     {
-        upgradePanel.gameObject.SetActive(true);
-
-        upgradePanel.setStat3Text((int)CheckAttractionTime);
-        upgradePanel.setStat2Text((int)SucessRate);
-        upgradePanel.setStat1Text((int)AttractRaduis);
+        _globalVars.uiManager.upgradePanel.SetAndShow(
+            "Trap Name Here",
+            UIStat.Create("Cooldown Duration", CheckAttractionTime),
+            UIStat.Create("Success Chance", SucessRate),
+            UIStat.Create("Area of Effect", AttractRaduis)
+        );
     }
 
     void MakeUIDisappear()
     {
-        upgradePanel.gameObject.SetActive(false);
+        _globalVars.uiManager.upgradePanel.Hide();
     }
 }

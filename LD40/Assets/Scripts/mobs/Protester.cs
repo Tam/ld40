@@ -4,21 +4,21 @@ using UnityEngine.AI;
 namespace mobs
 {
 	[RequireComponent(typeof(NavMeshAgent))]
-	public class Protester : MonoBehaviour {
-		
+	public class Protester : MonoBehaviour
+	{
 		// Variables
 		// =====================================================================
 
 		private GlobalVars _globalVars;
-		
+
 		private Transform _target;
-		
+
 		private NavMeshAgent _agent;
 
-        public float maxHealth = 20f;
-        private float currentHealth;
-        public float fearLimit = 20f;
-        private float currentFear;
+		public float maxHealth = 20f;
+		private float currentHealth;
+		public float fearLimit = 20f;
+		private float currentFear;
 
 		// Unity
 		// =====================================================================
@@ -27,13 +27,13 @@ namespace mobs
 		{
 			_globalVars = GlobalVars.instance;
 			_agent = GetComponent<NavMeshAgent>();
-            currentHealth = maxHealth;
+			currentHealth = maxHealth;
 		}
 
 		private void Start()
 		{
 			PickAndGoToRandomTarget();
-			
+
 			// Pick a new random target after 20 seconds, every 10 seconds
 			InvokeRepeating("ChangeTarget", 20f, 10f);
 		}
@@ -45,8 +45,11 @@ namespace mobs
 				if (_agent.remainingDistance <= _agent.stoppingDistance)
 					if (!_agent.hasPath || _agent.velocity.sqrMagnitude == 0f)
 						FaceTarget();
+
+			if (Input.GetKeyDown(KeyCode.R))
+				RunAway(_globalVars.FUCKBOI);
 		}
-		
+
 		// Actions
 		// =====================================================================
 
@@ -71,7 +74,7 @@ namespace mobs
 			float rand = Random.Range(-3.5f, 3f);
 			target.x += rand;
 			target.z += rand;
-			
+
 			_agent.SetDestination(target);
 		}
 
@@ -80,44 +83,59 @@ namespace mobs
 		/// </summary>
 		private void FaceTarget()
 		{
-			Vector3 direction = 
+			Vector3 direction =
 				(_globalVars.transform.position - transform.position).normalized;
-			
+
 			Quaternion lookRotation = Quaternion.LookRotation(
 				new Vector3(direction.x, 0, direction.z)
 			);
-			
+
 			transform.rotation = Quaternion.Slerp(
-				transform.rotation, 
+				transform.rotation,
 				lookRotation,
 				Time.deltaTime * 3f
 			);
 		}
 
-        public void Damage(float amount)
-        {
-            currentHealth -= amount;
-            if(currentHealth < 0)
-            {
-                //Kill protestor
-                Destroy(this);
-            }
-        }
+		/// <summary>
+		/// Make the protester take damage
+		/// </summary>
+		/// <param name="amount">Amount of damage to take</param>
+		public void Damage(float amount)
+		{
+			currentHealth -= amount;
+			if (currentHealth < 0)
+			{
+				// Kill protestor
+				Destroy(this);
+				_globalVars.DecreaseCurrentMobsBy(MobTypes.Protester, 1);
+			}
+		}
 
-        public void Scare(float amount, Transform fearLocation)
-        {
-            currentFear += amount;
+		/// <summary>
+		/// Scare the protester
+		/// </summary>
+		/// <param name="amount">Amount of fear to add</param>
+		/// <param name="fearLocation">Optional location to run from (will 180 if null)</param>
+		public void Scare(float amount, Transform fearLocation = null)
+		{
+			currentFear += amount;
 
-            if(currentFear >= fearLimit)
-            {
-                //Scare the protester
+			if (currentFear >= fearLimit)
+			{
+				RunAway(fearLocation);
+			}
+		}
 
-                if(fearLocation != null)
-                {
-                    // Run away from feat location
-                }
-            }
-        }
-		
+		/// <summary>
+		/// Run away!!
+		/// </summary>
+		/// <param name="from">Optional location to run from (will 180 if null)</param>
+		private void RunAway(Transform from = null)
+		{
+			Vector3 nextTarget = from ? from.transform.position : transform.forward;
+			Vector3 nextPos = transform.position - nextTarget * 10f;
+			_agent.SetDestination(nextPos);
+		}
 	}
 }
