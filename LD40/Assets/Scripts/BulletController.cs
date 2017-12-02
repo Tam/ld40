@@ -5,25 +5,62 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour {
 
-    private Transform target;
-
     public float damage;
     public float fear;
+    public float speed;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [Space]
+    public GameObject impactEffect;
 
-    void Hit()
+    private Transform parentTurret;
+    private Transform target;
+
+    public void Seek(Transform parentTurret, Transform target)
     {
-        Protester protestor = target.GetComponent<Protester>();
-        protestor.Damage(damage);
-        protestor.Scare(fear);
+        this.parentTurret = parentTurret;
+        this.target = target;
+    }
+
+    void Update()
+    {
+        if(target == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Vector3 dir = target.position - transform.position;
+        float distanceThisFrame = speed * Time.deltaTime;
+
+        if(dir.magnitude <= distanceThisFrame)
+        {
+            HitTarget();
+            return;
+        }
+
+        transform.Translate(dir.normalized * distanceThisFrame, Space.World);
+        transform.LookAt(target);
+    }
+
+    void HitTarget()
+    {
+        GameObject effect = Instantiate(impactEffect, transform.position, transform.rotation) as GameObject;
+        Destroy(effect, 5f);
+
+        Protester protester = target.GetComponent<Protester>();
+        if(protester != null)
+        {
+            if (damage > 0)
+            {
+                protester.Damage(damage);
+            }
+
+            if(fear > 0)
+            {
+                protester.Scare(fear, parentTurret);
+            }
+        }
+
+        Destroy(gameObject);
     }
 }
