@@ -6,16 +6,22 @@ public class Placement : MonoBehaviour
 {
     public bool Placing = false;
 
-    public int TurretToPlaceID = 100;
-    public GameObject[] TurretHolo;
-    public GameObject[] TurretsToPlace;
+    public int GameobjectToPlaceID = 100;
+    public GameObject[] GameobjectHolo;
+    public GameObject[] GameobjectToPlace;
+
+    public int numberOfTurrets;
 
     Vector3 Default = new Vector3(0, -2, 0);
     PlacementCollision PC;
+
+    public LayerMask TurretMask;
+    public LayerMask TrapMask;
+
 	// Use this for initialization
 	void Start ()
     {
-		
+        
 	}
 	
 	// Update is called once per frame
@@ -24,50 +30,59 @@ public class Placement : MonoBehaviour
         //Go into Placement Mode.
         if (Input.GetKeyUp(KeyCode.T))
         {
-             TurretToPlaceID = 0;
+            GameobjectToPlaceID = 1;
         }
 
-        if (TurretToPlaceID != 100)
+        if (GameobjectToPlaceID != 100)
         {
             //Fire Raycast from Camera To Mouse Position
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit Hit = new RaycastHit();
 
-            Debug.DrawRay(ray.origin, ray.direction * 100, Color.green);
+            Debug.DrawRay(ray.origin, ray.direction * 1000, Color.green);
 
-            if (Physics.Raycast(ray, out Hit, 100, 1 << 3))
+            LayerMask Mask;
+
+            if(GameobjectToPlaceID > numberOfTurrets)
+            {
+                Mask = TrapMask;
+            }
+            else
+            {
+                Mask = TurretMask;
+            }
+
+            if (Physics.Raycast(ray, out Hit, 1000, Mask))
             {
                 Vector3 HitPos = new Vector3(Hit.point.x, 0.5f, Hit.point.z);
 
                 if (PC == null)
                 {
-                    PC = TurretHolo[TurretToPlaceID].GetComponent<PlacementCollision>();
+                    PC = GameobjectHolo[GameobjectToPlaceID].GetComponent<PlacementCollision>();
                 }
 
-                TurretHolo[TurretToPlaceID].transform.position = HitPos;
+                GameobjectHolo[GameobjectToPlaceID].transform.position = HitPos;
 
-                if(!PC.IsColliding)
+                if (!PC.IsColliding)
                 {
-                    TurretHolo[TurretToPlaceID].GetComponent<Renderer>().material.color = Color.green;
+                    GameobjectHolo[GameobjectToPlaceID].GetComponent<Renderer>().material.color = Color.green;
 
                     if (Input.GetMouseButtonDown(0))
                     {
-                        TurretHolo[TurretToPlaceID].transform.position = Default;
-                        Instantiate(TurretsToPlace[TurretToPlaceID], HitPos, Quaternion.identity);
-                        TurretToPlaceID = 100;                      
+                        GameobjectHolo[GameobjectToPlaceID].transform.position = Default;
+                        Instantiate(GameobjectToPlace[GameobjectToPlaceID], HitPos, Quaternion.identity);
+                        GameobjectToPlaceID = 100;
                     }
                 }
                 else
                 {
-                    TurretHolo[TurretToPlaceID].GetComponent<Renderer>().material.color = Color.red;
+                    GameobjectHolo[GameobjectToPlaceID].GetComponent<Renderer>().material.color = Color.red;
 
                     if (Input.GetMouseButtonDown(0))
                     {
                         Debug.Log("Ermmm There is something in the way bro !!");
                     }
                 }
-                //Start trying to place Object
-               
             }        
         }
 	}
