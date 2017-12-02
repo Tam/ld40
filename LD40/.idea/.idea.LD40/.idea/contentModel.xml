@@ -27,6 +27,7 @@
           </e>
           <e p="TurretController.cs" t="Include" />
         </e>
+        <e p="TEST.cs" t="Include" />
         <e p="TrapsTest" t="Include">
           <e p="Traps.cs" t="Include" />
         </e>
