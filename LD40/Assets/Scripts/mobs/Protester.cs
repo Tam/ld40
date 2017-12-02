@@ -50,7 +50,7 @@ namespace mobs
 		/// </summary>
 		private void ChangeTarget()
 		{
-			if (Random.value >= 0.5f)
+			if (Random.value >= 0.25f)
 				PickAndGoToRandomTarget();
 		}
 
@@ -85,7 +85,7 @@ namespace mobs
 			transform.rotation = Quaternion.Slerp(
 				transform.rotation, 
 				lookRotation,
-				Time.deltaTime * 20f
+				Time.deltaTime * 3f
 			);
 		}
 		

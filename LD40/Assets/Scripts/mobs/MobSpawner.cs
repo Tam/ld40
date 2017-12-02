@@ -2,12 +2,6 @@
 
 namespace mobs
 {
-	public enum MobSpawnSide
-	{
-		Left,
-		Right,
-	}
-	
 	public class MobSpawner : MonoBehaviour {
 		
 		// Variables
@@ -19,14 +13,9 @@ namespace mobs
 		public GameObject mob;
 
 		/// <summary>
-		/// The side to spawn on (must be the same side as the targets)
+		/// Where the mobs will spawn from
 		/// </summary>
-		public MobSpawnSide spawnSide;
-		
-		/// <summary>
-		/// Radius of spawn circle
-		/// </summary>
-		public float radius = 10f;
+		public Transform[] spawnTargets = new Transform[5];
 
 		/// <summary>
 		/// Seconds between each spawn
@@ -58,29 +47,11 @@ namespace mobs
 		/// </summary>
 		private void SpawnMob()
 		{
-			// Set the spawn point to a random location in a 2d circle
-			Vector3 spawnPoint = Random.insideUnitCircle;
-			// Pad that location by our radius 
-			// (not sure on this but it kind of works, I think we're just be replacing the position)
-			// FIXME
-			Vector2 padding = Random.insideUnitCircle * radius;
-			spawnPoint += new Vector3(padding.x, 0, padding.y);
-			
-			// Reset y to 0
-			spawnPoint.y = 0f;
-
-			// If the spawn point is on the right, and we want it on the left
-			if (spawnPoint.z > 0f && spawnSide == MobSpawnSide.Left)
-				// Flip the z to the left
-				spawnPoint.z = -spawnPoint.z;
-			
-			// If the spawn point is on the left, and we want it on the right
-			if (spawnPoint.z < 0f && spawnSide == MobSpawnSide.Right)
-				// Flip the z to the right
-				spawnPoint.z = -spawnPoint.z;
+			// Pick spawn
+			Transform spawnPoint = spawnTargets[Random.Range(0, spawnTargets.Length)];
 			
 			// Instantiate the mob 
-			GameObject newMob = Instantiate(mob, spawnPoint, Quaternion.identity);
+			GameObject newMob = Instantiate(mob, spawnPoint.position, Quaternion.identity);
 			newMob.transform.parent = _parent.transform;
 		}
 		
