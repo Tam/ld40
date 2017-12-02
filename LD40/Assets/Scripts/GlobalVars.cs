@@ -230,10 +230,7 @@ public class GlobalVars : MonoBehaviour
         set
         {
             numUnporcessedGlobFlops = value;
-            OnStatChangeCallback.Invoke(
-                AvailableStats.NumUnprocessedGlobflobs, 
-                value
-            );
+            TriggerStatChange(AvailableStats.NumUnprocessedGlobflobs, value);
         }
     }
 
@@ -243,6 +240,12 @@ public class GlobalVars : MonoBehaviour
         {
             instance = this;
         }
+    }
+
+    private void TriggerStatChange(AvailableStats stat, int value)
+    {
+        if (OnStatChangeCallback != null)
+            OnStatChangeCallback.Invoke(stat, value);
     }
     
 }

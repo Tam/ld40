@@ -23,6 +23,12 @@ public class TurretController : MonoBehaviour {
     public float turnSpeed = 2.5f;
     public float findTargetFrequency = 0.75f;
 
+    public float damage = 1f;
+    public float fear;
+
+    public float damagePerTick = 0.1f;
+    public float fearPerTick;
+
     public FireType fireType;
 
     [Header("Projectile Properties")]
@@ -31,7 +37,7 @@ public class TurretController : MonoBehaviour {
 
     [Header("Particle Properties")]
     public ParticleSystem particles;
-
+    
     [Header("Line Renderer Properties")]
     public LineRenderer lineRenderer;
     // TODO: Other stats

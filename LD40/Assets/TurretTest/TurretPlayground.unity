@@ -226,6 +226,10 @@ MonoBehaviour:
   range: 10
   turnSpeed: 10
   findTargetFrequency: 0.75
+  damage: 1
+  fear: 0
+  damagePerTick: 0.1
+  fearPerTick: 0
   fireType: 2
   bulletPrefab: {fileID: 0}
   fireRate: 1

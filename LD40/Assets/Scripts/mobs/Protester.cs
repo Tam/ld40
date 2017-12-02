@@ -14,7 +14,12 @@ namespace mobs
 		private Transform _target;
 		
 		private NavMeshAgent _agent;
-		
+
+        public float maxHealth = 20f;
+        private float currentHealth;
+        public float fearLimit = 20f;
+        private float currentFear;
+
 		// Unity
 		// =====================================================================
 
@@ -22,7 +27,7 @@ namespace mobs
 		{
 			_globalVars = GlobalVars.instance;
 			_agent = GetComponent<NavMeshAgent>();
-
+            currentHealth = maxHealth;
 		}
 
 		private void Start()
@@ -88,6 +93,27 @@ namespace mobs
 				Time.deltaTime * 3f
 			);
 		}
+
+        public void Damage(float amount)
+        {
+            currentHealth -= amount;
+            if(currentHealth < 0)
+            {
+                //Kill protestor
+                Destroy(this);
+            }
+        }
+
+        public void Scare(float amount)
+        {
+            currentFear += amount;
+
+            if(currentFear >= fearLimit)
+            {
+                //Scare the protester
+                //Run away?
+            }
+        }
 		
 	}
 }

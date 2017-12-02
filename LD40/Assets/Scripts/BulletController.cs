@@ -1,8 +1,14 @@
-﻿using System.Collections;
+﻿using mobs;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletController : MonoBehaviour {
+
+    private Transform target;
+
+    public float damage;
+    public float fear;
 
 	// Use this for initialization
 	void Start () {
@@ -14,10 +20,10 @@ public class BulletController : MonoBehaviour {
 		
 	}
 
-    // GAME OBJECT SHOULD BE AN ENEMY AI SCRIPT
-    // Or use GetComponent<EnemyAI> on enemy
-    public void OnHit(GameObject enemy)
+    void Hit()
     {
-
+        Protester protestor = target.GetComponent<Protester>();
+        protestor.Damage(damage);
+        protestor.Scare(fear);
     }
 }
