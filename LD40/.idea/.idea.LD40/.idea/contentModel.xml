@@ -23,13 +23,12 @@
           </e>
           <e p="Placement.cs" t="Include" />
           <e p="PlacementCollision.cs" t="Include" />
+          <e p="SetRandomColor.cs" t="Include" />
+          <e p="Traps.cs" t="Include" />
           <e p="TurretController.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="UIHud.cs" t="Include" />
           </e>
-        </e>
-        <e p="TrapsTest" t="Include">
-          <e p="Traps.cs" t="Include" />
         </e>
       </e>
       <e p="LD40.sln" t="IncludeFlat" />

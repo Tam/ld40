@@ -11,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GlobalVars.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GlobalVars.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/GlobalVars.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
-              <caret line="250" column="1" lean-forward="true" selection-start-line="250" selection-start-column="1" selection-end-line="250" selection-end-column="1" />
+            <state relative-caret-position="0">
+              <caret line="204" column="9" lean-forward="false" selection-start-line="204" selection-start-column="9" selection-end-line="204" selection-end-column="9" />
               <folding>
                 <marker date="1512232244014" expanded="true" signature="40:73" ph="{...}" />
                 <marker date="1512232244014" expanded="true" signature="101:134" ph="{...}" />
@@ -65,6 +65,37 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Protester.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/mobs/Protester.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="688">
+              <caret line="110" column="40" lean-forward="true" selection-start-line="110" selection-start-column="40" selection-end-line="110" selection-end-column="40" />
+              <folding>
+                <marker date="1512232351705" expanded="false" signature="6:40" ph="..." />
+                <marker date="1512232351705" expanded="true" signature="56:2734" ph="{...}" />
+                <marker date="1512232351705" expanded="true" signature="141:2732" ph="{...}" />
+                <marker date="1512232351705" expanded="true" signature="148:235" ph="/* Variables ... */" />
+                <marker date="1512232351705" expanded="true" signature="489:572" ph="/* Unity ... */" />
+                <marker date="1512232351705" expanded="true" signature="596:723" ph="{...}" />
+                <marker date="1512232351705" expanded="true" signature="747:901" ph="{...}" />
+                <marker date="1512232351705" expanded="true" signature="926:1151" ph="{...}" />
+                <marker date="1512232351705" expanded="true" signature="1157:1242" ph="/* Actions ... */" />
+                <marker date="1512232351705" expanded="true" signature="1246:1319" ph="/// 50% chance to randomly change target ... " />
+                <marker date="1512232351705" expanded="true" signature="1349:1418" ph="{...}" />
+                <marker date="1512232351705" expanded="true" signature="1422:1506" ph="/// Picks a random target from the pre-defined list ... " />
+                <marker date="1512232351705" expanded="true" signature="1547:1826" ph="{...}" />
+                <marker date="1512232351705" expanded="true" signature="1830:1911" ph="/// Face the centre (the position of GlobalVars) ... " />
+                <marker date="1512232351705" expanded="true" signature="1939:2269" ph="{...}" />
+                <marker date="1512232351705" expanded="true" signature="2311:2494" ph="{...}" />
+                <marker date="1512232351705" expanded="true" signature="2392:2484" ph="{...}" />
+                <marker date="1512232351705" expanded="true" signature="2535:2726" ph="{...}" />
+                <marker date="1512232351705" expanded="true" signature="2622:2716" ph="{...}" />
+                <marker date="1512232351705" expanded="true" signature="2653:2702" ph="/* Scare the protester ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="UIHud.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/UIHud.cs">
           <provider selected="true" editor-type-id="text-editor">
@@ -91,7 +122,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GlobalVars.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Placement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/UIHud.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/TrapsTest/Traps.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E1F863D9-9421-4006-AED0-BD17AB690B95/15/908202f4/FieldInfo.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ACA5A92C-578B-4550-940A-DA0E8D8A8D7A/ec/a40d8a43/MonoBehaviour.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/mobs/Globflob.cs" root0="FORCE_HIGHLIGHTING" />
@@ -106,7 +136,6 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/mobs/BaseMob.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ACA5A92C-578B-4550-940A-DA0E8D8A8D7A/77/6f291ae9/Quaternion.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/mobs/Protester.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/mobs/Globflob.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E1F863D9-9421-4006-AED0-BD17AB690B95/15/908202f4/FieldInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/mobs/MobSpawner.cs" />
@@ -115,6 +144,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIHud.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Placement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GlobalVars.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/mobs/Protester.cs" />
       </list>
     </option>
   </component>
@@ -178,13 +208,6 @@
               <item name="Scripts" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="mobs" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="LD40 (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="TrapsTest" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -222,12 +245,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1512209121100</updated>
-      <workItem from="1512209123334" duration="18504000" />
+      <workItem from="1512209123334" duration="19004000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18504000" />
+    <option name="totallyTimeSpent" value="19004000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -361,30 +384,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/mobs/Protester.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="41" column="24" lean-forward="false" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="37" />
-          <folding>
-            <marker date="1512216830659" expanded="false" signature="6:40" ph="..." />
-            <marker date="1512216830659" expanded="true" signature="56:2092" ph="{...}" />
-            <marker date="1512216830659" expanded="true" signature="141:2090" ph="{...}" />
-            <marker date="1512216830659" expanded="true" signature="148:235" ph="/* Variables ... */" />
-            <marker date="1512216830659" expanded="true" signature="342:425" ph="/* Unity ... */" />
-            <marker date="1512216830659" expanded="true" signature="449:538" ph="{...}" />
-            <marker date="1512216830659" expanded="true" signature="562:716" ph="{...}" />
-            <marker date="1512216830659" expanded="true" signature="741:966" ph="{...}" />
-            <marker date="1512216830659" expanded="true" signature="972:1057" ph="/* Actions ... */" />
-            <marker date="1512216830659" expanded="true" signature="1061:1134" ph="/// 50% chance to randomly change target ... " />
-            <marker date="1512216830659" expanded="true" signature="1164:1233" ph="{...}" />
-            <marker date="1512216830659" expanded="true" signature="1237:1321" ph="/// Picks a random target from the pre-defined list ... " />
-            <marker date="1512216830659" expanded="true" signature="1362:1641" ph="{...}" />
-            <marker date="1512216830659" expanded="true" signature="1645:1726" ph="/// Face the centre (the position of GlobalVars) ... " />
-            <marker date="1512216830659" expanded="true" signature="1754:2084" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/TEST.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -420,17 +419,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="640">
           <caret line="42" column="88" lean-forward="false" selection-start-line="42" selection-start-column="77" selection-end-line="42" selection-end-column="88" />
-          <folding>
-            <marker date="1512226132428" expanded="false" signature="6:78" ph="..." />
-            <marker date="1512226132428" expanded="true" signature="114:1463" ph="{...}" />
-            <marker date="1512226132428" expanded="true" signature="371:451" ph="{...}" />
-            <marker date="1512226132428" expanded="true" signature="487:795" ph="{...}" />
-            <marker date="1512226132428" expanded="true" signature="546:789" ph="{...}" />
-            <marker date="1512226132428" expanded="true" signature="606:779" ph="{...}" />
-            <marker date="1512226132428" expanded="true" signature="844:1290" ph="{...}" />
-            <marker date="1512226132428" expanded="true" signature="1006:1284" ph="{...}" />
-            <marker date="1512226132428" expanded="true" signature="1338:1461" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -499,8 +488,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/GlobalVars.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="250" column="1" lean-forward="true" selection-start-line="250" selection-start-column="1" selection-end-line="250" selection-end-column="1" />
+        <state relative-caret-position="0">
+          <caret line="204" column="9" lean-forward="false" selection-start-line="204" selection-start-column="9" selection-end-line="204" selection-end-column="9" />
           <folding>
             <marker date="1512232244014" expanded="true" signature="40:73" ph="{...}" />
             <marker date="1512232244014" expanded="true" signature="101:134" ph="{...}" />
@@ -545,6 +534,35 @@
             <marker date="1512232244014" expanded="true" signature="5018:5108" ph="{...}" />
             <marker date="1512232244014" expanded="true" signature="5053:5102" ph="{...}" />
             <marker date="1512232244014" expanded="true" signature="5176:5284" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/mobs/Protester.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="688">
+          <caret line="110" column="40" lean-forward="true" selection-start-line="110" selection-start-column="40" selection-end-line="110" selection-end-column="40" />
+          <folding>
+            <marker date="1512232351705" expanded="false" signature="6:40" ph="..." />
+            <marker date="1512232351705" expanded="true" signature="56:2734" ph="{...}" />
+            <marker date="1512232351705" expanded="true" signature="141:2732" ph="{...}" />
+            <marker date="1512232351705" expanded="true" signature="148:235" ph="/* Variables ... */" />
+            <marker date="1512232351705" expanded="true" signature="489:572" ph="/* Unity ... */" />
+            <marker date="1512232351705" expanded="true" signature="596:723" ph="{...}" />
+            <marker date="1512232351705" expanded="true" signature="747:901" ph="{...}" />
+            <marker date="1512232351705" expanded="true" signature="926:1151" ph="{...}" />
+            <marker date="1512232351705" expanded="true" signature="1157:1242" ph="/* Actions ... */" />
+            <marker date="1512232351705" expanded="true" signature="1246:1319" ph="/// 50% chance to randomly change target ... " />
+            <marker date="1512232351705" expanded="true" signature="1349:1418" ph="{...}" />
+            <marker date="1512232351705" expanded="true" signature="1422:1506" ph="/// Picks a random target from the pre-defined list ... " />
+            <marker date="1512232351705" expanded="true" signature="1547:1826" ph="{...}" />
+            <marker date="1512232351705" expanded="true" signature="1830:1911" ph="/// Face the centre (the position of GlobalVars) ... " />
+            <marker date="1512232351705" expanded="true" signature="1939:2269" ph="{...}" />
+            <marker date="1512232351705" expanded="true" signature="2311:2494" ph="{...}" />
+            <marker date="1512232351705" expanded="true" signature="2392:2484" ph="{...}" />
+            <marker date="1512232351705" expanded="true" signature="2535:2726" ph="{...}" />
+            <marker date="1512232351705" expanded="true" signature="2622:2716" ph="{...}" />
+            <marker date="1512232351705" expanded="true" signature="2653:2702" ph="/* Scare the protester ... */" />
           </folding>
         </state>
       </provider>
