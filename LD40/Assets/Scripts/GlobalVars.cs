@@ -13,22 +13,22 @@ public class GlobalVars : MonoBehaviour
     //--------------------------------------------AI------------------------------------------------//
 
     //Amount of globflops on playing felid
-    public int AmountGlobFlops;
+    private int amountGlobFlops;
 
     //Maxuim Amount of GlobFlops Allowed
-    public int MaxAmountGlobFlops;
+    private int maxAmountGlobFlops;
 
     //Minium Amount of GlobFlops Allowed
-    public int MinAmountGlobFlops;
+    public int minAmountGlobFlops;
 
     //Amount of GlobFlops killed
-    public int AmountGlobFlopsKilled;
+    private int amountGlobFlopsKilled;
 
     //Amount of Protestors
-    public int AmountProtestors;
+    private int amountProtestors;
 
     //Maxuim Amount Of Protestors
-    public int MaxAmountProtestor;
+    private int maxAmountProtestor;
 
     // Default Target Positions for Protestors
     public Transform[] ProtestorsTargets = new Transform[5];
@@ -36,7 +36,7 @@ public class GlobalVars : MonoBehaviour
     //------------------------------------------Mechcanics------------------------------------------//
 
     //Amount of Currency
-    public float AmountCurrency;
+    private float amountCurrency;
 
     //Global Price SuperValibleUnObtainium
     public float GobalPriceUnobtainium;
@@ -49,6 +49,71 @@ public class GlobalVars : MonoBehaviour
     //Amount of Traps Placed
     public int TrapsPlaced;
 
+
+    public int AmountGlobFlops
+    {
+        get
+        {
+            return amountGlobFlops;
+        }
+
+        set
+        {
+            amountGlobFlops = value;
+        }
+    }
+
+    public int AmountGlobFlopsKilled
+    {
+        get
+        {
+            return amountGlobFlopsKilled;
+        }
+
+        set
+        {
+            amountGlobFlopsKilled = value;
+        }
+    }
+
+    public int AmountProtestors
+    {
+        get
+        {
+            return amountProtestors;
+        }
+
+        set
+        {
+            amountProtestors = value;
+        }
+    }
+
+    public int MaxAmountProtestor
+    {
+        get
+        {
+            return maxAmountProtestor;
+        }
+
+        set
+        {
+            maxAmountProtestor = value;
+        }
+    }
+
+    public float AmountCurrency
+    {
+        get
+        {
+            return amountCurrency;
+        }
+
+        set
+        {
+            amountCurrency = value;
+        }
+    }
 
     void Awake()
     {
