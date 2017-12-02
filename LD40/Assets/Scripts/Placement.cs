@@ -83,6 +83,12 @@ public class Placement : MonoBehaviour
                         Debug.Log("Ermmm There is something in the way bro !!");
                     }
                 }
+
+                if(Input.GetMouseButtonDown(1))
+                {
+                    GameobjectHolo[GameobjectToPlaceID].transform.position = Default;
+                    GameobjectToPlaceID = 100;
+                }
             }        
         }
 	}
