@@ -30,6 +30,7 @@ public class TurretController : MonoBehaviour {
     public float fireRate = 1f;
 
     [Header("Particle Properties")]
+    public ParticleSystem particles;
 
     [Header("Line Renderer Properties")]
     public LineRenderer lineRenderer;
@@ -77,9 +78,9 @@ public class TurretController : MonoBehaviour {
         }
         else
         {
-            if(lineRenderer != null)
+            if(particles != null)
             {
-                lineRenderer.enabled = false;
+                particles.Stop();
             }
         }
 	}
@@ -110,6 +111,15 @@ public class TurretController : MonoBehaviour {
 
     void ShootParticle()
     {
+        if (particles == null)
+        {
+            throw new UnityException("Did not define a particle system for turret.");
+        }
+
+        if(target != null)
+        {
+            particles.Play();
+        }        
 
     }
 
@@ -122,33 +132,34 @@ public class TurretController : MonoBehaviour {
             throw new UnityException("Did not define a line renderer for turret.");
         }
 
-        IsLookingAtTarget();
-
-        //lineRenderer.enabled = true;
-
-        lineRenderer.SetPosition(0, muzzlePoint.position);
-        lineRenderer.SetPosition(1, target.transform.position);
+        if (IsLookingAtTarget())
+        {
+            lineRenderer.enabled = true;
+            lineRenderer.SetPosition(0, muzzlePoint.position);
+            lineRenderer.SetPosition(1, target.transform.position);
+        }
+        else
+        {
+            lineRenderer.enabled = false;
+        }
+       
     }
 
     bool IsLookingAtTarget()
     {
         targetLineColor = Color.red;
         if (target == null) return false;
-        Debug.Log("RAY");
 
         RaycastHit hit;
-        Debug.DrawRay(muzzlePoint.transform.position, muzzlePoint.transform.TransformDirection(Vector3.forward) * 100f, Color.cyan);
-        if(Physics.Raycast(muzzlePoint.transform.position, muzzlePoint.transform.TransformDirection(Vector3.forward), out hit, 100f))
+        if (Physics.Raycast(muzzlePoint.transform.position, muzzlePoint.transform.TransformDirection(Vector3.right), out hit, 100f))
         {
-            Debug.Log(hit.transform.gameObject.GetInstanceID() + " + " + target.GetInstanceID());
             if (hit.transform.gameObject.GetInstanceID() == target.GetInstanceID())
             {
-                Debug.Log("Is looking at target");
                 targetLineColor = Color.blue;
                 return true;
             }
         }
-        targetLineColor = new Color(255, 157, 10);
+        targetLineColor = new Color(1, 0.616f, 0.039f);
         return false;
     }
 
