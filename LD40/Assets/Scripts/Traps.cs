@@ -86,7 +86,13 @@ public class Traps : MonoBehaviour
 
     void OnMouseExit()
     {
+<<<<<<< HEAD
+        if (isUIUp == true)
+        {
+            MakeUIDisappear();
+=======
         if (isUIUp)
+>>>>>>> 2842be3520c766f48a520395d2aa9027c0702d37
             isUIUp = false;
     }
 
