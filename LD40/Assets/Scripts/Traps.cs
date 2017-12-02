@@ -40,7 +40,7 @@ public class Traps : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!GlobFlopsInRange.Contains(other.gameObject))
+        if (!GlobFlopsInRange.Contains(other.gameObject) && other.gameObject.tag == "GlobFlob")
             GlobFlopsInRange.Add(other.gameObject);
     }
 
