@@ -30,7 +30,7 @@ public class Placement : MonoBehaviour
         //Go into Placement Mode.
         if (Input.GetKeyUp(KeyCode.T))
         {
-            GameobjectToPlaceID = 0;
+            GameobjectToPlaceID = 1;
         }
 
         if (GameobjectToPlaceID != 100)
