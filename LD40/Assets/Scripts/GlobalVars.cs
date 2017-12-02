@@ -4,122 +4,92 @@ using UnityEngine;
 
 public class GlobalVars : MonoBehaviour
 {
-    //Singleton
-    public static GlobalVars instance;
+	//Singleton
+	public static GlobalVars instance;
 
-    //Time Playing the game from start to finish.
-    public float TimeElapsed;
+	//Time Playing the game from start to finish.
+	public float TimeElapsed;
 
-    //--------------------------------------------AI------------------------------------------------//
+	//--------------------------------------------AI------------------------------------------------//
 
-    //Amount of globflops on playing felid
-    private int amountGlobFlops;
+	//Amount of globflops on playing felid
+	private int amountGlobFlops;
 
-    //Maxuim Amount of GlobFlops Allowed
-    private int maxAmountGlobFlops;
+	//Maxuim Amount of GlobFlops Allowed
+	private int maxAmountGlobFlops;
 
-    //Minium Amount of GlobFlops Allowed
-    public int minAmountGlobFlops;
+	//Minium Amount of GlobFlops Allowed
+	public int minAmountGlobFlops;
 
-    //Amount of GlobFlops killed
-    private int amountGlobFlopsKilled;
+	//Amount of GlobFlops killed
+	private int amountGlobFlopsKilled;
 
-    //Amount of Protestors
-    private int amountProtestors;
+	//Amount of Protestors
+	private int amountProtestors;
 
-    //Maxuim Amount Of Protestors
-    private int maxAmountProtestor;
+	//Maxuim Amount Of Protestors
+	private int maxAmountProtestor;
 
-    // Default Target Positions for Protestors
-    public Transform[] ProtestorsTargets = new Transform[5];
+	// Default Target Positions for Protestors
+	public Transform[] ProtestorsTargets = new Transform[5];
 
-    //------------------------------------------Mechcanics------------------------------------------//
+	//------------------------------------------Mechcanics------------------------------------------//
 
-    //Amount of Currency
-    private float amountCurrency;
+	//Amount of Currency
+	private float amountCurrency;
 
-    //Global Price SuperValibleUnObtainium
-    public float GobalPriceUnobtainium;
+	//Global Price SuperValibleUnObtainium
+	public float GobalPriceUnobtainium;
 
-    //------------------------------------------Placements------------------------------------------//
+	//------------------------------------------Placements------------------------------------------//
 
-    //Amount of Turrents Placed
-    public int TurretsPlaced;
+	//Amount of Turrents Placed
+	public int TurretsPlaced;
 
-    //Amount of Traps Placed
-    public int TrapsPlaced;
+	//Amount of Traps Placed
+	public int TrapsPlaced;
 
 
-    public int AmountGlobFlops
-    {
-        get
-        {
-            return amountGlobFlops;
-        }
+	public int AmountGlobFlops
+	{
+		get { return amountGlobFlops; }
 
-        set
-        {
-            amountGlobFlops = value;
-        }
-    }
+		set { amountGlobFlops = value; }
+	}
 
-    public int AmountGlobFlopsKilled
-    {
-        get
-        {
-            return amountGlobFlopsKilled;
-        }
+	public int AmountGlobFlopsKilled
+	{
+		get { return amountGlobFlopsKilled; }
 
-        set
-        {
-            amountGlobFlopsKilled = value;
-        }
-    }
+		set { amountGlobFlopsKilled = value; }
+	}
 
-    public int AmountProtestors
-    {
-        get
-        {
-            return amountProtestors;
-        }
+	public int AmountProtestors
+	{
+		get { return amountProtestors; }
 
-        set
-        {
-            amountProtestors = value;
-        }
-    }
+		set { amountProtestors = value; }
+	}
 
-    public int MaxAmountProtestor
-    {
-        get
-        {
-            return maxAmountProtestor;
-        }
+	public int MaxAmountProtestor
+	{
+		get { return maxAmountProtestor; }
 
-        set
-        {
-            maxAmountProtestor = value;
-        }
-    }
+		set { maxAmountProtestor = value; }
+	}
 
-    public float AmountCurrency
-    {
-        get
-        {
-            return amountCurrency;
-        }
+	public float AmountCurrency
+	{
+		get { return amountCurrency; }
 
-        set
-        {
-            amountCurrency = value;
-        }
-    }
+		set { amountCurrency = value; }
+	}
 
-    void Awake()
-    {
-        if(instance == null)
-        {
-            instance = this;
-        }
-    }
+	void Awake()
+	{
+		if (instance == null)
+		{
+			instance = this;
+		}
+	}
 }
