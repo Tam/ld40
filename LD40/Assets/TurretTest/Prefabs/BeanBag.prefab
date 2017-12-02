@@ -126,3 +126,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   fear: 2
+  speed: 3
+  impactEffect: {fileID: 0}
