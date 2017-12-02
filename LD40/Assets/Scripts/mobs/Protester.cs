@@ -63,7 +63,7 @@ namespace mobs
 			_target = targets[Random.Range(0, targets.Length)];
 
 			Vector3 target = _target.position;
-			float rand = Random.Range(-3f, 3f);
+			float rand = Random.Range(-3.5f, 3f);
 			target.x += rand;
 			target.z += rand;
 			
@@ -85,7 +85,7 @@ namespace mobs
 			transform.rotation = Quaternion.Slerp(
 				transform.rotation, 
 				lookRotation,
-				Time.deltaTime * 10f
+				Time.deltaTime * 20f
 			);
 		}
 		

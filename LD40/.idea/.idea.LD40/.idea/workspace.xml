@@ -14,24 +14,24 @@
       <file leaf-file-name="Protester.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/mobs/Protester.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="64" column="46" lean-forward="true" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
+            <state relative-caret-position="576">
+              <caret line="65" column="46" lean-forward="false" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
               <folding>
-                <marker date="1512214488821" expanded="true" signature="6:40" ph="..." />
-                <marker date="1512214488821" expanded="true" signature="56:2090" ph="{...}" />
-                <marker date="1512214488821" expanded="true" signature="141:2088" ph="{...}" />
-                <marker date="1512214488821" expanded="true" signature="148:235" ph="/* Variables ... */" />
-                <marker date="1512214488821" expanded="true" signature="342:425" ph="/* Unity ... */" />
-                <marker date="1512214488821" expanded="true" signature="449:538" ph="{...}" />
-                <marker date="1512214488821" expanded="true" signature="562:716" ph="{...}" />
-                <marker date="1512214488821" expanded="true" signature="741:966" ph="{...}" />
-                <marker date="1512214488821" expanded="true" signature="972:1057" ph="/* Actions ... */" />
-                <marker date="1512214488821" expanded="true" signature="1061:1134" ph="/// 50% chance to randomly change target ... " />
-                <marker date="1512214488821" expanded="true" signature="1164:1232" ph="{...}" />
-                <marker date="1512214488821" expanded="true" signature="1236:1320" ph="/// Picks a random target from the pre-defined list ... " />
-                <marker date="1512214488821" expanded="true" signature="1361:1638" ph="{...}" />
-                <marker date="1512214488821" expanded="true" signature="1642:1723" ph="/// Face the centre (the position of GlobalVars) ... " />
-                <marker date="1512214488821" expanded="true" signature="1751:2082" ph="{...}" />
+                <marker date="1512215553419" expanded="true" signature="6:40" ph="..." />
+                <marker date="1512215553419" expanded="true" signature="56:2092" ph="{...}" />
+                <marker date="1512215553419" expanded="true" signature="141:2090" ph="{...}" />
+                <marker date="1512215553419" expanded="true" signature="148:235" ph="/* Variables ... */" />
+                <marker date="1512215553419" expanded="true" signature="342:425" ph="/* Unity ... */" />
+                <marker date="1512215553419" expanded="true" signature="449:538" ph="{...}" />
+                <marker date="1512215553419" expanded="true" signature="562:716" ph="{...}" />
+                <marker date="1512215553419" expanded="true" signature="741:966" ph="{...}" />
+                <marker date="1512215553419" expanded="true" signature="972:1057" ph="/* Actions ... */" />
+                <marker date="1512215553419" expanded="true" signature="1061:1134" ph="/// 50% chance to randomly change target ... " />
+                <marker date="1512215553419" expanded="true" signature="1164:1232" ph="{...}" />
+                <marker date="1512215553419" expanded="true" signature="1236:1320" ph="/// Picks a random target from the pre-defined list ... " />
+                <marker date="1512215553419" expanded="true" signature="1361:1640" ph="{...}" />
+                <marker date="1512215553419" expanded="true" signature="1644:1725" ph="/// Face the centre (the position of GlobalVars) ... " />
+                <marker date="1512215553419" expanded="true" signature="1753:2084" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -213,12 +213,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1512209121100</updated>
-      <workItem from="1512209123334" duration="5362000" />
+      <workItem from="1512209123334" duration="6426000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5362000" />
+    <option name="totallyTimeSpent" value="6426000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -399,24 +399,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/mobs/Protester.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="64" column="46" lean-forward="true" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
+        <state relative-caret-position="576">
+          <caret line="65" column="46" lean-forward="false" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
           <folding>
-            <marker date="1512214488821" expanded="true" signature="6:40" ph="..." />
-            <marker date="1512214488821" expanded="true" signature="56:2090" ph="{...}" />
-            <marker date="1512214488821" expanded="true" signature="141:2088" ph="{...}" />
-            <marker date="1512214488821" expanded="true" signature="148:235" ph="/* Variables ... */" />
-            <marker date="1512214488821" expanded="true" signature="342:425" ph="/* Unity ... */" />
-            <marker date="1512214488821" expanded="true" signature="449:538" ph="{...}" />
-            <marker date="1512214488821" expanded="true" signature="562:716" ph="{...}" />
-            <marker date="1512214488821" expanded="true" signature="741:966" ph="{...}" />
-            <marker date="1512214488821" expanded="true" signature="972:1057" ph="/* Actions ... */" />
-            <marker date="1512214488821" expanded="true" signature="1061:1134" ph="/// 50% chance to randomly change target ... " />
-            <marker date="1512214488821" expanded="true" signature="1164:1232" ph="{...}" />
-            <marker date="1512214488821" expanded="true" signature="1236:1320" ph="/// Picks a random target from the pre-defined list ... " />
-            <marker date="1512214488821" expanded="true" signature="1361:1638" ph="{...}" />
-            <marker date="1512214488821" expanded="true" signature="1642:1723" ph="/// Face the centre (the position of GlobalVars) ... " />
-            <marker date="1512214488821" expanded="true" signature="1751:2082" ph="{...}" />
+            <marker date="1512215553419" expanded="true" signature="6:40" ph="..." />
+            <marker date="1512215553419" expanded="true" signature="56:2092" ph="{...}" />
+            <marker date="1512215553419" expanded="true" signature="141:2090" ph="{...}" />
+            <marker date="1512215553419" expanded="true" signature="148:235" ph="/* Variables ... */" />
+            <marker date="1512215553419" expanded="true" signature="342:425" ph="/* Unity ... */" />
+            <marker date="1512215553419" expanded="true" signature="449:538" ph="{...}" />
+            <marker date="1512215553419" expanded="true" signature="562:716" ph="{...}" />
+            <marker date="1512215553419" expanded="true" signature="741:966" ph="{...}" />
+            <marker date="1512215553419" expanded="true" signature="972:1057" ph="/* Actions ... */" />
+            <marker date="1512215553419" expanded="true" signature="1061:1134" ph="/// 50% chance to randomly change target ... " />
+            <marker date="1512215553419" expanded="true" signature="1164:1232" ph="{...}" />
+            <marker date="1512215553419" expanded="true" signature="1236:1320" ph="/// Picks a random target from the pre-defined list ... " />
+            <marker date="1512215553419" expanded="true" signature="1361:1640" ph="{...}" />
+            <marker date="1512215553419" expanded="true" signature="1644:1725" ph="/// Face the centre (the position of GlobalVars) ... " />
+            <marker date="1512215553419" expanded="true" signature="1753:2084" ph="{...}" />
           </folding>
         </state>
       </provider>
