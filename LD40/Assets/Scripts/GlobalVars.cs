@@ -132,6 +132,9 @@ public class GlobalVars : MonoBehaviour
     //Global Price SuperValibleUnObtainium
     public float GobalPriceUnobtainium;
 
+    //Stored GlobFlops For processing
+    private int numUnporcessedGlobFlops;
+
     //------------------------------------------Placements------------------------------------------//
 
     //Amount of Turrents Placed
@@ -203,6 +206,19 @@ public class GlobalVars : MonoBehaviour
         set
         {
             amountCurrency = value;
+        }
+    }
+
+    public int NumUnporcessedGlobFlops
+    {
+        get
+        {
+            return numUnporcessedGlobFlops;
+        }
+
+        set
+        {
+            numUnporcessedGlobFlops = value;
         }
     }
 

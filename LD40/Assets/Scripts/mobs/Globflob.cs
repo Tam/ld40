@@ -15,6 +15,8 @@ namespace mobs
 		private NavMeshAgent _agent;
 
 		private float _timer;
+
+        private bool Attracted = false;
 		
 		// Unity
 		// =====================================================================
@@ -31,13 +33,27 @@ namespace mobs
 		private void Update()
 		{
 			_timer += Time.deltaTime;
- 
-			if (_timer >= _wanderDelay) {
-				Vector2 newPos = Random.insideUnitCircle * _wanderRadius;
-				_agent.SetDestination(transform.position + new Vector3(newPos.x, 0f, newPos.y));
-				_timer = 0;
-				PickNewTimeAndTarget();
-			}
+
+            if (!Attracted)
+            {
+                if (_timer >= _wanderDelay)
+                {
+                    Vector2 newPos = Random.insideUnitCircle * _wanderRadius;
+                    _agent.SetDestination(transform.position + new Vector3(newPos.x, 0f, newPos.y));
+                    _timer = 0;
+                    PickNewTimeAndTarget();
+                }
+            }
+            else
+            {
+                if (!_agent.pathPending)
+                    if (_agent.remainingDistance <= _agent.stoppingDistance)
+                        if (!_agent.hasPath || _agent.velocity.sqrMagnitude == 0f)
+                        {
+                            GlobalVars.instance.NumUnporcessedGlobFlops += 1;
+                            Destroy(gameObject);
+                        }
+            }
 		}
 
 		// Actions
@@ -48,6 +64,11 @@ namespace mobs
 			_wanderDelay = Random.Range(0f, 5f);
 			_wanderRadius = Random.Range(5f, 50f);
 		}
-		
-	}
+
+        public void setTarget(Transform _transform)
+        {
+            Attracted = true;
+            _agent.SetDestination(_transform.position);
+        }	
+	}  
 }
