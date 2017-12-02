@@ -30,7 +30,7 @@ public class Placement : MonoBehaviour
         //Go into Placement Mode.
         if (Input.GetKeyUp(KeyCode.T))
         {
-            GameobjectToPlaceID = 0;
+            GameobjectToPlaceID = 1;
         }
 
         if (GameobjectToPlaceID != 100)
@@ -39,7 +39,7 @@ public class Placement : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit Hit = new RaycastHit();
 
-            Debug.DrawRay(ray.origin, ray.direction * 1000, Color.green);
+            //Debug.DrawRay(ray.origin, ray.direction * 1000, Color.green);
 
             LayerMask Mask;
 

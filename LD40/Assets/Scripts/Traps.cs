@@ -5,8 +5,7 @@ using UnityEngine;
 public class Traps : MonoBehaviour
 {
     public float SucessRate;
-    public int AttractRaduis;
-    public int ResourceAmount;
+    public float AttractRaduis;
 
     public float CheckAttractionTime = 10f;
 
@@ -14,8 +13,11 @@ public class Traps : MonoBehaviour
 
     public List<GameObject> GlobFlopsInRange = new List<GameObject>();
 
+    bool isUIUp = false;
+
     private void Start()
     {
+        GetComponentInChildren<SphereCollider>().radius = AttractRaduis;
         InvokeRepeating("CheckAttraction", 5, CheckAttractionTime);
     }
 
@@ -33,7 +35,7 @@ public class Traps : MonoBehaviour
                     .GetComponentInParent<mobs.Globflob>();
                 
                 if (gf != null)
-                    gf.setTarget(TargetPoint, ResourceAmount);
+                    gf.setTarget(TargetPoint);
             }
         }
     }
@@ -48,5 +50,47 @@ public class Traps : MonoBehaviour
     {
         if (GlobFlopsInRange.Contains(other.gameObject))
             GlobFlopsInRange.Remove(other.gameObject);
+    }
+
+    public void SetCatcherRaduis(float _raduis)
+    {
+        AttractRaduis = _raduis;
+        GetComponentInChildren<SphereCollider>().radius = AttractRaduis;
+    }
+
+    public void SetSucessRate(float _Valve)
+    {
+        SucessRate = _Valve;
+    }
+
+    public void SetAttractionTime(int _time)
+    {
+        CheckAttractionTime = _time;
+    }
+
+    void OnMouseOver()
+    {
+        if (isUIUp != true)
+        {
+            MakeUIAppear();
+            isUIUp = true;
+        }
+
+        Debug.Log("fuck");
+    }
+
+    void OnMouseExit()
+    {
+        if (isUIUp == true)
+        {
+            isUIUp = false;
+        }
+
+        Debug.Log("Doublefuck");
+    }
+
+    void MakeUIAppear()
+    {
+
     }
 }

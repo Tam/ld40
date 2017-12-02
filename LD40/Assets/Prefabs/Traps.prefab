@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114422803712013938}
   - component: {fileID: 54037206027916278}
   - component: {fileID: 65373922882647864}
+  - component: {fileID: 114900661847796508}
   m_Layer: 0
   m_Name: Traps
   m_TagString: Trap
@@ -188,6 +189,17 @@ MonoBehaviour:
   CheckAttractionTime: 10
   TargetPoint: {fileID: 4784835159985246}
   GlobFlopsInRange: []
+--- !u!114 &114900661847796508
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310955351918320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017dc294162be4e468d01cd04c21c9d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135602607205285974
 SphereCollider:
   m_ObjectHideFlags: 1

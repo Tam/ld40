@@ -64,10 +64,10 @@ namespace mobs
 		// Actions
 		// =====================================================================
 
-		public void setTarget(Transform _transform, int _Amount)
+		public void setTarget(Transform _transform)
 		{
 			Attracted = true;
-			AmountOfResoucre += _Amount;
+			AmountOfResoucre += 1;
 			_agent.SetDestination(_transform.position);
 		}
 
