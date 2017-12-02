@@ -304,14 +304,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Placing: 0
-  TurretToPlaceID: 100
-  TurretHolo:
+  GameobjectToPlaceID: 100
+  GameobjectHolo:
   - {fileID: 1629537945}
-  TurretsToPlace:
+  GameobjectToPlace:
   - {fileID: 1711331942089936, guid: a9d9f02bbad136c48ae63dba1fba9493, type: 2}
-  Mask:
+  numberOfTurrets: 0
+  TurretMask:
     serializedVersion: 2
     m_Bits: 256
+  TrapMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &406344588
 GameObject:
   m_ObjectHideFlags: 0
