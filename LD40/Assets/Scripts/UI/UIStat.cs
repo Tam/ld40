@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace UI
+﻿namespace UI
 {
 	public class UIStat
 	{

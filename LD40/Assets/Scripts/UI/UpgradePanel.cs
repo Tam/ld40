@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 namespace UI
 {
+	[RequireComponent(typeof(RectTransform))]
 	public class UpgradePanel : MonoBehaviour
 	{
 		
@@ -19,6 +20,8 @@ namespace UI
 
 		public Text stat3Label;
 		public Text stat3Value;
+
+		private RectTransform _rect;
 		
 		// Setters
 		// =====================================================================
@@ -53,6 +56,21 @@ namespace UI
 			stat3Value.text = stat.value;
 		}
 		
+		// Unity
+		// =====================================================================
+
+		private void Awake()
+		{
+			if (_rect == null)
+				_rect = GetComponent<RectTransform>();
+		}
+
+		private void Update()
+		{
+			if (enabled && Input.GetKeyDown(KeyCode.Escape))
+				Hide();
+		}
+
 		// Actions
 		// =====================================================================
 
@@ -67,6 +85,7 @@ namespace UI
 		}
 
 		public void SetAndShow(
+			Transform target,
 			string name,
 			UIStat stat1,
 			UIStat stat2,
@@ -75,6 +94,21 @@ namespace UI
 			SetName(name);
 			SetStats(stat1, stat2, stat3);
 			Show();
+			SetTarget(target);
+		}
+
+		public void SetTarget(Transform trans)
+		{
+			Vector3 pos = Camera.main.WorldToScreenPoint(trans.position);
+			float h = _rect.rect.height;
+			float offset = h / 2f + 10f;
+
+			if (pos.y <= h)
+				pos.y += offset;
+			else
+				pos.y -= offset;
+			
+			transform.position = pos;
 		}
 		
 	}

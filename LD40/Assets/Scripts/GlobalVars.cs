@@ -15,8 +15,6 @@ public enum AvailableStats
 [RequireComponent(typeof(UIManager))]
 public class GlobalVars : MonoBehaviour
 {
-    // TESTING RUN AWAY!
-    public Transform FUCKBOI;
     
     //Singleton
     public static GlobalVars instance;

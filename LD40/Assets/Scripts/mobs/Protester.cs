@@ -20,6 +20,8 @@ namespace mobs
 		public float fearLimit = 20f;
 		private float currentFear;
 
+		private bool _fleeing;
+
 		// Unity
 		// =====================================================================
 
@@ -42,12 +44,16 @@ namespace mobs
 		{
 			// If we're not pathing, face the centre
 			if (!_agent.pathPending)
+			{
 				if (_agent.remainingDistance <= _agent.stoppingDistance)
+				{
 					if (!_agent.hasPath || _agent.velocity.sqrMagnitude == 0f)
+					{
+						if (_fleeing) _fleeing = false;
 						FaceTarget();
-
-			if (Input.GetKeyDown(KeyCode.R))
-				RunAway(_globalVars.FUCKBOI);
+					}
+				}
+			}
 		}
 
 		// Actions
@@ -58,6 +64,10 @@ namespace mobs
 		/// </summary>
 		private void ChangeTarget()
 		{
+			// Don't change target if we're fleeing
+			if (_fleeing)
+				return;
+			
 			if (Random.value >= 0.25f)
 				PickAndGoToRandomTarget();
 		}
@@ -133,8 +143,14 @@ namespace mobs
 		/// <param name="from">Optional location to run from (will 180 if null)</param>
 		private void RunAway(Transform from = null)
 		{
-			Vector3 nextTarget = from ? from.transform.position : transform.forward;
-			Vector3 nextPos = transform.position - nextTarget * 10f;
+			_fleeing = true;
+			
+			Vector3 nextPos;
+			
+			if (from)
+				nextPos = transform.position - (from.position - transform.position);
+			else
+				nextPos = transform.position - transform.forward;
 			_agent.SetDestination(nextPos);
 		}
 	}
