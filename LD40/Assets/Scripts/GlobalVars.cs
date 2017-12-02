@@ -1,6 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
+public enum MobTypes
+{
+    Protester,
+    Globflob,
+}
 
 public class GlobalVars : MonoBehaviour
 {
@@ -12,6 +16,58 @@ public class GlobalVars : MonoBehaviour
     
     // Mobs
     // =====================================================================
+
+    public void IncreaseCurrentMobsBy(MobTypes mob, int amount)
+    {
+        switch (mob)
+        {
+            case MobTypes.Protester:
+                _currentProtesters += amount;
+                break;
+            case MobTypes.Globflob:
+                _currentGlobflobs += amount;
+                break;
+        }
+    }
+
+    public void DecreaseCurrentMobsBy(MobTypes mob, int amount)
+    {
+        switch (mob)
+        {
+            case MobTypes.Protester:
+                _currentProtesters -= amount;
+                break;
+            case MobTypes.Globflob:
+                _currentGlobflobs -= amount;
+                break;
+        }
+    }
+
+    public int GetCurrentMobs(MobTypes mob)
+    {
+        switch (mob)
+        {
+            case MobTypes.Protester:
+                return _currentProtesters;
+            case MobTypes.Globflob:
+                return _currentGlobflobs;
+        }
+
+        return 0;
+    }
+
+    public int GetMaxMobs(MobTypes mob)
+    {
+        switch (mob)
+        {
+            case MobTypes.Protester:
+                return _maxProtesters;
+            case MobTypes.Globflob:
+                return _maxGlobflobs;
+        }
+
+        return 0;
+    }
     
     // Globflobs
     // ---------------------------------------------------------------------
@@ -20,7 +76,6 @@ public class GlobalVars : MonoBehaviour
     public int currentGlobflobs
     {
         get { return _currentGlobflobs; }
-        set { _currentGlobflobs = value; }
     }
 
     private int _maxGlobflobs = 50;
@@ -37,7 +92,6 @@ public class GlobalVars : MonoBehaviour
     public int currentProtesters
     {
         get { return _currentProtesters; }
-        set { _currentProtesters = value; }
     }
 
     private int _maxProtesters = 50;
@@ -159,4 +213,5 @@ public class GlobalVars : MonoBehaviour
             instance = this;
         }
     }
+    
 }

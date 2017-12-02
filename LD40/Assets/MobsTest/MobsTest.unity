@@ -465,19 +465,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeElapsed: 0
-  AmountGlobFlops: 0
-  MaxAmountGlobFlops: 0
-  MinAmountGlobFlops: 0
-  AmountGlobFlopsKilled: 0
-  AmountProtestors: 0
-  MaxAmountProtestor: 0
+  maxAmountGlobFlops: 0
+  minAmountGlobFlops: 0
   ProtestorsTargets:
   - {fileID: 1070403970}
   - {fileID: 2076517385}
   - {fileID: 1456251862}
   - {fileID: 96953608}
   - {fileID: 2011592339}
-  AmountCurrency: 0
   GobalPriceUnobtainium: 0
   TurretsPlaced: 0
   TrapsPlaced: 0
@@ -505,7 +500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb125a7ddbeb7047befbddea1103521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Protesters
+  type: 0
   mob: {fileID: 1379540758340564, guid: 36ea64d4e7b0a7f4999ea54b4a8a0903, type: 2}
   spawnTargets:
   - {fileID: 2011108707}
@@ -525,7 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb125a7ddbeb7047befbddea1103521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Globflobs
+  type: 1
   mob: {fileID: 1605118727164010, guid: 1c0f059a269fb894694d3db4bedbb340, type: 2}
   spawnTargets:
   - {fileID: 1318816296}
