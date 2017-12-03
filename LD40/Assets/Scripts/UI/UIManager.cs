@@ -16,6 +16,8 @@ namespace UI
 		
 		public UpgradePanel upgradePanel;
 
+        public TurretBuildUI turretBuildUI;
+
 		public GameOverPanel gameOverPanel;
 		
 		// Unity
