@@ -1,4 +1,5 @@
-﻿using UI;
+﻿using Logic;
+using UI;
 using UnityEngine;
 
 public enum MobTypes
@@ -7,20 +8,20 @@ public enum MobTypes
 	Globflob,
 }
 
-public enum AvailableStats
-{
-	NumUnprocessedGlobflobs,
-}
-
-[RequireComponent(typeof(UIManager))]
+[RequireComponent(typeof(UIManager), typeof(SocialBuzz))]
 public class GlobalVars : MonoBehaviour
 {
+	
 	//Singleton
 	public static GlobalVars instance;
 
+	[Header("Sub-Logic")]
 	public UIManager uiManager;
 
+	public SocialBuzz socialBuzz;
+
 	// Time Playing the game from start to finish.
+	[Space]
 	public float TimeElapsed;
 	
 	// Modifiers
@@ -29,6 +30,7 @@ public class GlobalVars : MonoBehaviour
 	/// <summary>
 	/// How many protesters will spawn per Globflob captured
 	/// </summary>
+	[Header("Modifiers")]
 	public int protestersToGlobflobs = 2;
 
 	/// <summary>
@@ -40,13 +42,6 @@ public class GlobalVars : MonoBehaviour
 	/// How much Supervaluableunobtainium each Globflob is worth
 	/// </summary>
 	public int globflobsToSupervaluableunobtainium = 3;
-
-	// Events
-	// =====================================================================
-
-	public delegate void OnStatChange(AvailableStats stat, int value);
-
-	public OnStatChange OnStatChangeCallback;
 
 	// Mobs
 	// =====================================================================
@@ -116,7 +111,6 @@ public class GlobalVars : MonoBehaviour
 	public int maxGlobflobs
 	{
 		get { return _maxGlobflobs; }
-		set { _maxGlobflobs = value; }
 	}
 
 	// Protestors
@@ -166,19 +160,24 @@ public class GlobalVars : MonoBehaviour
 
 	/// <summary>
 	/// Process the Globflobs
-	/// 
-	/// TODO: Improve. This only works if we only have 1 type of Globflob (no super 'flobs)
 	/// </summary>
 	/// <param name="amount">Number to process</param>
-	public void ProcessGlobflobs(int amount)
+	/// <param name="worth">
+	/// 	How much Supervaluableunobtainium this Globflob is worth.
+	/// 	Leave at -1 (unset) to use the default value.
+	/// </param>
+	public void ProcessGlobflobs(int amount, int worth = -1)
 	{
+		if (worth < 0)
+			worth = globflobsToSupervaluableunobtainium;
+		
 		if (amount > _unprocessedGlobflobs)
 			amount = _unprocessedGlobflobs;
 		
 		_unprocessedGlobflobs -= amount;
 		_processedGlobflobs += amount;
 
-		_supervaluableunobtainiumAquiredMonth += amount * globflobsToSupervaluableunobtainium;
+		_supervaluableunobtainiumAquiredMonth += amount * worth;
 	}
 
 	// Supervaluableunobtainium
@@ -223,6 +222,7 @@ public class GlobalVars : MonoBehaviour
 	private int amountGlobFlops;
 
 	//Maxuim Amount of GlobFlops Allowed
+	[Header("Other (needs organizing)")]
 	public int maxAmountGlobFlops;
 
 	//Minium Amount of GlobFlops Allowed
@@ -315,32 +315,14 @@ public class GlobalVars : MonoBehaviour
 		set { amountCurrency = value; }
 	}
 
-	public int NumUnporcessedGlobFlops
-	{
-		get { return numUnporcessedGlobFlops; }
-
-		set
-		{
-			numUnporcessedGlobFlops = value;
-			TriggerStatChange(AvailableStats.NumUnprocessedGlobflobs, value);
-		}
-	}
-
 	// Unity
 	// =====================================================================
 
 	void Awake()
 	{
-		if (instance == null)
-			instance = this;
-	}
-
-	// Events
-	// =====================================================================
-
-	private void TriggerStatChange(AvailableStats stat, int value)
-	{
-		if (OnStatChangeCallback != null)
-			OnStatChangeCallback.Invoke(stat, value);
+		if (instance != null) return;
+		
+		instance = this;
+		socialBuzz.globalVars = instance;
 	}
 }
