@@ -213,7 +213,16 @@ public class GlobalVars : MonoBehaviour
 	public int money
 	{
 		get { return _money; }
-		set { _money = value; }
+	}
+
+	public void IncreaseMoney(int amount)
+	{
+		_money += amount;
+	}
+
+	public void DecreaseMoney(int amount)
+	{
+		_money -= amount;
 	}
 
 
