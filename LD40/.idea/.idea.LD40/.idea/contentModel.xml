@@ -15,9 +15,11 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="BulletController.cs" t="Include" />
+          <e p="Factory.cs" t="Include" />
           <e p="GlobalVars.cs" t="Include" />
           <e p="Helpers.cs" t="Include" />
           <e p="logic" t="Include">
+            <e p="Quota.cs" t="Include" />
             <e p="SocialBuzz.cs" t="Include" />
           </e>
           <e p="mobs" t="Include">

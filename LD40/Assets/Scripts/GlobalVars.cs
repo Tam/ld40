@@ -8,7 +8,7 @@ public enum MobTypes
 	Globflob,
 }
 
-[RequireComponent(typeof(UIManager), typeof(SocialBuzz))]
+[RequireComponent(typeof(UIManager), typeof(SocialBuzz), typeof(Quota))]
 public class GlobalVars : MonoBehaviour
 {
 	
@@ -19,6 +19,8 @@ public class GlobalVars : MonoBehaviour
 	public UIManager uiManager;
 
 	public SocialBuzz socialBuzz;
+
+	public Quota quota;
 
 	// Time Playing the game from start to finish.
 	[Space]
@@ -190,7 +192,7 @@ public class GlobalVars : MonoBehaviour
 		_unprocessedGlobflobs -= amount;
 		_processedGlobflobs += amount;
 
-		_supervaluableunobtainiumAquiredMonth += amount * worth;
+		IncreaseSupervaluableunobtainiumAquired(amount * worth);
 	}
 
 	// Supervaluableunobtainium
@@ -202,19 +204,13 @@ public class GlobalVars : MonoBehaviour
 		get { return _supervaluableunobtainiumAquiredTotal; }
 	}
 
-	private int _supervaluableunobtainiumAquiredMonth;
-	public int supervaluableunobtainiumAquiredMonth
-	{
-		get { return _supervaluableunobtainiumAquiredMonth; }
-	}
-
-	public void IncreaseSupervaluableunobtainiumAquiredMonth(int amount)
+	public void IncreaseSupervaluableunobtainiumAquired(int amount)
 	{
 		// Increase the overall total
 		_supervaluableunobtainiumAquiredTotal += amount;
-			
-		// Increase the monthly total
-		_supervaluableunobtainiumAquiredMonth += amount;
+		
+		// Increase the monthly quota count
+		quota.IncreaseCurrentQuota(amount);
 			
 		// Increase the money
 		_money += amount * moneyToSupervaluableunobtainium;
@@ -353,6 +349,7 @@ public class GlobalVars : MonoBehaviour
 		
 		instance = this;
 		socialBuzz.globalVars = instance;
+		quota.globalVars = instance;
 	}
 
 	private void Start()
@@ -378,7 +375,7 @@ public class GlobalVars : MonoBehaviour
 		_day = 1;
 		_month++;
 		
-		// TODO: Trigger quota check
+		quota.CheckQuotaReached();
 	}
 	
 }

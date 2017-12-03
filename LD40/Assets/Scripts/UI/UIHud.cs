@@ -10,7 +10,6 @@ namespace UI
 
 		public Text numUnprocessedGlobflobs;
 		public Text svuTotal;
-		public Text svuMonth;
 		public Text monthlyQuota;
 		public Text money;
 		public Text buzz;
@@ -36,9 +35,8 @@ namespace UI
 
 			svuTotal.text = _globalVars.supervaluableunobtainiumAquiredTotal + "";
 
-			svuMonth.text = _globalVars.supervaluableunobtainiumAquiredMonth + "";
-			
-			// TODO: Monthly Quota
+			monthlyQuota.text = _globalVars.quota.currentQuota + " / " + 
+			                    _globalVars.quota.maxQuota;
 
 			money.text = _globalVars.money + "";
 
