@@ -8,23 +8,35 @@ public class TurretPlacement : MonoBehaviour
 
     public GameObject PlacementVector;
 
-	private void OnMouseEnter()
-    {
-        if (Input.GetMouseButton(0))
-        {
-            //Make Build Buttons Interactable
-            //Send Which Placement Platform is requesting Building
-            GlobalVars.instance.uiManager.turretBuildUI.SetButtonInteractable(this, true);
-        }
-    }
+    private bool _mouseOver;
 
-    private void OnMouseExit()
+    private void Update()
     {
-        if (Input.GetMouseButton(1))
+        if (_mouseOver)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                //Make Build Buttons Interactable
+                //Send Which Placement Platform is requesting Building
+                GlobalVars.instance.uiManager.turretBuildUI.SetButtonInteractable(this, true);
+            }
+        }
+        
+        if (Input.GetMouseButtonDown(1))
         {
             //Make Build buttons UnInteractable
             GlobalVars.instance.uiManager.turretBuildUI.SetButtonInteractable(null, false);
         }
+    }
+
+	private void OnMouseOver()
+	{
+	    _mouseOver = true;
+	}
+
+    private void OnMouseExit()
+    {
+        _mouseOver = false;
     }
 
     public void BuildTurret(GameObject _TurretToBuild)
