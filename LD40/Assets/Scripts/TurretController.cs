@@ -43,6 +43,7 @@ public class TurretController : MonoBehaviour {
     
     [Header("Line Renderer Properties")]
     public LineRenderer lineRenderer;
+    public Light emissionLight;
 
     [Header("Debug")]
     public Color radiusColor = Color.red;
@@ -143,7 +144,7 @@ public class TurretController : MonoBehaviour {
         }        
 
     }
-
+    
     void ShootLineRenderer()
     {
         if (target == null) return;
@@ -155,6 +156,10 @@ public class TurretController : MonoBehaviour {
 
         if (IsLookingAtTarget())
         {
+            if(emissionLight != null)
+            {
+                emissionLight.enabled = true;
+            }
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(0, muzzlePoint.position);
             lineRenderer.SetPosition(1, target.transform.position);
@@ -162,6 +167,10 @@ public class TurretController : MonoBehaviour {
         }
         else
         {
+            if (emissionLight != null)
+            {
+                emissionLight.enabled = false;
+            }
             lineRenderer.enabled = false;
         }
        
