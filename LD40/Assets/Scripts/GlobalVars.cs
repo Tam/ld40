@@ -130,7 +130,19 @@ public class GlobalVars : MonoBehaviour
 
 	// Game Stats
 	// =====================================================================
-	
+
+	private int _day;
+	public int day
+	{
+		get { return _day; }
+	}
+
+	private int _month;
+	public int month
+	{
+		get { return _month; }
+	}
+
 	// Globflobs
 	// ---------------------------------------------------------------------
 
@@ -342,4 +354,31 @@ public class GlobalVars : MonoBehaviour
 		instance = this;
 		socialBuzz.globalVars = instance;
 	}
+
+	private void Start()
+	{
+		// Day tick runs every 2s after 2s
+		InvokeRepeating("DayTick", 2f, 2f);
+	}
+
+	// Actions
+	// =====================================================================
+
+	/// <summary>
+	/// Goes to the next day
+	/// </summary>
+	private void DayTick()
+	{
+		_day++;
+		
+		// If the day isn't higher than the max per month (30), return 
+		if (_day <= 30)
+			return;
+
+		_day = 1;
+		_month++;
+		
+		// TODO: Trigger quota check
+	}
+	
 }
