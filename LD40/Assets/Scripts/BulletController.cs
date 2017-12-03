@@ -30,6 +30,7 @@ public class BulletController : MonoBehaviour {
     private Transform target;
 
     private Rigidbody rb;
+    private bool hasHit = false;
 
     public void Seek(Transform parentTurret, Transform target)
     {
@@ -67,6 +68,13 @@ public class BulletController : MonoBehaviour {
             rb.useGravity = true;
         }
         Destroy(gameObject, lifeAfterImpact);
+
+        if (!hasHit)
+        {
+            HitTarget();
+            hasHit = false;
+        }
+        
     }
 
     void HitTarget()
@@ -77,8 +85,14 @@ public class BulletController : MonoBehaviour {
             Destroy(effect, 5f);
         }
 
+        if(target == null)
+        {
+            return;
+        }
+
         Protester protester = target.GetComponent<Protester>();
-        if(protester != null)
+
+        if (protester != null)
         {
             if (damage > 0)
             {

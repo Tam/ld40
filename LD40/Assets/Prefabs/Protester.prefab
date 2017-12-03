@@ -20,9 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4708971451347430}
   - component: {fileID: 33921855667037668}
-  - component: {fileID: 136706021551307960}
   - component: {fileID: 23525950669068452}
-  - component: {fileID: 54962660994272084}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Protester
@@ -58,6 +56,8 @@ GameObject:
   - component: {fileID: 4545195652790842}
   - component: {fileID: 195900314557145606}
   - component: {fileID: 114161330703023768}
+  - component: {fileID: 54917625706595912}
+  - component: {fileID: 136670926461279702}
   m_Layer: 0
   m_Name: Protester
   m_TagString: Protester
@@ -136,7 +136,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1379540758340564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -44.53}
+  m_LocalPosition: {x: 0, y: 0.449, z: -14.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4708971451347430}
@@ -334,12 +334,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1087622737606418}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54962660994272084
+--- !u!54 &54917625706595912
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1087622737606418}
+  m_GameObject: {fileID: 1379540758340564}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -395,33 +395,33 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1379540758340564}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 918defd62f392894398c9c21cca7f742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 20
   fearLimit: 20
---- !u!136 &136706021551307960
+--- !u!136 &136670926461279702
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1087622737606418}
+  m_GameObject: {fileID: 1379540758340564}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!195 &195900314557145606
 NavMeshAgent:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1379540758340564}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.75
   m_Speed: 8

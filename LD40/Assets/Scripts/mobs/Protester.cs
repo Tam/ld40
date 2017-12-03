@@ -58,9 +58,11 @@ namespace mobs
 		/// </summary>
 		private void ChangeTarget()
 		{
-			// Don't change target if we're fleeing
-			if (_fleeing)
+            // Don't change target if we're fleeing
+            if (_fleeing || gameObject == null)
+            {
 				return;
+            }
 			
 			// A 75% chance of changing target
 			if (Random.value <= 0.75f)
@@ -114,9 +116,10 @@ namespace mobs
 			currentHealth -= amount;
 			if (currentHealth < 0)
 			{
-				// Kill protestor
-				Destroy(this);
+                // Kill protestor
 				_globalVars.DecreaseCurrentMobsBy(MobTypes.Protester, 1);
+                CancelInvoke();
+                Destroy(gameObject);
 			}
 		}
 
@@ -150,7 +153,12 @@ namespace mobs
 			else nextPos = transform.forward;
 
 			nextPos = nextPos.normalized * 10f;
-			
+
+            if(_agent == null || !_agent.enabled)
+            {
+                return;
+            }
+
 			_agent.SetDestination(transform.position - nextPos);
 		}
 	}

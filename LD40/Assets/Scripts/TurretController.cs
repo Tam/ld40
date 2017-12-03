@@ -25,6 +25,8 @@ public class TurretController : MonoBehaviour {
     public Transform turretHead;
     public Transform muzzlePoint;
 
+    public Vector3 targetOffset;
+
     [Header("General")]
     public string enemyTag;
     public float range = 10f;
@@ -207,7 +209,7 @@ public class TurretController : MonoBehaviour {
             }
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(0, muzzlePoint.position);
-            lineRenderer.SetPosition(1, target.transform.position);
+            lineRenderer.SetPosition(1, target.transform.position + targetOffset);
             HitTarget(damagePerTick + additionalDamagePerTick, fearPerTick + additionalFearPerTick);
         }
         else
@@ -263,9 +265,9 @@ public class TurretController : MonoBehaviour {
         if (target == null) return false;
 
         RaycastHit hit;
+        Debug.DrawLine(muzzlePoint.transform.position, muzzlePoint.transform.TransformDirection(Vector3.right) * 100f, Color.cyan);
         if (Physics.Raycast(muzzlePoint.transform.position, muzzlePoint.transform.TransformDirection(Vector3.right), out hit, 100f))
         {
-            
             if (hit.transform.gameObject.GetInstanceID() == target.GetInstanceID())
             {
                 targetLineColor = Color.blue;
@@ -278,7 +280,7 @@ public class TurretController : MonoBehaviour {
 
     void TrackTarget()
     {
-        Vector3 dir = target.transform.position - turretHead.position;
+        Vector3 dir = (target.transform.position + targetOffset) - turretHead.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(turretHead.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         turretHead.rotation = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
@@ -295,7 +297,7 @@ public class TurretController : MonoBehaviour {
         if(target != null && showRayToTarget)
         {
             Gizmos.color = targetLineColor;
-            Gizmos.DrawLine(muzzlePoint.transform.position, target.transform.position);
+            Gizmos.DrawLine(muzzlePoint.transform.position, (target.transform.position + targetOffset));
         }
     }
 }
