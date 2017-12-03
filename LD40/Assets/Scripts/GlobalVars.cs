@@ -24,9 +24,17 @@ public class GlobalVars : MonoBehaviour
 
 	public Inspection inspection;
 
+	public Placement placement;
+
 	// Time Playing the game from start to finish.
 	[Space]
 	public float TimeElapsed;
+	
+	// Events
+	// =====================================================================
+
+	public delegate void OnMoneyChange(int money);
+	public OnMoneyChange OnMoneyChangeCallback;
 	
 	// Modifiers
 	// =====================================================================
@@ -230,7 +238,7 @@ public class GlobalVars : MonoBehaviour
 		quota.IncreaseCurrentQuota(amount);
 			
 		// Increase the money
-		_money += amount * moneyToSupervaluableunobtainium;
+		IncreaseMoney(amount * moneyToSupervaluableunobtainium);
 		
 		// Increase the score
 		score += scoreBonus ? amount * scoreBonusMultiplier : amount;
@@ -239,7 +247,7 @@ public class GlobalVars : MonoBehaviour
 	// Money
 	// ---------------------------------------------------------------------
 
-	private int _money;
+	private int _money = 100;
 	public int money
 	{
 		get { return _money; }
@@ -248,12 +256,27 @@ public class GlobalVars : MonoBehaviour
 	public void IncreaseMoney(int amount)
 	{
 		_money += amount;
+		
+		if (OnMoneyChangeCallback != null)
+			OnMoneyChangeCallback.Invoke(_money);
 	}
 
 	public void DecreaseMoney(int amount)
 	{
 		_money -= amount;
+		
+		if (OnMoneyChangeCallback != null)
+			OnMoneyChangeCallback.Invoke(_money);
 	}
+	
+	// Misc
+	// ---------------------------------------------------------------------
+
+	/// <summary>
+	/// The amount of money it costs to build a trap
+	/// </summary>
+	[Header("Misc")]
+	public int trapCost = 100;
 
 
 	#region Old variables that need orgainizing
@@ -372,6 +395,7 @@ public class GlobalVars : MonoBehaviour
 		socialBuzz.globalVars = instance;
 		quota.globalVars = instance;
 		inspection.globalVars = instance;
+		placement.globalVars = instance;
 	}
 
 	private void Start()

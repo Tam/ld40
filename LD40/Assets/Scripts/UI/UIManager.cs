@@ -14,13 +14,13 @@ namespace UI
 		public GlobalVars globalVars;
 
 		public Button overlayButton;
+		public Button buildTrapButton;
 
 		public InspectionPanel inspectionPanel;
 		public UpgradePanel upgradePanel;
 		public GameOverPanel gameOverPanel;
 
 		public TurretBuildUI turretBuildUI;
-
 
 		private readonly List<BasePanel> _panelsWithOverlay = new List<BasePanel>();
 
@@ -36,6 +36,9 @@ namespace UI
 			inspectionPanel.Hide();
 			gameOverPanel.Hide();
 			overlayButton.gameObject.SetActive(false);
+
+			globalVars.OnMoneyChangeCallback += OnMoneyChange;
+			globalVars.placement.OnPlacingChangeCallback += OnPlacingChange;
 		}
 
 		// Actions
@@ -70,6 +73,22 @@ namespace UI
 		
 		// Events
 		// =====================================================================
+		
+		// Events: Internal
+		// ---------------------------------------------------------------------
+
+		private void OnMoneyChange(int money)
+		{
+			buildTrapButton.interactable = money >= globalVars.trapCost;
+		}
+
+		private void OnPlacingChange(bool isPlacing)
+		{
+			buildTrapButton.interactable = !isPlacing;
+		}
+		
+		// Events: Buttons
+		// ---------------------------------------------------------------------
 
 		public void OnOverlayClick()
 		{
@@ -82,6 +101,11 @@ namespace UI
 			overlayButton.gameObject.SetActive(false);
 			
 			_isHidingAll = false;
+		}
+
+		public void OnBuildTrapButtonClick()
+		{
+			globalVars.placement.GameobjectToPlaceID = 1;
 		}
 
 	}

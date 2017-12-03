@@ -18,6 +18,7 @@ namespace mobs
 		private float _timer;
 
         private bool Attracted;
+		private ParticleSystem trapParticles;
 
         private int AmountOfResoucre = 1;
 		
@@ -52,11 +53,6 @@ namespace mobs
                     PickNewTimeAndTarget();
                 }
             }
-            else
-            {
-	            if (Helpers.AgentHasStoppedMoving(_agent))
-		            Capture();
-            }
 		}
 
 		// Actions
@@ -66,6 +62,7 @@ namespace mobs
 		{
 			Attracted = true;
 			AmountOfResoucre += 1;
+			trapParticles = _transform.parent.GetComponent<ParticleSystem>();
 			_agent.SetDestination(_transform.position);
 		}
 
@@ -75,9 +72,13 @@ namespace mobs
 			_wanderRadius = Random.Range(5f, 50f);
 		}
 
-		private void Capture()
+		/// <summary>
+		/// Triggered in Traps::OnTriggerEnter
+		/// </summary>
+		public void Capture()
 		{
-			_globalVars.IncreaseGlobflobsCaptured(AmountOfResoucre);
+			trapParticles.Emit(100);
+			_globalVars.IncreaseGlobflobsCaptured(1);
 			_globalVars.DecreaseCurrentMobsBy(MobTypes.Globflob, 1);
 			Destroy(gameObject);
 		}
