@@ -213,6 +213,7 @@ public class GlobalVars : MonoBehaviour
 	public int money
 	{
 		get { return _money; }
+		set { _money = value; }
 	}
 
 
