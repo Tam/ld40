@@ -71,6 +71,11 @@ public class TurretController : MonoBehaviour {
             {
                 particles.Stop();
             }
+
+            if(lineRenderer != null)
+            {
+                lineRenderer.enabled = false;
+            }
         }
 	}
 
