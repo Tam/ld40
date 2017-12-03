@@ -9,6 +9,7 @@ namespace Logic
 		// Variables
 		// =====================================================================
 
+		[HideInInspector]
 		public GlobalVars globalVars;
 
 		/// <summary>

@@ -8,7 +8,7 @@ public enum MobTypes
 	Globflob,
 }
 
-[RequireComponent(typeof(UIManager), typeof(SocialBuzz))]
+[RequireComponent(typeof(UIManager), typeof(SocialBuzz), typeof(Quota))]
 public class GlobalVars : MonoBehaviour
 {
 	
@@ -19,6 +19,8 @@ public class GlobalVars : MonoBehaviour
 	public UIManager uiManager;
 
 	public SocialBuzz socialBuzz;
+
+	public Quota quota;
 
 	// Time Playing the game from start to finish.
 	[Space]
@@ -130,7 +132,19 @@ public class GlobalVars : MonoBehaviour
 
 	// Game Stats
 	// =====================================================================
-	
+
+	private int _day;
+	public int day
+	{
+		get { return _day; }
+	}
+
+	private int _month;
+	public int month
+	{
+		get { return _month; }
+	}
+
 	// Globflobs
 	// ---------------------------------------------------------------------
 
@@ -138,12 +152,13 @@ public class GlobalVars : MonoBehaviour
 	public int globflobsCaptured
 	{
 		get { return _globflobsCaptured; }
-		set
-		{
-			_globflobsCaptured += value;
-			_unprocessedGlobflobs += value;
-			_maxProtesters += value * protestersToGlobflobs;
-		}
+	}
+
+	public void IncreaseGlobflobsCaptured(int amount)
+	{
+		_globflobsCaptured += amount;
+		_unprocessedGlobflobs += amount;
+		_maxProtesters += amount * protestersToGlobflobs;
 	}
 
 	private int _unprocessedGlobflobs;
@@ -177,7 +192,7 @@ public class GlobalVars : MonoBehaviour
 		_unprocessedGlobflobs -= amount;
 		_processedGlobflobs += amount;
 
-		_supervaluableunobtainiumAquiredMonth += amount * worth;
+		IncreaseSupervaluableunobtainiumAquired(amount * worth);
 	}
 
 	// Supervaluableunobtainium
@@ -189,21 +204,16 @@ public class GlobalVars : MonoBehaviour
 		get { return _supervaluableunobtainiumAquiredTotal; }
 	}
 
-	private int _supervaluableunobtainiumAquiredMonth;
-	public int supervaluableunobtainiumAquiredMonth
+	public void IncreaseSupervaluableunobtainiumAquired(int amount)
 	{
-		get { return _supervaluableunobtainiumAquiredMonth; }
-		set
-		{
-			// Increase the overall total
-			_supervaluableunobtainiumAquiredTotal += value;
+		// Increase the overall total
+		_supervaluableunobtainiumAquiredTotal += amount;
+		
+		// Increase the monthly quota count
+		quota.IncreaseCurrentQuota(amount);
 			
-			// Increase the monthly total
-			_supervaluableunobtainiumAquiredMonth += value;
-			
-			// Increase the money
-			_money += value * moneyToSupervaluableunobtainium;
-		}
+		// Increase the money
+		_money += amount * moneyToSupervaluableunobtainium;
 	}
 	
 	// Money
@@ -215,7 +225,19 @@ public class GlobalVars : MonoBehaviour
 		get { return _money; }
 	}
 
+	public void IncreaseMoney(int amount)
+	{
+		_money += amount;
+	}
 
+	public void DecreaseMoney(int amount)
+	{
+		_money -= amount;
+	}
+
+
+	#region Old variables that need orgainizing
+	
 	//--------------------------------------------AI------------------------------------------------//
 
 	//Amount of globflops on playing felid
@@ -314,6 +336,9 @@ public class GlobalVars : MonoBehaviour
 
 		set { amountCurrency = value; }
 	}
+	
+	#endregion
+	
 
 	// Unity
 	// =====================================================================
@@ -324,5 +349,33 @@ public class GlobalVars : MonoBehaviour
 		
 		instance = this;
 		socialBuzz.globalVars = instance;
+		quota.globalVars = instance;
 	}
+
+	private void Start()
+	{
+		// Day tick runs every 2s after 2s
+		InvokeRepeating("DayTick", 2f, 2f);
+	}
+
+	// Actions
+	// =====================================================================
+
+	/// <summary>
+	/// Goes to the next day
+	/// </summary>
+	private void DayTick()
+	{
+		_day++;
+		
+		// If the day isn't higher than the max per month (30), return 
+		if (_day <= 30)
+			return;
+
+		_day = 1;
+		_month++;
+		
+		quota.CheckQuotaReached();
+	}
+	
 }
