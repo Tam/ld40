@@ -6,7 +6,6 @@ public class Traps : MonoBehaviour
 {
     public float SucessRate;
     public float AttractRaduis;
-
     public float CheckAttractionTime = 10f;
 
     public Transform TargetPoint;
@@ -57,18 +56,18 @@ public class Traps : MonoBehaviour
 
     public void SetCatcherRaduis(float _raduis)
     {
-        AttractRaduis = _raduis;
+        AttractRaduis += _raduis;
         GetComponentInChildren<SphereCollider>().radius = AttractRaduis;
     }
 
     public void SetSucessRate(float _Valve)
     {
-        SucessRate = _Valve;
+        SucessRate += _Valve;
     }
 
     public void SetAttractionTime(int _time)
     {
-        CheckAttractionTime = _time;
+        CheckAttractionTime -= _time;
     }
 
     void OnMouseOver()
@@ -99,7 +98,8 @@ public class Traps : MonoBehaviour
             "Trap Name Here",
             UIStat.Create("Cooldown Duration", CheckAttractionTime),
             UIStat.Create("Success Chance", SucessRate),
-            UIStat.Create("Area of Effect", AttractRaduis)
+            UIStat.Create("Area of Effect", AttractRaduis),
+            this
         );
     }
 
