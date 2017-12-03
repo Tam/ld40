@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class BulletController : MonoBehaviour {
 
+    [Header("Stats")]
     public float damage;
     public float fear;
     public float speed;
@@ -14,8 +15,11 @@ public class BulletController : MonoBehaviour {
     public GameObject impactEffect;
 
     [Space]
+    [Header("Physics")]
     public bool gravityOnImpact;
     public float lifeAfterImpact;
+    [Range(0, 1)]
+    public float randomSpin;
 
     private Transform parentTurret;
     private Transform target;
@@ -28,46 +32,20 @@ public class BulletController : MonoBehaviour {
         this.target = target;
 
         rb = GetComponent<Rigidbody>();
-        //Vector3 dir = target.position - transform.position;
-        rb.AddForce(transform.TransformDirection(Vector3.right) * speed * 100);
-        rb.AddTorque(Random.insideUnitSphere);
+
+        rb.AddForce(transform.TransformDirection(Vector3.right) * speed * Random.Range(0.9f, 1) * 100);
+        rb.AddTorque(Random.insideUnitSphere * randomSpin);
+
         Destroy(gameObject, 5f);
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        //if(collision.transform.gameObject.tag == target.transform.gameObject.tag)
-        //{
-            if (gravityOnImpact)
-            {
-                rb.useGravity = true;
-            }
-            Destroy(gameObject, lifeAfterImpact);
-        //}
-        
-    }
-
-    void Update()
-    {
-        if(target == null)
+        if (gravityOnImpact)
         {
-            Destroy(gameObject);
-            return;
+            rb.useGravity = true;
         }
-
-
-
-        //Vector3 dir = target.position - transform.position;
-        //float distanceThisFrame = speed * Time.deltaTime;
-
-        //if(dir.magnitude <= distanceThisFrame)
-        //{
-        //    HitTarget();
-        //    return;
-        //}
-
-        //transform.Translate(dir.normalized * distanceThisFrame, Space.World);
-        //transform.LookAt(target);
+        Destroy(gameObject, lifeAfterImpact);
     }
 
     void HitTarget()
@@ -94,4 +72,6 @@ public class BulletController : MonoBehaviour {
 
         Destroy(gameObject);
     }
+
+
 }

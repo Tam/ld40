@@ -6,7 +6,6 @@ namespace UI
     [RequireComponent(typeof(RectTransform))]
     public class UpgradePanel : MonoBehaviour
     {
-
         MonoBehaviour Owner;
 
         // Variables
@@ -63,7 +62,7 @@ namespace UI
             if(Owner.GetType() == typeof(Traps))
             {
                 Traps Temp = (Traps)Owner;
-                Temp.SetAttractionTime(GlobalVars.instance.CheckAtractionTimeIncrease);
+                Temp.SetAttractionTime(TrapTypesUpgrades.RequestUpgradeAmount(UpgradeType.CatchCoolDown, Temp.Type));
             }
             else if(Owner.GetType() == typeof(TurretController))
             {
@@ -76,7 +75,7 @@ namespace UI
             if (Owner.GetType() == typeof(Traps))
             {
                 Traps Temp = (Traps)Owner;
-                Temp.SetAttractionTime(GlobalVars.instance.CatchRateIncrease);
+                Temp.SetSucessRate(TrapTypesUpgrades.RequestUpgradeAmount(UpgradeType.CatchSuccessChance, Temp.Type));
             }
             else if (Owner.GetType() == typeof(TurretController))
             {
@@ -89,7 +88,7 @@ namespace UI
             if (Owner.GetType() == typeof(Traps))
             {
                 Traps Temp = (Traps)Owner;
-                Temp.SetAttractionTime(GlobalVars.instance.AttractRaduisIncrease);
+                Temp.SetCatcherRaduis(TrapTypesUpgrades.RequestUpgradeAmount(UpgradeType.CatchRaduis, Temp.Type));
             }
             else if (Owner.GetType() == typeof(TurretController))
             {

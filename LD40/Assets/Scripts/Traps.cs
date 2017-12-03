@@ -16,6 +16,8 @@ public class Traps : MonoBehaviour
 
     private GlobalVars _globalVars;
 
+    public TrapTypes Type;
+
     private void Start()
     {
         _globalVars = GlobalVars.instance;
@@ -58,16 +60,19 @@ public class Traps : MonoBehaviour
     {
         AttractRaduis += _raduis;
         GetComponentInChildren<SphereCollider>().radius = AttractRaduis;
+        UpdateUI();
     }
 
     public void SetSucessRate(float _Valve)
     {
         SucessRate += _Valve;
+        UpdateUI();
     }
 
     public void SetAttractionTime(int _time)
     {
         CheckAttractionTime -= _time;
+        UpdateUI();
     }
 
     void OnMouseOver()
@@ -101,6 +106,11 @@ public class Traps : MonoBehaviour
             UIStat.Create("Area of Effect", AttractRaduis),
             this
         );
+    }
+
+    void UpdateUI()
+    {
+        _globalVars.uiManager.upgradePanel.SetStats(UIStat.Create("Cooldown Duration", CheckAttractionTime),UIStat.Create("Success Chance", SucessRate), UIStat.Create("Area of Effect", AttractRaduis));
     }
 
     void MakeUIDisappear()

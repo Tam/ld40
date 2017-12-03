@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using mobs;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,9 +25,6 @@ public class TurretController : MonoBehaviour {
     public float findTargetFrequency = 0.75f;
     
     [Space]
-    public float damage = 1f;
-    public float fear;
-
     public float damagePerTick = 0.1f;
     public float fearPerTick;
     
@@ -115,11 +113,16 @@ public class TurretController : MonoBehaviour {
 
     void ShootProjectile()
     {
+        if (bulletPrefab == null)
+        {
+            throw new UnityException("Did not define a bullet prefab for turret.");
+        }
+
         if (IsLookingAtTarget())
         {
             if (fireCountdown <= 0f)
             {
-                FireProjectile();
+                FireProjectiles();
                 fireCountdown = 1f / fireRate;
             }
         }
@@ -136,6 +139,7 @@ public class TurretController : MonoBehaviour {
         if(target != null)
         {
             particles.Play();
+            HitTarget(damagePerTick, fearPerTick);
         }        
 
     }
@@ -154,6 +158,7 @@ public class TurretController : MonoBehaviour {
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(0, muzzlePoint.position);
             lineRenderer.SetPosition(1, target.transform.position);
+            HitTarget(damagePerTick, fearPerTick);
         }
         else
         {
@@ -162,11 +167,10 @@ public class TurretController : MonoBehaviour {
        
     }
 
-    void FireProjectile()
+    void FireProjectiles()
     {
         for(int i = 0; i < projectilesPerShot; i++)
         {
-
             Vector3 rot = Random.insideUnitSphere * spread;
             Quaternion rotation = Quaternion.Euler(rot) * muzzlePoint.transform.rotation;
 
@@ -179,6 +183,26 @@ public class TurretController : MonoBehaviour {
         }
     }
 
+    void HitTarget(float damage, float fear)
+    {
+        Protester protester = target.GetComponent<Protester>();
+
+        if(protester != null)
+        {
+            if (damage > 0)
+            {
+                protester.Damage(damage);
+            }
+
+            if(fear > 0)
+            {
+                protester.Scare(fear, transform);
+            }
+        }
+
+    }
+
+
     bool IsLookingAtTarget()
     {
         targetLineColor = Color.red;
@@ -187,6 +211,7 @@ public class TurretController : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(muzzlePoint.transform.position, muzzlePoint.transform.TransformDirection(Vector3.right), out hit, 100f))
         {
+            
             if (hit.transform.gameObject.GetInstanceID() == target.GetInstanceID())
             {
                 targetLineColor = Color.blue;
@@ -215,15 +240,6 @@ public class TurretController : MonoBehaviour {
         
         if(target != null && showRayToTarget)
         {
-            //TODO: Set color to green is target in range, else red
-            //if (Vector3.Distance(transform.position, target.transform.position) <= range)
-            //{
-            //    Gizmos.color = Color.blue;
-            //}
-            //else
-            //{
-            //    Gizmos.color = Color.red;
-            //}
             Gizmos.color = targetLineColor;
             Gizmos.DrawLine(muzzlePoint.transform.position, target.transform.position);
         }
