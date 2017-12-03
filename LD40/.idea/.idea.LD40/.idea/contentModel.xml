@@ -16,6 +16,10 @@
         <e p="Scripts" t="Include">
           <e p="BulletController.cs" t="Include" />
           <e p="GlobalVars.cs" t="Include" />
+          <e p="Helpers.cs" t="Include" />
+          <e p="logic" t="Include">
+            <e p="SocialBuzz.cs" t="Include" />
+          </e>
           <e p="mobs" t="Include">
             <e p="Globflob.cs" t="Include" />
             <e p="MobSpawner.cs" t="Include" />

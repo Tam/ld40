@@ -43,16 +43,10 @@ namespace mobs
 		private void Update()
 		{
 			// If we're not pathing, face the centre
-			if (!_agent.pathPending)
+			if (Helpers.AgentHasStoppedMoving(_agent))
 			{
-				if (_agent.remainingDistance <= _agent.stoppingDistance)
-				{
-					if (!_agent.hasPath || _agent.velocity.sqrMagnitude == 0f)
-					{
-						if (_fleeing) _fleeing = false;
-						FaceTarget();
-					}
-				}
+				if (_fleeing) _fleeing = false;
+				FaceTarget();
 			}
 		}
 
@@ -68,7 +62,8 @@ namespace mobs
 			if (_fleeing)
 				return;
 			
-			if (Random.value >= 0.25f)
+			// A 75% chance of changing target
+			if (Random.value <= 0.75f)
 				PickAndGoToRandomTarget();
 		}
 
@@ -77,14 +72,17 @@ namespace mobs
 		/// </summary>
 		private void PickAndGoToRandomTarget()
 		{
+			// Pick a random protester target
 			Transform[] targets = _globalVars.ProtestorsTargets;
 			_target = targets[Random.Range(0, targets.Length)];
 
+			// Find a random spot around that target
 			Vector3 target = _target.position;
 			float rand = Random.Range(-3.5f, 3f);
 			target.x += rand;
 			target.z += rand;
 
+			// Go there
 			_agent.SetDestination(target);
 		}
 
@@ -129,6 +127,7 @@ namespace mobs
 		/// <param name="fearLocation">Optional location to run from (will 180 if null)</param>
 		public void Scare(float amount, Transform fearLocation = null)
 		{
+			// TODO: Change me to fear amount equates to how far they run, not whether they do 
 			currentFear += amount;
 
 			if (currentFear >= fearLimit)
@@ -147,11 +146,12 @@ namespace mobs
 			
 			Vector3 nextPos;
 			
-			if (from)
-				nextPos = transform.position - (from.position - transform.position);
-			else
-				nextPos = transform.position - transform.forward;
-			_agent.SetDestination(nextPos);
+			if (from) nextPos = from.position - transform.position;
+			else nextPos = transform.forward;
+
+			nextPos = nextPos.normalized * 10f;
+			
+			_agent.SetDestination(transform.position - nextPos);
 		}
 	}
 }

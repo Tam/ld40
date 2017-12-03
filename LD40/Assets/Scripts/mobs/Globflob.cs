@@ -54,10 +54,8 @@ namespace mobs
             }
             else
             {
-                if (!_agent.pathPending)
-                    if (_agent.remainingDistance <= _agent.stoppingDistance)
-                        if (!_agent.hasPath || _agent.velocity.sqrMagnitude == 0f)
-	                        Capture();
+	            if (Helpers.AgentHasStoppedMoving(_agent))
+		            Capture();
             }
 		}
 
@@ -79,7 +77,7 @@ namespace mobs
 
 		private void Capture()
 		{
-			_globalVars.NumUnporcessedGlobFlops += AmountOfResoucre;
+			_globalVars.globflobsCaptured = AmountOfResoucre;
 			_globalVars.DecreaseCurrentMobsBy(MobTypes.Globflob, 1);
 			Destroy(gameObject);
 		}
