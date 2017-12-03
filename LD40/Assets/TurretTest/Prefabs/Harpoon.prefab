@@ -492,9 +492,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb4e1733bc3b14e4580e87aca061d6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  damage: 3.33
   fear: 0
   speed: 5
   impactEffect: {fileID: 0}
   gravityOnImpact: 1
   lifeAfterImpact: 3
+  randomSpin: 0

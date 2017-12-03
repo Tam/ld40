@@ -146,3 +146,4 @@ MonoBehaviour:
   impactEffect: {fileID: 0}
   gravityOnImpact: 1
   lifeAfterImpact: 3
+  randomSpin: 1
