@@ -133,13 +133,13 @@ public class GlobalVars : MonoBehaviour
 	// Game Stats
 	// =====================================================================
 
-	private int _day;
+	private int _day = 1;
 	public int day
 	{
 		get { return _day; }
 	}
 
-	private int _month;
+	private int _month = 1;
 	public int month
 	{
 		get { return _month; }
@@ -180,9 +180,14 @@ public class GlobalVars : MonoBehaviour
 	/// <param name="worth">
 	/// 	How much Supervaluableunobtainium this Globflob is worth.
 	/// 	Leave at -1 (unset) to use the default value.
+	/// 	TODO: For worth to work, Factory needs to know the worth of each Globflob
+	/// 	TODO(cont.): So we'll need to store each Globflob in a list w/ their worth
 	/// </param>
 	public void ProcessGlobflobs(int amount, int worth = -1)
 	{
+		if (_unprocessedGlobflobs == 0)
+			return;
+		
 		if (worth < 0)
 			worth = globflobsToSupervaluableunobtainium;
 		

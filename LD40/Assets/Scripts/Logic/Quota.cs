@@ -17,7 +17,7 @@ namespace Logic
 			get { return _currentQuota; }
 		}
 
-		private int _maxQuota;
+		private int _maxQuota = 10;
 		public int maxQuota
 		{
 			get { return _maxQuota; }
