@@ -15,7 +15,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/GlobalVars.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="544">
-              <caret line="400" column="23" lean-forward="true" selection-start-line="400" selection-start-column="23" selection-end-line="400" selection-end-column="23" />
+              <caret line="400" column="23" lean-forward="false" selection-start-line="400" selection-start-column="23" selection-end-line="400" selection-end-column="23" />
               <folding>
                 <marker date="1512306106033" expanded="true" signature="6:41" ph="..." />
                 <marker date="1512306106033" expanded="true" signature="63:90" ph="{...}" />
@@ -84,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="208">
-              <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+              <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
               <folding>
                 <marker date="1512306106054" expanded="true" signature="6:57" ph="..." />
                 <marker date="1512306106054" expanded="true" signature="71:1214" ph="{...}" />
@@ -312,12 +312,12 @@
       <updated>1512209121100</updated>
       <workItem from="1512209123334" duration="19004000" />
       <workItem from="1512234089046" duration="13177000" />
-      <workItem from="1512290112600" duration="14522000" />
+      <workItem from="1512290112600" duration="14861000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46703000" />
+    <option name="totallyTimeSpent" value="47042000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -941,7 +941,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/GlobalVars.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
-          <caret line="400" column="23" lean-forward="true" selection-start-line="400" selection-start-column="23" selection-end-line="400" selection-end-column="23" />
+          <caret line="400" column="23" lean-forward="false" selection-start-line="400" selection-start-column="23" selection-end-line="400" selection-end-column="23" />
           <folding>
             <marker date="1512306106033" expanded="true" signature="6:41" ph="..." />
             <marker date="1512306106033" expanded="true" signature="63:90" ph="{...}" />
@@ -1038,7 +1038,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
-          <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+          <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
           <folding>
             <marker date="1512306106054" expanded="true" signature="6:57" ph="..." />
             <marker date="1512306106054" expanded="true" signature="71:1214" ph="{...}" />
