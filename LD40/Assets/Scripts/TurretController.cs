@@ -89,6 +89,11 @@ public class TurretController : MonoBehaviour {
             {
                 lineRenderer.enabled = false;
             }
+
+            if(emissionLight != null)
+            {
+                emissionLight.enabled = false;
+            }
         }
 	}
 
