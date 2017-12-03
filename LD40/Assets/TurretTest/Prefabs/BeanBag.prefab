@@ -142,7 +142,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   fear: 2
-  speed: 8
+  speed: 12
+  additionalDamage: 0
+  additionalFear: 2524.355
   impactEffect: {fileID: 0}
   gravityOnImpact: 1
   lifeAfterImpact: 3
