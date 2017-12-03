@@ -18,7 +18,10 @@ public class TurretPlacement : MonoBehaviour
             {
                 //Make Build Buttons Interactable
                 //Send Which Placement Platform is requesting Building
-                GlobalVars.instance.uiManager.turretBuildUI.SetButtonInteractable(this, true);
+                if (PlacedTurret == null)
+                {
+                    GlobalVars.instance.uiManager.turretBuildUI.SetButtonInteractable(this, true);
+                }
             }
         }
         
@@ -29,7 +32,7 @@ public class TurretPlacement : MonoBehaviour
         }
     }
 
-	private void OnMouseOver()
+	private void OnMouseEnter()
 	{
 	    _mouseOver = true;
 	}

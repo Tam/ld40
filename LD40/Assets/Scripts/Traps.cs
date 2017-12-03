@@ -92,7 +92,7 @@ public class Traps : MonoBehaviour
     {
         if (isUIUp)
         {
-//            MakeUIDisappear();
+//          MakeUIDisappear();
             isUIUp = false;
         }
     }

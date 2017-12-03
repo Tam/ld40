@@ -485,7 +485,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 150298305}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -491, y: -305.5, z: 0}
+  m_LocalPosition: {x: -492.5, y: -306.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 269588082}
@@ -535,7 +535,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 150298308}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1907773296}
+        m_MethodName: OnClickTurret2
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1896876849919396, guid: d9f3bc90cc71d0948825c4664dd31e1c,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &150298308
@@ -3418,7 +3430,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1320643537}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -431, y: -305.5, z: 0}
+  m_LocalPosition: {x: -432.5, y: -306.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1538877703}
@@ -3468,7 +3480,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1320643540}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1907773296}
+        m_MethodName: OnClickTurret3
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1426990662938406, guid: f738b3f5142e10f448907ecdc3b395b1,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1320643540
@@ -4434,7 +4458,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1696241051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 561, y: 315.5, z: 0}
+  m_LocalPosition: {x: 562.5, y: 316.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2030480588}
@@ -5135,7 +5159,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1837694640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -551, y: -305.5, z: 0}
+  m_LocalPosition: {x: -552.5, y: -306.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 404027265}
@@ -5185,7 +5209,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1837694643}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1907773296}
+        m_MethodName: OnClickTurret1
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1896876849919396, guid: c83ffd896b3204440b028de535b557fd,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1837694643
