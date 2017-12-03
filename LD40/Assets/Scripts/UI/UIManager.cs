@@ -1,4 +1,4 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,48 +10,74 @@ namespace UI
 		// Variables
 		// =====================================================================
 
+		[HideInInspector]
 		public GlobalVars globalVars;
 
 		public Button overlayButton;
 		
 		public UpgradePanel upgradePanel;
 
+        public TurretBuildUI turretBuildUI;
+
 		public GameOverPanel gameOverPanel;
-		
+
+		private readonly List<BasePanel> _panelsWithOverlay = new List<BasePanel>();
+
+		private bool _isHidingAll;
+
 		// Unity
 		// =====================================================================
 
-		private void Awake()
+		private void Start()
 		{
 			// Make sure everything is hidden
 			upgradePanel.Hide();
 			gameOverPanel.Hide();
-			
-			// TODO: When opening a panel w/ overlay, add panel to overlay list
-			// TODO: When closing panel, remove from overlay list (hide overlay if list now empty)
-			// TODO: On overlay click close all panels in overlay list
+			overlayButton.gameObject.SetActive(false);
 		}
 
 		// Actions
 		// =====================================================================
 
-		public void ShowOverlay()
+		public void AddPanelToOverlayList(BasePanel panel)
 		{
+			_panelsWithOverlay.Add(panel);
 			overlayButton.gameObject.SetActive(true);
 		}
 
-		public void HideOverlay()
+		public void RemovePanelFromOverlayList(BasePanel panel)
 		{
-			overlayButton.gameObject.SetActive(false);
+			if (_isHidingAll)
+				return;
+			
+			_panelsWithOverlay.Remove(panel);
+			if (_panelsWithOverlay.Count == 0)
+				overlayButton.gameObject.SetActive(false);
 		}
 
-		public void ShowGameOver(float score)
+		public void ShowGameOver()
 		{
-			gameOverPanel.scoreText.text = score + "";
+			gameOverPanel.scoreText.text = globalVars.score + "";
 			gameOverPanel.Show();
 			
 			// Pause the game
 			globalVars.Pause();
+		}
+		
+		// Events
+		// =====================================================================
+
+		public void OnOverlayClick()
+		{
+			_isHidingAll = true;
+			
+			foreach (BasePanel panel in _panelsWithOverlay)
+				panel.Hide();
+			
+			_panelsWithOverlay.Clear();
+			overlayButton.gameObject.SetActive(false);
+			
+			_isHidingAll = false;
 		}
 
 	}

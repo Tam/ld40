@@ -4,28 +4,35 @@ namespace UI
 {
 	public class BasePanel : MonoBehaviour
 	{
-
-		protected GlobalVars _globalVars;
+		protected GlobalVars globalVars;
 		
 		protected bool showWithOverlay = true;
-	
+
 		// Actions
 		// =====================================================================
 
 		public void Show()
 		{
-			if (_globalVars == null)
-				_globalVars = GlobalVars.instance;
+			SetActive(true);
 			
 			if (showWithOverlay)
-				_globalVars.uiManager.ShowOverlay();
-			
-			gameObject.SetActive(true);
+				globalVars.uiManager.AddPanelToOverlayList(this);
 		}
 
 		public void Hide()
 		{
-			gameObject.SetActive(false);
+			if (showWithOverlay && globalVars != null)
+				globalVars.uiManager.RemovePanelFromOverlayList(this);
+			
+			SetActive(false);
+		}
+
+		private void SetActive(bool active)
+		{
+			gameObject.SetActive(active);
+			
+			if (active && globalVars == null)
+				globalVars = GlobalVars.instance;
 		}
 		
 	}

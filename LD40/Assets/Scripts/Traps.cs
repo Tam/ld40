@@ -13,6 +13,7 @@ public class Traps : MonoBehaviour
     public List<GameObject> GlobFlopsInRange = new List<GameObject>();
 
     private bool isUIUp;
+    private bool _wasPlaced = true;
 
     private GlobalVars _globalVars;
 
@@ -79,7 +80,7 @@ public class Traps : MonoBehaviour
     {
         if (isUIUp != true)
         {
-            if(Input.GetMouseButtonDown(0))
+            if(Input.GetMouseButtonUp(0))
             { 
                 MakeUIAppear();
                 isUIUp = true;
@@ -98,6 +99,12 @@ public class Traps : MonoBehaviour
 
     void MakeUIAppear()
     {
+        if (_wasPlaced)
+        {
+            _wasPlaced = false;
+            return;
+        }
+        
         _globalVars.uiManager.upgradePanel.SetAndShow(
             transform,
             "Trap Name Here",

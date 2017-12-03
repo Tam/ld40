@@ -12,17 +12,27 @@ namespace UI
 
 		public Text scoreText;
 		
+		// Unity
+		// =====================================================================
+
+		private void Awake()
+		{
+			showWithOverlay = false;
+		}
+
 		// Events
 		// =====================================================================
 
 		public void OnMainMenuClick()
 		{
+			// TODO: Main Menu Button
 			Debug.Log("MAIN MENU");
 		}
 
 		public void OnRestartClick()
 		{
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			globalVars.UnPause();
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
 
 	}

@@ -187,6 +187,7 @@ MonoBehaviour:
   CheckAttractionTime: 5
   TargetPoint: {fileID: 4242005623977434}
   GlobFlopsInRange: []
+  Type: 2
 --- !u!135 &135802822483102616
 SphereCollider:
   m_ObjectHideFlags: 1
