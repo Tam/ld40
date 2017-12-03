@@ -366,7 +366,6 @@ public class GlobalVars : MonoBehaviour
 		if (instance != null) return;
 		
 		instance = this;
-		uiManager.globalVars = instance;
 		socialBuzz.globalVars = instance;
 		quota.globalVars = instance;
 	}
@@ -379,16 +378,6 @@ public class GlobalVars : MonoBehaviour
 
 	// Actions
 	// =====================================================================
-
-	public void Pause()
-	{
-		Time.timeScale = 0;
-	}
-
-	public void UnPause()
-	{
-		Time.timeScale = 1;
-	}
 
 	/// <summary>
 	/// Goes to the next day

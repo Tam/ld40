@@ -4,7 +4,7 @@ using UnityEngine.UI;
 namespace UI
 {
     [RequireComponent(typeof(RectTransform))]
-    public class UpgradePanel : BasePanel
+    public class UpgradePanel : MonoBehaviour
     {
         MonoBehaviour Owner;
 
@@ -119,6 +119,16 @@ namespace UI
 
 		// Actions
 		// =====================================================================
+
+		public void Show()
+		{
+			gameObject.SetActive(true);
+		}
+
+		public void Hide()
+		{
+			gameObject.SetActive(false);
+		}
 
         public void SetAndShow(
             Transform target,
