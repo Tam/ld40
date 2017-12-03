@@ -555,9 +555,9 @@ MonoBehaviour:
   enemyTag: Protester
   range: 25
   turnSpeed: 10
-  findTargetFrequency: 1
+  findTargetFrequency: 0.25
   damagePerTick: 0.1
-  fearPerTick: 0
+  fearPerTick: 1
   damageUpgradeMultiplier: 1.25
   fearUpgradeMultiplier: 1.25
   fireType: 2
