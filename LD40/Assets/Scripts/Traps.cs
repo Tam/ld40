@@ -16,6 +16,8 @@ public class Traps : MonoBehaviour
 
     private GlobalVars _globalVars;
 
+    public TrapTypes Type;
+
     private void Start()
     {
         _globalVars = GlobalVars.instance;
