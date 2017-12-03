@@ -133,6 +133,16 @@ public class GlobalVars : MonoBehaviour
 	// Game Stats
 	// =====================================================================
 
+	// Score
+	// ---------------------------------------------------------------------
+
+	public float score;
+	public bool scoreBonus;
+	public float scoreBonusMultiplier = 1.2f;
+	
+	// Date
+	// ---------------------------------------------------------------------
+	
 	private int _day = 1;
 	public int day
 	{
@@ -219,6 +229,9 @@ public class GlobalVars : MonoBehaviour
 			
 		// Increase the money
 		_money += amount * moneyToSupervaluableunobtainium;
+		
+		// Increase the score
+		score += scoreBonus ? amount * scoreBonusMultiplier : amount;
 	}
 	
 	// Money

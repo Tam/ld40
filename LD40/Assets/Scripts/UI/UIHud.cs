@@ -16,6 +16,8 @@ namespace UI
 		public Text protesters;
 		public Text globflobs;
 		public Text time;
+		public Text score;
+		public Text scoreBonus;
 		
 		private GlobalVars _globalVars;
 		
@@ -51,6 +53,10 @@ namespace UI
 			                 _globalVars.maxGlobflobs;
 
 			time.text = _globalVars.day + " / " + _globalVars.month;
+
+			score.text = _globalVars.score + "";
+
+			scoreBonus.text = _globalVars.scoreBonus ? "Yes" : "No";
 		}
 		
 	}
