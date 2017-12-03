@@ -29,6 +29,7 @@
           <e p="PlacementCollision.cs" t="Include" />
           <e p="SetRandomColor.cs" t="Include" />
           <e p="Traps.cs" t="Include" />
+          <e p="TrapTypesUpgrades.cs" t="Include" />
           <e p="TrapUpgrades.cs" t="Include" />
           <e p="TurretController.cs" t="Include" />
           <e p="UI" t="Include">
