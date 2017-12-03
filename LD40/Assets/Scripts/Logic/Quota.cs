@@ -47,7 +47,7 @@ namespace Logic
 				return;
 			}
 			
-			Debug.Log("Game over, man! Game over! (TODO)");
+			globalVars.uiManager.ShowGameOver();
 		}
 		
 	}

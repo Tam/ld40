@@ -4,7 +4,7 @@ namespace UI
 {
 	public class BasePanel : MonoBehaviour
 	{
-		private GlobalVars _globalVars;
+		protected GlobalVars globalVars;
 		
 		protected bool showWithOverlay = true;
 
@@ -16,13 +16,13 @@ namespace UI
 			SetActive(true);
 			
 			if (showWithOverlay)
-				_globalVars.uiManager.AddPanelToOverlayList(this);
+				globalVars.uiManager.AddPanelToOverlayList(this);
 		}
 
 		public void Hide()
 		{
-			if (showWithOverlay && _globalVars != null)
-				_globalVars.uiManager.RemovePanelFromOverlayList(this);
+			if (showWithOverlay && globalVars != null)
+				globalVars.uiManager.RemovePanelFromOverlayList(this);
 			
 			SetActive(false);
 		}
@@ -31,8 +31,8 @@ namespace UI
 		{
 			gameObject.SetActive(active);
 			
-			if (active && _globalVars == null)
-				_globalVars = GlobalVars.instance;
+			if (active && globalVars == null)
+				globalVars = GlobalVars.instance;
 		}
 		
 	}
