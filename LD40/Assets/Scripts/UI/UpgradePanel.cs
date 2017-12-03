@@ -6,7 +6,6 @@ namespace UI
     [RequireComponent(typeof(RectTransform))]
     public class UpgradePanel : MonoBehaviour
     {
-
         MonoBehaviour Owner;
 
         // Variables
