@@ -34,8 +34,12 @@
           <e p="Traps.cs" t="Include" />
           <e p="TrapTypesUpgrades.cs" t="Include" />
           <e p="TrapUpgrades.cs" t="Include" />
+          <e p="TurretBuildUI.cs" t="Include" />
           <e p="TurretController.cs" t="Include" />
+          <e p="TurretPlacement.cs" t="Include" />
           <e p="UI" t="Include">
+            <e p="BasePanel.cs" t="Include" />
+            <e p="GameOverPanel.cs" t="Include" />
             <e p="UIHud.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
             <e p="UIStat.cs" t="Include" />

@@ -7,27 +7,32 @@ namespace UI
 		private GlobalVars _globalVars;
 		
 		protected bool showWithOverlay = true;
-	
+
 		// Actions
 		// =====================================================================
 
 		public void Show()
 		{
-			if (_globalVars == null)
-				_globalVars = GlobalVars.instance;
-
+			SetActive(true);
+			
 			if (showWithOverlay)
 				_globalVars.uiManager.AddPanelToOverlayList(this);
-			
-			gameObject.SetActive(true);
 		}
 
 		public void Hide()
 		{
-			if (showWithOverlay)
+			if (showWithOverlay && _globalVars != null)
 				_globalVars.uiManager.RemovePanelFromOverlayList(this);
 			
-			gameObject.SetActive(false);
+			SetActive(false);
+		}
+
+		private void SetActive(bool active)
+		{
+			gameObject.SetActive(active);
+			
+			if (active && _globalVars == null)
+				_globalVars = GlobalVars.instance;
 		}
 		
 	}

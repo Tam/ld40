@@ -10,6 +10,7 @@ namespace UI
 		// Variables
 		// =====================================================================
 
+		[HideInInspector]
 		public GlobalVars globalVars;
 
 		public Button overlayButton;
@@ -22,14 +23,17 @@ namespace UI
 
 		private readonly List<BasePanel> _panelsWithOverlay = new List<BasePanel>();
 
+		private bool _isHidingAll;
+
 		// Unity
 		// =====================================================================
 
-		private void Awake()
+		private void Start()
 		{
 			// Make sure everything is hidden
 			upgradePanel.Hide();
 			gameOverPanel.Hide();
+			overlayButton.gameObject.SetActive(false);
 		}
 
 		// Actions
@@ -43,6 +47,9 @@ namespace UI
 
 		public void RemovePanelFromOverlayList(BasePanel panel)
 		{
+			if (_isHidingAll)
+				return;
+			
 			_panelsWithOverlay.Remove(panel);
 			if (_panelsWithOverlay.Count == 0)
 				overlayButton.gameObject.SetActive(false);
@@ -62,8 +69,15 @@ namespace UI
 
 		public void OnOverlayClick()
 		{
+			_isHidingAll = true;
+			
 			foreach (BasePanel panel in _panelsWithOverlay)
 				panel.Hide();
+			
+			_panelsWithOverlay.Clear();
+			overlayButton.gameObject.SetActive(false);
+			
+			_isHidingAll = false;
 		}
 
 	}
