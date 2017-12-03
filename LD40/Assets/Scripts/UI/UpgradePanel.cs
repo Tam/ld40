@@ -3,58 +3,78 @@ using UnityEngine.UI;
 
 namespace UI
 {
-	[RequireComponent(typeof(RectTransform))]
-	public class UpgradePanel : MonoBehaviour
-	{
-		
-		// Variables
-		// =====================================================================
+    [RequireComponent(typeof(RectTransform))]
+    public class UpgradePanel : MonoBehaviour
+    {
 
-		public new Text name;
-		
-		public Text stat1Label;
-		public Text stat1Value;
+        // Variables
+        // =====================================================================
 
-		public Text stat2Label;
-		public Text stat2Value;
+        public new Text name;
 
-		public Text stat3Label;
-		public Text stat3Value;
+        public Text stat1Label;
+        public Text stat1Value;
 
-		private RectTransform _rect;
-		
-		// Setters
-		// =====================================================================
+        public Text stat2Label;
+        public Text stat2Value;
 
-		public void SetName(string name)
-		{
-			this.name.text = name;
-		}
+        public Text stat3Label;
+        public Text stat3Value;
 
-		public void SetStats(UIStat stat1, UIStat stat2, UIStat stat3)
-		{
-			setStat1(stat1);
-			setStat2(stat2);
-			setStat3(stat3);
-		}
+        private RectTransform _rect;
 
-		public void setStat1(UIStat stat)
-		{
-			stat1Label.text = stat.name;
-			stat1Value.text = stat.value;
-		}
+        // Setters
+        // =====================================================================
 
-		public void setStat2(UIStat stat)
-		{
-			stat2Label.text = stat.name;
-			stat2Value.text = stat.value;
-		}
+        public void SetName(string name)
+        {
+            this.name.text = name;
+        }
 
-		public void setStat3(UIStat stat)
-		{
-			stat3Label.text = stat.name;
-			stat3Value.text = stat.value;
-		}
+        public void SetStats(UIStat stat1, UIStat stat2, UIStat stat3)
+        {
+            setStat1(stat1);
+            setStat2(stat2);
+            setStat3(stat3);
+        }
+
+        public void setStat1(UIStat stat)
+        {
+            stat1Label.text = stat.name;
+            stat1Value.text = stat.value;
+        }
+
+        public void setStat2(UIStat stat)
+        {
+            stat2Label.text = stat.name;
+            stat2Value.text = stat.value;
+        }
+
+        public void setStat3(UIStat stat)
+        {
+            stat3Label.text = stat.name;
+            stat3Value.text = stat.value;
+        }
+
+        public void UpgradeButton1()
+        {
+
+        }
+
+        public void UpgradeButton2()
+        {
+
+        }
+
+        public void UpgradeButton3()
+        {
+
+        }
+
+        public void DestroyItem()
+        {
+
+        }
 		
 		// Unity
 		// =====================================================================

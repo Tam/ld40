@@ -159,6 +159,24 @@ public class GlobalVars : MonoBehaviour
     //Amount of Traps Placed
     public int TrapsPlaced;
 
+    //------------------------------------------Upgrades----------------------------------------------//
+    //Damage Modifa when you upgrade the damage this value to added on.
+    public int TDamageUpgradeNum;
+    //This value to added on when upgrading Attack Speed
+    public float TAttackSpeed;
+    //this value is added on when upgrading range
+    public int TAttackRange;
+
+
+    //thi value is added on when the play upgrades the catch rate or a trap
+    public int CatchRateIncrease;
+
+    //this value is added on when upgrading the attract raduis in traps
+    public int AttractRaduisIncrease;
+
+    //this value is sbtracted on when decreases the attration time
+    public int CheckAtractionTimeIncrease;
+
 
     public int AmountGlobFlops
     {
