@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 
 public class Factory : MonoBehaviour
 {
@@ -8,7 +10,19 @@ public class Factory : MonoBehaviour
 
 	private GlobalVars _globalVars;
 
-	public float processingSpeed = 1f;
+	private WaitForSeconds _processingSpeed = new WaitForSeconds(1f);
+	private float _processingSpeedSeconds = 1f;
+	public float processingSpeed
+	{
+		get { return _processingSpeedSeconds; }
+		set
+		{
+			_processingSpeedSeconds = value;
+			_processingSpeed = new WaitForSeconds(value);
+		}
+	}
+
+	public int globflobsToProcessEachTime = 1;
 	
 	// Unity
 	// =====================================================================
@@ -16,14 +30,18 @@ public class Factory : MonoBehaviour
 	private void Start()
 	{
 		_globalVars = GlobalVars.instance;
+		StartCoroutine("Process");
 	}
 	
 	// Actions
 	// =====================================================================
 
-	private void Process()
+	private IEnumerator Process()
 	{
-		//
+		for(;;) {
+			_globalVars.ProcessGlobflobs(globflobsToProcessEachTime);
+			yield return _processingSpeed;
+		}
 	}
 	
 }

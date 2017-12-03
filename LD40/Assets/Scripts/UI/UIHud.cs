@@ -15,6 +15,7 @@ namespace UI
 		public Text buzz;
 		public Text protesters;
 		public Text globflobs;
+		public Text time;
 		
 		private GlobalVars _globalVars;
 		
@@ -48,6 +49,8 @@ namespace UI
 
 			globflobs.text = _globalVars.currentGlobflobs + " / " +
 			                 _globalVars.maxGlobflobs;
+
+			time.text = _globalVars.day + " / " + _globalVars.month;
 		}
 		
 	}
