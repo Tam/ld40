@@ -55,7 +55,7 @@ namespace Logic
 			_currentSocialBuzz += protesters * protestersToBuzz;
 			
 			if (_currentSocialBuzz >= _maxSocialBuzz)
-				Debug.Log("YOU STOLE FIZZY LIFTING DRINKS! (TODO: Trigger inspection logic)");
+				globalVars.inspection.TriggerInspector();
 		}
 		
 	}

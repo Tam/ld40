@@ -22,6 +22,8 @@ public class GlobalVars : MonoBehaviour
 
 	public Quota quota;
 
+	public Inspection inspection;
+
 	// Time Playing the game from start to finish.
 	[Space]
 	public float TimeElapsed;
@@ -369,6 +371,7 @@ public class GlobalVars : MonoBehaviour
 		uiManager.globalVars = instance;
 		socialBuzz.globalVars = instance;
 		quota.globalVars = instance;
+		inspection.globalVars = instance;
 	}
 
 	private void Start()

@@ -47,7 +47,7 @@ namespace Logic
 				return;
 			}
 			
-			globalVars.uiManager.ShowGameOver();
+			globalVars.uiManager.ShowGameOver("Failed to meet monthly quota");
 		}
 		
 	}
