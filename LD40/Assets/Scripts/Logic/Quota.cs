@@ -11,6 +11,8 @@ namespace Logic
 		[HideInInspector]
 		public GlobalVars globalVars;
 
+		public float monthlyQuotaMultiplier = 1.75f;
+
 		private int _currentQuota;
 		public int currentQuota
 		{
@@ -29,8 +31,10 @@ namespace Logic
 		public void IncreaseCurrentQuota(int amount)
 		{
 			_currentQuota += amount;
-			
-			// TODO: If above max quota, get bonus score
+
+			if (!globalVars.scoreBonus)
+				if (_currentQuota > _maxQuota)
+					globalVars.scoreBonus = true;
 		}
 
 		public void CheckQuotaReached()
@@ -38,7 +42,8 @@ namespace Logic
 			if (_currentQuota >= _maxQuota)
 			{
 				_currentQuota = 0;
-				_maxQuota = Mathf.CeilToInt(_maxQuota * 1.2f);
+				globalVars.scoreBonus = false;
+				_maxQuota = Mathf.CeilToInt(_maxQuota * monthlyQuotaMultiplier);
 				return;
 			}
 			
