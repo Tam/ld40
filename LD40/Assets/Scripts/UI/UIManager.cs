@@ -14,12 +14,13 @@ namespace UI
 		public GlobalVars globalVars;
 
 		public Button overlayButton;
-		
+
+		public InspectionPanel inspectionPanel;
 		public UpgradePanel upgradePanel;
-
-        public TurretBuildUI turretBuildUI;
-
 		public GameOverPanel gameOverPanel;
+
+		public TurretBuildUI turretBuildUI;
+
 
 		private readonly List<BasePanel> _panelsWithOverlay = new List<BasePanel>();
 
@@ -32,6 +33,7 @@ namespace UI
 		{
 			// Make sure everything is hidden
 			upgradePanel.Hide();
+			inspectionPanel.Hide();
 			gameOverPanel.Hide();
 			overlayButton.gameObject.SetActive(false);
 		}
