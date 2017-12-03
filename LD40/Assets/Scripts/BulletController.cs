@@ -11,6 +11,11 @@ public class BulletController : MonoBehaviour {
     public float fear;
     public float speed;
 
+    [HideInInspector]
+    public float additionalDamage = 0;
+    [HideInInspector]
+    public float additionalFear = 0;
+
     [Space]
     public GameObject impactEffect;
 
@@ -39,6 +44,22 @@ public class BulletController : MonoBehaviour {
         Destroy(gameObject, 5f);
     }
 
+    public void Upgrade(float damageUpgradeMultiplier, float fearUpgradeMultiplier)
+    {
+        if(additionalDamage == 0)
+        {
+            additionalDamage = damage;
+        }
+
+        if(additionalFear == 0)
+        {
+            additionalFear = fear;
+        }
+
+        additionalDamage *= damageUpgradeMultiplier;
+        additionalFear *= fearUpgradeMultiplier;
+    }
+
     void OnCollisionEnter(Collision collision)
     {
         if (gravityOnImpact)
@@ -61,12 +82,12 @@ public class BulletController : MonoBehaviour {
         {
             if (damage > 0)
             {
-                protester.Damage(damage);
+                protester.Damage(damage + additionalDamage);
             }
 
             if(fear > 0)
             {
-                protester.Scare(fear, parentTurret);
+                protester.Scare(fear + additionalFear, parentTurret);
             }
         }
 

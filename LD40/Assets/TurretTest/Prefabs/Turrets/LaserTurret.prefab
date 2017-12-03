@@ -533,8 +533,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f3527a023db3f449396efcf907de0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitude: 1
-  frequency: 0.5
+  amplitude: 0.15
+  frequency: 10
 --- !u!114 &114502602329521500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -546,6 +546,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad6209c9ddf1d84b81b2701127c50a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  additionalDamagePerTick: 0
+  additionalFearPerTick: 0
+  level: 1
   turretHead: {fileID: 4696064557414492}
   muzzlePoint: {fileID: 4315767562235832}
   enemyTag: Protester

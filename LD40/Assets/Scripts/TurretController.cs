@@ -14,6 +14,13 @@ public class TurretController : MonoBehaviour {
 
     private GameObject target;
 
+    [HideInInspector]
+    public float additionalDamagePerTick = 0;
+    [HideInInspector]
+    public float additionalFearPerTick = 0;
+    [HideInInspector]
+    public int level = 1;
+
     [Header("Turret Parts")]
     public Transform turretHead;
     public Transform muzzlePoint;
@@ -27,7 +34,11 @@ public class TurretController : MonoBehaviour {
     [Space]
     public float damagePerTick = 0.1f;
     public float fearPerTick;
-    
+
+    [Space]
+    public float damageUpgradeMultiplier = 1.25f;
+    public float fearUpgradeMultiplier = 1.25f;
+
     [Space]
     public FireType fireType;
 
@@ -50,13 +61,13 @@ public class TurretController : MonoBehaviour {
     private Color targetLineColor = Color.red;
     public bool showRadius = true;
     public bool showRayToTarget = true;
-
+    
 	void Start ()
     {
         InvokeRepeating("FindTarget", 0, findTargetFrequency);
+        Upgrade();
 	}
 	
-
 	void Update ()
     {
 		if(target != null)
@@ -79,6 +90,35 @@ public class TurretController : MonoBehaviour {
         }
 	}
 
+    void Upgrade()
+    {
+        level++;
+        
+        if(bulletPrefab != null)
+        {
+            BulletController bulletController = bulletPrefab.GetComponent<BulletController>();
+            if(bulletController != null)
+            {
+                bulletController.Upgrade(damageUpgradeMultiplier, fearUpgradeMultiplier);
+            }
+        }
+        else
+        {
+            if (additionalDamagePerTick == 0)
+            {
+                additionalDamagePerTick = damagePerTick;
+            }
+
+            if (additionalFearPerTick == 0)
+            {
+                additionalFearPerTick = fearPerTick;
+            }
+
+            additionalDamagePerTick *= damageUpgradeMultiplier;
+            additionalFearPerTick *= fearUpgradeMultiplier;
+        }
+    }
+    
     void FindTarget()
     {
         GameObject[] targets = GameObject.FindGameObjectsWithTag(enemyTag);
@@ -168,7 +208,7 @@ public class TurretController : MonoBehaviour {
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(0, muzzlePoint.position);
             lineRenderer.SetPosition(1, target.transform.position);
-            HitTarget(damagePerTick, fearPerTick);
+            HitTarget(damagePerTick + additionalDamagePerTick, fearPerTick + additionalFearPerTick);
         }
         else
         {
