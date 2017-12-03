@@ -55,9 +55,11 @@ namespace UI
 				overlayButton.gameObject.SetActive(false);
 		}
 
-		public void ShowGameOver()
+		public void ShowGameOver(string reason)
 		{
+			// Show game over screen
 			gameOverPanel.scoreText.text = globalVars.score + "";
+			gameOverPanel.reasonText.text = reason;
 			gameOverPanel.Show();
 			
 			// Pause the game

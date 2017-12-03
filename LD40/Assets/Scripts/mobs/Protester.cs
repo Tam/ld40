@@ -59,10 +59,8 @@ namespace mobs
 		private void ChangeTarget()
 		{
             // Don't change target if we're fleeing
-            if (_fleeing || gameObject == null)
-            {
+            if (_fleeing)
 				return;
-            }
 			
 			// A 75% chance of changing target
 			if (Random.value <= 0.75f)
