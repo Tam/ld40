@@ -77,7 +77,7 @@ namespace mobs
 
 		private void Capture()
 		{
-			_globalVars.globflobsCaptured = AmountOfResoucre;
+			_globalVars.IncreaseGlobflobsCaptured(AmountOfResoucre);
 			_globalVars.DecreaseCurrentMobsBy(MobTypes.Globflob, 1);
 			Destroy(gameObject);
 		}

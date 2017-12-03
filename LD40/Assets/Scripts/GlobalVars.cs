@@ -138,12 +138,13 @@ public class GlobalVars : MonoBehaviour
 	public int globflobsCaptured
 	{
 		get { return _globflobsCaptured; }
-		set
-		{
-			_globflobsCaptured += value;
-			_unprocessedGlobflobs += value;
-			_maxProtesters += value * protestersToGlobflobs;
-		}
+	}
+
+	public void IncreaseGlobflobsCaptured(int amount)
+	{
+		_globflobsCaptured += amount;
+		_unprocessedGlobflobs += amount;
+		_maxProtesters += amount * protestersToGlobflobs;
 	}
 
 	private int _unprocessedGlobflobs;
@@ -193,17 +194,18 @@ public class GlobalVars : MonoBehaviour
 	public int supervaluableunobtainiumAquiredMonth
 	{
 		get { return _supervaluableunobtainiumAquiredMonth; }
-		set
-		{
-			// Increase the overall total
-			_supervaluableunobtainiumAquiredTotal += value;
+	}
+
+	public void IncreaseSupervaluableunobtainiumAquiredMonth(int amount)
+	{
+		// Increase the overall total
+		_supervaluableunobtainiumAquiredTotal += amount;
 			
-			// Increase the monthly total
-			_supervaluableunobtainiumAquiredMonth += value;
+		// Increase the monthly total
+		_supervaluableunobtainiumAquiredMonth += amount;
 			
-			// Increase the money
-			_money += value * moneyToSupervaluableunobtainium;
-		}
+		// Increase the money
+		_money += amount * moneyToSupervaluableunobtainium;
 	}
 	
 	// Money
@@ -226,6 +228,8 @@ public class GlobalVars : MonoBehaviour
 	}
 
 
+	#region Old variables that need orgainizing
+	
 	//--------------------------------------------AI------------------------------------------------//
 
 	//Amount of globflops on playing felid
@@ -324,6 +328,9 @@ public class GlobalVars : MonoBehaviour
 
 		set { amountCurrency = value; }
 	}
+	
+	#endregion
+	
 
 	// Unity
 	// =====================================================================
