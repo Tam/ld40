@@ -14,7 +14,7 @@ public class TurretPlacement : MonoBehaviour
         {
             //Make Build Buttons Interactable
             //Send Which Placement Platform is requesting Building
-            GlobalVars.Instance.uiManager.turretBuildUI.SetButtonInteractable(this, true);
+            GlobalVars.instance.uiManager.turretBuildUI.SetButtonInteractable(this, true);
         }
     }
 
@@ -23,7 +23,7 @@ public class TurretPlacement : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             //Make Build buttons UnInteractable
-            GlobalVars.Instance.uiManager.turretBuildUI.SetButtonInteractable(null, false);
+            GlobalVars.instance.uiManager.turretBuildUI.SetButtonInteractable(null, false);
         }
     }
 
