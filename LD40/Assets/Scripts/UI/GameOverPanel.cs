@@ -12,6 +12,14 @@ namespace UI
 
 		public Text scoreText;
 		
+		// Unity
+		// =====================================================================
+
+		private void Awake()
+		{
+			showWithOverlay = false;
+		}
+
 		// Events
 		// =====================================================================
 

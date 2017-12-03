@@ -4,8 +4,7 @@ namespace UI
 {
 	public class BasePanel : MonoBehaviour
 	{
-
-		protected GlobalVars _globalVars;
+		private GlobalVars _globalVars;
 		
 		protected bool showWithOverlay = true;
 	
@@ -16,15 +15,18 @@ namespace UI
 		{
 			if (_globalVars == null)
 				_globalVars = GlobalVars.instance;
-			
+
 			if (showWithOverlay)
-				_globalVars.uiManager.ShowOverlay();
+				_globalVars.uiManager.AddPanelToOverlayList(this);
 			
 			gameObject.SetActive(true);
 		}
 
 		public void Hide()
 		{
+			if (showWithOverlay)
+				_globalVars.uiManager.RemovePanelFromOverlayList(this);
+			
 			gameObject.SetActive(false);
 		}
 		

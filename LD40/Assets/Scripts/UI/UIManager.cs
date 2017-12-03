@@ -1,4 +1,4 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +17,9 @@ namespace UI
 		public UpgradePanel upgradePanel;
 
 		public GameOverPanel gameOverPanel;
-		
+
+		private readonly List<BasePanel> _panelsWithOverlay = new List<BasePanel>();
+
 		// Unity
 		// =====================================================================
 
@@ -26,23 +28,22 @@ namespace UI
 			// Make sure everything is hidden
 			upgradePanel.Hide();
 			gameOverPanel.Hide();
-			
-			// TODO: When opening a panel w/ overlay, add panel to overlay list
-			// TODO: When closing panel, remove from overlay list (hide overlay if list now empty)
-			// TODO: On overlay click close all panels in overlay list
 		}
 
 		// Actions
 		// =====================================================================
 
-		public void ShowOverlay()
+		public void AddPanelToOverlayList(BasePanel panel)
 		{
+			_panelsWithOverlay.Add(panel);
 			overlayButton.gameObject.SetActive(true);
 		}
 
-		public void HideOverlay()
+		public void RemovePanelFromOverlayList(BasePanel panel)
 		{
-			overlayButton.gameObject.SetActive(false);
+			_panelsWithOverlay.Remove(panel);
+			if (_panelsWithOverlay.Count == 0)
+				overlayButton.gameObject.SetActive(false);
 		}
 
 		public void ShowGameOver(float score)
@@ -52,6 +53,15 @@ namespace UI
 			
 			// Pause the game
 			globalVars.Pause();
+		}
+		
+		// Events
+		// =====================================================================
+
+		public void OnOverlayClick()
+		{
+			foreach (BasePanel panel in _panelsWithOverlay)
+				panel.Hide();
 		}
 
 	}
