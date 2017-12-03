@@ -6,6 +6,7 @@ namespace UI
     [RequireComponent(typeof(RectTransform))]
     public class UpgradePanel : MonoBehaviour
     {
+        MonoBehaviour Owner;
 
         // Variables
         // =====================================================================
@@ -58,22 +59,47 @@ namespace UI
 
         public void UpgradeButton1()
         {
+            if(Owner.GetType() == typeof(Traps))
+            {
+                Traps Temp = (Traps)Owner;
+                Temp.SetAttractionTime(TrapTypesUpgrades.RequestUpgradeAmount(UpgradeType.CatchCoolDown, Temp.Type));
+            }
+            else if(Owner.GetType() == typeof(TurretController))
+            {
 
+            }
         }
 
         public void UpgradeButton2()
         {
+            if (Owner.GetType() == typeof(Traps))
+            {
+                Traps Temp = (Traps)Owner;
+                Temp.SetSucessRate(TrapTypesUpgrades.RequestUpgradeAmount(UpgradeType.CatchSuccessChance, Temp.Type));
+            }
+            else if (Owner.GetType() == typeof(TurretController))
+            {
 
+            }
         }
 
         public void UpgradeButton3()
         {
+            if (Owner.GetType() == typeof(Traps))
+            {
+                Traps Temp = (Traps)Owner;
+                Temp.SetCatcherRaduis(TrapTypesUpgrades.RequestUpgradeAmount(UpgradeType.CatchRaduis, Temp.Type));
+            }
+            else if (Owner.GetType() == typeof(TurretController))
+            {
 
+            }
         }
 
         public void DestroyItem()
         {
-
+            Destroy(Owner.gameObject);
+            Hide();
         }
 		
 		// Unity
@@ -104,18 +130,20 @@ namespace UI
 			gameObject.SetActive(false);
 		}
 
-		public void SetAndShow(
-			Transform target,
-			string name,
-			UIStat stat1,
-			UIStat stat2,
-			UIStat stat3
-		) {
-			SetName(name);
-			SetStats(stat1, stat2, stat3);
-			Show();
-			SetTarget(target);
-		}
+        public void SetAndShow(
+            Transform target,
+            string name,
+            UIStat stat1,
+            UIStat stat2,
+            UIStat stat3,
+            MonoBehaviour _owner
+        ) {
+            SetName(name);
+            SetStats(stat1, stat2, stat3);
+            Show();
+            SetTarget(target);
+            SetOwner(_owner);
+        }
 
 		public void SetTarget(Transform trans)
 		{
@@ -130,6 +158,11 @@ namespace UI
 			
 			transform.position = pos;
 		}
+
+        public void SetOwner(MonoBehaviour _Owner)
+        {
+            Owner = _Owner;
+        }
 		
 	}
 }
