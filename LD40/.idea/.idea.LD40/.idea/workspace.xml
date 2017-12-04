@@ -14,8 +14,8 @@
       <file leaf-file-name="GlobalVars.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/GlobalVars.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="173" column="42" lean-forward="false" selection-start-line="173" selection-start-column="42" selection-end-line="173" selection-end-column="42" />
+            <state relative-caret-position="590">
+              <caret line="185" column="0" lean-forward="true" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
               <folding>
                 <marker date="1512388258453" expanded="false" signature="6:54" ph="..." />
                 <marker date="1512388258453" expanded="true" signature="76:103" ph="{...}" />
@@ -456,12 +456,12 @@
       <workItem from="1512234089046" duration="13177000" />
       <workItem from="1512290112600" duration="24048000" />
       <workItem from="1512325709972" duration="5326000" />
-      <workItem from="1512370907282" duration="14856000" />
+      <workItem from="1512370907282" duration="15186000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76411000" />
+    <option name="totallyTimeSpent" value="76741000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1201,8 +1201,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/GlobalVars.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="173" column="42" lean-forward="false" selection-start-line="173" selection-start-column="42" selection-end-line="173" selection-end-column="42" />
+        <state relative-caret-position="590">
+          <caret line="185" column="0" lean-forward="true" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
           <folding>
             <marker date="1512388258453" expanded="false" signature="6:54" ph="..." />
             <marker date="1512388258453" expanded="true" signature="76:103" ph="{...}" />
