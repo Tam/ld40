@@ -14,11 +14,9 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="BulletController.cs" t="Include" />
           <e p="Factory.cs" t="Include" />
           <e p="GlobalVars.cs" t="Include" />
           <e p="Helpers.cs" t="Include" />
-          <e p="LightFlicker.cs" t="Include" />
           <e p="logic" t="Include">
             <e p="Inspection.cs" t="Include" />
             <e p="Quota.cs" t="Include" />
@@ -29,19 +27,26 @@
             <e p="MobSpawner.cs" t="Include" />
             <e p="Protester.cs" t="Include" />
           </e>
-          <e p="Placement.cs" t="Include" />
-          <e p="PlacementCollision.cs" t="Include" />
           <e p="SetRandomColor.cs" t="Include" />
-          <e p="Traps.cs" t="Include" />
-          <e p="TrapTypesUpgrades.cs" t="Include" />
-          <e p="TrapUpgrades.cs" t="Include" />
-          <e p="TurretBuildUI.cs" t="Include" />
-          <e p="TurretController.cs" t="Include" />
-          <e p="TurretPlacement.cs" t="Include" />
+          <e p="Traps" t="Include">
+            <e p="PlacementCollision.cs" t="Include" />
+            <e p="PulseEffect.cs" t="Include" />
+            <e p="Trap.cs" t="Include" />
+            <e p="TrapPlacement.cs" t="Include" />
+            <e p="TrapTypesUpgrades.cs" t="Include" />
+            <e p="TrapUpgrades.cs" t="Include" />
+          </e>
+          <e p="Turrets" t="Include">
+            <e p="BulletController.cs" t="Include" />
+            <e p="LightFlicker.cs" t="Include" />
+            <e p="TurretController.cs" t="Include" />
+            <e p="TurretPlacement.cs" t="Include" />
+          </e>
           <e p="UI" t="Include">
             <e p="BasePanel.cs" t="Include" />
             <e p="GameOverPanel.cs" t="Include" />
             <e p="InspectionPanel.cs" t="Include" />
+            <e p="TurretBuildUI.cs" t="Include" />
             <e p="UIHud.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
             <e p="UIStat.cs" t="Include" />

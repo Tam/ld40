@@ -1,4 +1,5 @@
 ﻿using Logic;
+using Traps;
 using UI;
 using UnityEngine;
 
@@ -24,7 +25,7 @@ public class GlobalVars : MonoBehaviour
 
 	public Inspection inspection;
 
-	public Placement placement;
+	public TrapPlacement TrapPlacement;
 
 	// Time Playing the game from start to finish.
 	[Space]
@@ -395,7 +396,7 @@ public class GlobalVars : MonoBehaviour
 		socialBuzz.globalVars = instance;
 		quota.globalVars = instance;
 		inspection.globalVars = instance;
-		placement.globalVars = instance;
+		TrapPlacement.globalVars = instance;
 	}
 
 	private void Start()

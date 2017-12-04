@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace mobs
+namespace Mobs
 {
 	public class MobSpawner : MonoBehaviour {
 		

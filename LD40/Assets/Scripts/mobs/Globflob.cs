@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-namespace mobs
+namespace Mobs
 {
 	[RequireComponent(typeof(NavMeshAgent))]
-	public class Globflob : MonoBehaviour {
-		
+	public class Globflob : MonoBehaviour
+	{
 		// Variables
 		// =====================================================================
 
@@ -17,11 +17,12 @@ namespace mobs
 
 		private float _timer;
 
-        private bool Attracted;
-		private ParticleSystem trapParticles;
+		private bool Attracted;
 
-        private int AmountOfResoucre = 1;
-		
+		private int AmountOfResoucre = 1;
+
+		private bool _fleeing;
+
 		// Unity
 		// =====================================================================
 
@@ -29,7 +30,7 @@ namespace mobs
 		{
 			_agent = GetComponent<NavMeshAgent>();
 			_agent.SetDestination(Vector3.zero);
-			
+
 			_wanderDelay = Random.Range(10f, 15f);
 			_wanderRadius = Random.Range(5f, 50f);
 		}
@@ -43,16 +44,21 @@ namespace mobs
 		{
 			_timer += Time.deltaTime;
 
-            if (!Attracted)
-            {
-                if (_timer >= _wanderDelay)
-                {
-                    Vector2 newPos = Random.insideUnitCircle * _wanderRadius;
-                    _agent.SetDestination(transform.position + new Vector3(newPos.x, 0f, newPos.y));
-                    _timer = 0;
-                    PickNewTimeAndTarget();
-                }
-            }
+			if (!Attracted && !_fleeing)
+			{
+				if (_timer >= _wanderDelay)
+				{
+					Vector2 newPos = Random.insideUnitCircle * _wanderRadius;
+					_agent.SetDestination(
+						transform.position + new Vector3(newPos.x, 0f, newPos.y)
+					);
+					_timer = 0;
+					PickNewTimeAndTarget();
+				}
+			}
+
+			if (_fleeing && Helpers.AgentHasStoppedMoving(_agent))
+				_fleeing = false;
 		}
 
 		// Actions
@@ -62,7 +68,6 @@ namespace mobs
 		{
 			Attracted = true;
 			AmountOfResoucre += 1;
-			trapParticles = _transform.parent.GetComponent<ParticleSystem>();
 			_agent.SetDestination(_transform.position);
 		}
 
@@ -77,11 +82,25 @@ namespace mobs
 		/// </summary>
 		public void Capture()
 		{
-			trapParticles.Emit(100);
 			_globalVars.IncreaseGlobflobsCaptured(1);
 			_globalVars.DecreaseCurrentMobsBy(MobTypes.Globflob, 1);
 			Destroy(gameObject);
 		}
+
+		/// <summary>
+		/// Run away (usually from a trap that has just been placed)
+		/// </summary>
+		/// <param name="from"></param>
+		/// <param name="distance"></param>
+		public void RunAway(Transform from, float distance = 10f)
+		{
+			_fleeing = true;
+
+			Vector3 nextPos = from.position - transform.position;
+			nextPos = nextPos.normalized * distance;
+
+			_agent.SetDestination(transform.position - nextPos);
+		}
 		
-	}  
+	}
 }

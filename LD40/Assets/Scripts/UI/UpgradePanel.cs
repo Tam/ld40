@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Traps;
+using Turrets;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI
@@ -59,9 +61,9 @@ namespace UI
 
         public void UpgradeButton1()
         {
-            if(Owner.GetType() == typeof(Traps))
+            if(Owner.GetType() == typeof(Trap))
             {
-                Traps Temp = (Traps)Owner;
+                Trap Temp = (Trap)Owner;
                 Temp.SetAttractionTime(TrapTypesUpgrades.RequestUpgradeAmount(UpgradeType.CatchCoolDown, Temp.Type));
             }
             else if(Owner.GetType() == typeof(TurretController))
@@ -72,9 +74,9 @@ namespace UI
 
         public void UpgradeButton2()
         {
-            if (Owner.GetType() == typeof(Traps))
+            if (Owner.GetType() == typeof(Trap))
             {
-                Traps Temp = (Traps)Owner;
+                Trap Temp = (Trap)Owner;
                 Temp.SetSucessRate(TrapTypesUpgrades.RequestUpgradeAmount(UpgradeType.CatchSuccessChance, Temp.Type));
             }
             else if (Owner.GetType() == typeof(TurretController))
@@ -85,9 +87,9 @@ namespace UI
 
         public void UpgradeButton3()
         {
-            if (Owner.GetType() == typeof(Traps))
+            if (Owner.GetType() == typeof(Trap))
             {
-                Traps Temp = (Traps)Owner;
+                Trap Temp = (Trap)Owner;
                 Temp.SetCatcherRaduis(TrapTypesUpgrades.RequestUpgradeAmount(UpgradeType.CatchRaduis, Temp.Type));
             }
             else if (Owner.GetType() == typeof(TurretController))

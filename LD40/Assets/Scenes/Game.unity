@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 178714425}
   m_Layer: 0
   m_Name: Factory
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
@@ -833,7 +833,7 @@ MonoBehaviour:
   socialBuzz: {fileID: 257546687}
   quota: {fileID: 257546688}
   inspection: {fileID: 257546689}
-  placement: {fileID: 257546685}
+  TrapPlacement: {fileID: 257546685}
   TimeElapsed: 0
   protestersToGlobflobs: 2
   moneyToSupervaluableunobtainium: 5
@@ -884,10 +884,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   globalVars: {fileID: 0}
-  Placing: 0
   GameobjectHolo:
   - {fileID: 1629537945}
-  - {fileID: 732218996}
+  - {fileID: 1261527429}
   GameobjectToPlace:
   - {fileID: 1711331942089936, guid: a9d9f02bbad136c48ae63dba1fba9493, type: 2}
   - {fileID: 1415512069242284, guid: d210251416136b44b9e420a00f3a2148, type: 2}
@@ -2298,11 +2297,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4803286708131230, guid: 1e0cfd06eea189e4db9ba1e16b8d0e62,
     type: 2}
   m_PrefabInternal: {fileID: 732218994}
---- !u!1 &732218996 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1496940940933260, guid: 1e0cfd06eea189e4db9ba1e16b8d0e62,
-    type: 2}
-  m_PrefabInternal: {fileID: 732218994}
 --- !u!1 &737138343
 GameObject:
   m_ObjectHideFlags: 0
@@ -2568,6 +2562,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 732218995}
+  - {fileID: 1261527428}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3812,6 +3807,58 @@ RectTransform:
   m_AnchoredPosition: {x: 36.2, y: 0}
   m_SizeDelta: {x: 128.05, y: 17.6}
   m_Pivot: {x: 0, y: 1}
+--- !u!1001 &1261527427
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 799076239}
+    m_Modifications:
+    - target: {fileID: 4669702643143626, guid: 7e2b20e0e88892a498d6273133c0162e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -27.789137
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669702643143626, guid: 7e2b20e0e88892a498d6273133c0162e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669702643143626, guid: 7e2b20e0e88892a498d6273133c0162e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.0644913
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669702643143626, guid: 7e2b20e0e88892a498d6273133c0162e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669702643143626, guid: 7e2b20e0e88892a498d6273133c0162e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669702643143626, guid: 7e2b20e0e88892a498d6273133c0162e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669702643143626, guid: 7e2b20e0e88892a498d6273133c0162e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669702643143626, guid: 7e2b20e0e88892a498d6273133c0162e, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7e2b20e0e88892a498d6273133c0162e, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1261527428 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4669702643143626, guid: 7e2b20e0e88892a498d6273133c0162e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1261527427}
+--- !u!1 &1261527429 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1938302135680090, guid: 7e2b20e0e88892a498d6273133c0162e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1261527427}
 --- !u!1 &1268599343
 GameObject:
   m_ObjectHideFlags: 0
@@ -5949,7 +5996,7 @@ GameObject:
   - component: {fileID: 1897647343}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

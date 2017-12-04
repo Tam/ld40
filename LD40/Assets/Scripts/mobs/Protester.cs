@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-namespace mobs
+namespace Mobs
 {
 	[RequireComponent(typeof(NavMeshAgent))]
 	public class Protester : MonoBehaviour

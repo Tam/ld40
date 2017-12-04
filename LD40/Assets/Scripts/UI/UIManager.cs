@@ -38,7 +38,7 @@ namespace UI
 			overlayButton.gameObject.SetActive(false);
 
 			globalVars.OnMoneyChangeCallback += OnMoneyChange;
-			globalVars.placement.OnPlacingChangeCallback += OnPlacingChange;
+			globalVars.TrapPlacement.OnPlacingChangeCallback += OnPlacingChange;
 		}
 
 		// Actions
@@ -105,7 +105,7 @@ namespace UI
 
 		public void OnBuildTrapButtonClick()
 		{
-			globalVars.placement.GameobjectToPlaceID = 1;
+			globalVars.TrapPlacement.GameobjectToPlaceID = 1;
 		}
 
 	}
