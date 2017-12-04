@@ -171,7 +171,7 @@ public class GlobalVars : MonoBehaviour
 		get { return _maxProtesters; }
 	}
 
-	public float protesterAttackDamage = 5f;
+	public float protesterAttackDamage = 2f;
 	
 	// Default Spawn Positions for Protestors
 	public Transform[] ProtestorSpawns = new Transform[5];
