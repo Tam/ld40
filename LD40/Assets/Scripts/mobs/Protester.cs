@@ -30,16 +30,13 @@ namespace Mobs
 		// Unity
 		// =====================================================================
 
-		private void Awake()
+		private void Start()
 		{
 			_globalVars = GlobalVars.instance;
 			_agent = GetComponent<NavMeshAgent>();
 			currentHealth = maxHealth;
 			_stoppingDistance = _agent.stoppingDistance;
-		}
-
-		private void Start()
-		{
+			
 			PickAndGoToRandomTarget();
 
 			// Pick a new random target after 20 seconds, every 10 seconds
@@ -130,7 +127,7 @@ namespace Mobs
 //			target.z = clrd.gameObject.transform.position.z;
 			
 			// Set stopping distance to 0
-			_agent.stoppingDistance = 0f;
+			_agent.stoppingDistance = 1f;
 			
 			_agent.SetDestination(target);
 		}
