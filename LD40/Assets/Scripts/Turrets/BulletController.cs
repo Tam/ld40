@@ -101,7 +101,7 @@ namespace Turrets
 
                 if(fear > 0)
                 {
-                    protester.Scare(fear + additionalFear, parentTurret);
+                    protester.Scare(fear + additionalFear);
                 }
             }
 

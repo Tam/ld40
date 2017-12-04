@@ -45,7 +45,13 @@ namespace Mobs
 			// If we're not pathing, face the centre
 			if (Helpers.AgentHasStoppedMoving(_agent))
 			{
-				if (_fleeing) _fleeing = false;
+				if (_fleeing)
+				{
+					_fleeing = false;
+					// Re-add this mob to the count, re-up the max count
+					_globalVars.IncreaseCurrentMobsBy(MobTypes.Protester, 1);
+					_globalVars.IncreaseMaxMobsBy(MobTypes.Protester, 1);
+				}
 				FaceTarget();
 			}
 		}
@@ -115,7 +121,8 @@ namespace Mobs
 			if (currentHealth < 0)
 			{
                 // Kill protestor
-				_globalVars.DecreaseCurrentMobsBy(MobTypes.Protester, 1);
+				if (!_fleeing)
+					_globalVars.DecreaseCurrentMobsBy(MobTypes.Protester, 1);
                 CancelInvoke();
                 Destroy(gameObject);
 			}
@@ -125,39 +132,37 @@ namespace Mobs
 		/// Scare the protester
 		/// </summary>
 		/// <param name="amount">Amount of fear to add</param>
-		/// <param name="fearLocation">Optional location to run from (will 180 if null)</param>
-		public void Scare(float amount, Transform fearLocation = null)
+		public void Scare(float amount)
 		{
-			// TODO: Change me to fear amount equates to how far they run, not whether they do 
 			currentFear += amount;
 
 			if (currentFear >= fearLimit)
-			{
-				RunAway(fearLocation);
-			}
+				RunAway();
 		}
 
 		/// <summary>
 		/// Run away!!
 		/// </summary>
-		/// <param name="from">Optional location to run from (will 180 if null)</param>
-		private void RunAway(Transform from = null)
+		private void RunAway()
 		{
+			if(_agent == null || !_agent.enabled || _fleeing)
+				return;
+			
 			_fleeing = true;
+			currentFear = 0f;
 			
-			Vector3 nextPos;
+			// Temporarily stop them contributing to the total mob count
+			// This will stop them adding to the social buzz.
+			_globalVars.DecreaseCurrentMobsBy(MobTypes.Protester, 1);
 			
-			if (from) nextPos = from.position - transform.position;
-			else nextPos = transform.forward;
+			// Temporarily decrease the max # protesters that can spawn, so we
+			// don't spawn more protesters than we should.
+			_globalVars.DecreaseMaxMobsBy(MobTypes.Protester, 1);
+			
+			Transform runTo = 
+				_globalVars.ProtestorSpawns[Random.Range(0, _globalVars.ProtestorSpawns.Length)];
 
-			nextPos = nextPos.normalized * 10f;
-
-            if(_agent == null || !_agent.enabled)
-            {
-                return;
-            }
-
-			_agent.SetDestination(transform.position - nextPos);
+			_agent.SetDestination(runTo.transform.position);
 		}
 	}
 }

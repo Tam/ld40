@@ -18,11 +18,6 @@ namespace Mobs
 		public GameObject mob;
 
 		/// <summary>
-		/// Where the mobs will spawn from
-		/// </summary>
-		public Transform[] spawnTargets = new Transform[5];
-
-		/// <summary>
 		/// Seconds between each spawn
 		/// </summary>
 		public float spawnDelay = 3f;
@@ -34,6 +29,11 @@ namespace Mobs
 
 		private GlobalVars _globalVars;
 
+		/// <summary>
+		/// Where the mobs will spawn from
+		/// </summary>
+		private Transform[] _spawnTargets;
+
 		// Unity
 		// =====================================================================
 
@@ -42,6 +42,17 @@ namespace Mobs
             _globalVars = GlobalVars.instance;
 			// Create the parent
 			_parent = new GameObject(type + "s");
+			
+			// Get Spawn targets
+			switch (type)
+			{
+				case MobTypes.Globflob:
+					_spawnTargets = _globalVars.GlobflobSpawns;
+					break;
+				case MobTypes.Protester:
+					_spawnTargets = _globalVars.ProtestorSpawns;
+					break;
+			}
 			
 			// Run SpawnMob immediately, then every spawnDelay seconds
 			InvokeRepeating("SpawnMob", 0f, spawnDelay);
@@ -63,7 +74,7 @@ namespace Mobs
 				return;
 			
 			// Pick spawn
-			Transform spawnPoint = spawnTargets[Random.Range(0, spawnTargets.Length)];
+			Transform spawnPoint = _spawnTargets[Random.Range(0, _spawnTargets.Length)];
 			
 			// Instantiate the mob 
 			GameObject newMob = Instantiate(mob, spawnPoint.position, Quaternion.identity);

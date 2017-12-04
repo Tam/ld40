@@ -791,12 +791,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   mob: {fileID: 1605118727164010, guid: 1c0f059a269fb894694d3db4bedbb340, type: 2}
-  spawnTargets:
-  - {fileID: 1926729820}
-  - {fileID: 1621654152}
-  - {fileID: 900188283}
-  - {fileID: 1133518702}
-  - {fileID: 783784771}
   spawnDelay: 3
 --- !u!114 &257546682
 MonoBehaviour:
@@ -811,12 +805,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   mob: {fileID: 1379540758340564, guid: 36ea64d4e7b0a7f4999ea54b4a8a0903, type: 2}
-  spawnTargets:
-  - {fileID: 1356364433}
-  - {fileID: 1804491681}
-  - {fileID: 1353018483}
-  - {fileID: 406344589}
-  - {fileID: 903987585}
   spawnDelay: 3
 --- !u!114 &257546683
 MonoBehaviour:
@@ -838,18 +826,31 @@ MonoBehaviour:
   protestersToGlobflobs: 2
   moneyToSupervaluableunobtainium: 5
   globflobsToSupervaluableunobtainium: 3
-  score: 0
-  scoreBonus: 0
-  scoreBonusMultiplier: 1.2
-  trapCost: 100
-  maxAmountGlobFlops: 0
-  minAmountGlobFlops: 0
+  GlobflobSpawns:
+  - {fileID: 1926729820}
+  - {fileID: 1621654152}
+  - {fileID: 900188283}
+  - {fileID: 1133518702}
+  - {fileID: 783784771}
+  ProtestorSpawns:
+  - {fileID: 1356364433}
+  - {fileID: 1804491681}
+  - {fileID: 1353018483}
+  - {fileID: 406344589}
+  - {fileID: 903987585}
   ProtestorsTargets:
   - {fileID: 597518609}
   - {fileID: 452390977}
   - {fileID: 1473535996}
   - {fileID: 424624578}
   - {fileID: 974157895}
+  ProtesterAttackTarget: {fileID: 490891259}
+  score: 0
+  scoreBonus: 0
+  scoreBonusMultiplier: 1.2
+  trapCost: 100
+  maxAmountGlobFlops: 0
+  minAmountGlobFlops: 0
   GobalPriceUnobtainium: 0
   TurretsPlaced: 0
   TrapsPlaced: 0
@@ -1412,6 +1413,47 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 464524815}
+--- !u!1 &490891257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 490891259}
+  - component: {fileID: 490891258}
+  m_Layer: 0
+  m_Name: ProtesterAttackTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &490891258
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 490891257}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &490891259
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 490891257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -6.45}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &530819843
 GameObject:
   m_ObjectHideFlags: 0

@@ -85,6 +85,32 @@ public class GlobalVars : MonoBehaviour
 		}
 	}
 
+	public void IncreaseMaxMobsBy(MobTypes mob, int amount)
+	{
+		switch (mob)
+		{
+			case MobTypes.Protester:
+				_maxProtesters += amount;
+				break;
+			case MobTypes.Globflob:
+				_maxGlobflobs += amount;
+				break;
+		}
+	}
+
+	public void DecreaseMaxMobsBy(MobTypes mob, int amount)
+	{
+		switch (mob)
+		{
+			case MobTypes.Protester:
+				_maxProtesters -= amount;
+				break;
+			case MobTypes.Globflob:
+				_maxGlobflobs -= amount;
+				break;
+		}
+	}
+
 	public int GetCurrentMobs(MobTypes mob)
 	{
 		switch (mob)
@@ -126,6 +152,10 @@ public class GlobalVars : MonoBehaviour
 		get { return _maxGlobflobs; }
 	}
 
+	// Default Spawn Positions for Globflobs
+	[Header("Mobs")]
+	public Transform[] GlobflobSpawns = new Transform[5];
+
 	// Protestors
 	// ---------------------------------------------------------------------
 
@@ -141,12 +171,24 @@ public class GlobalVars : MonoBehaviour
 		get { return _maxProtesters; }
 	}
 
+	// Default Spawn Positions for Protestors
+	public Transform[] ProtestorSpawns = new Transform[5];
+
+	// Default Target Positions for Protestors
+	public Transform[] ProtestorsTargets = new Transform[5];
+
+	/// <summary>
+	/// Target for protesters to attack
+	/// </summary>
+	public Transform ProtesterAttackTarget;
+
 	// Game Stats
 	// =====================================================================
 
 	// Score
 	// ---------------------------------------------------------------------
 
+	[Header("Game Stats")]
 	public float score;
 	public bool scoreBonus;
 	public float scoreBonusMultiplier = 1.2f;
@@ -302,9 +344,6 @@ public class GlobalVars : MonoBehaviour
 
 	//Maxuim Amount Of Protestors
 	private int maxAmountProtestor;
-
-	// Default Target Positions for Protestors
-	public Transform[] ProtestorsTargets = new Transform[5];
 
 	//------------------------------------------Mechcanics------------------------------------------//
 

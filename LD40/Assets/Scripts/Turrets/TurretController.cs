@@ -257,7 +257,7 @@ namespace Turrets
 
                 if(fear > 0)
                 {
-                    protester.Scare(fear, transform);
+                    protester.Scare(fear);
                 }
             }
 
