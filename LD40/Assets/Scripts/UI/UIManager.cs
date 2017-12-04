@@ -21,8 +21,6 @@ namespace UI
 		public BuildTurretPanel buildTurretPanel;
 		public GameOverPanel gameOverPanel;
 
-		public TurretBuildUI turretBuildUI;
-
 		private readonly List<BasePanel> _panelsWithOverlay = new List<BasePanel>();
 
 		private bool _isHidingAll;

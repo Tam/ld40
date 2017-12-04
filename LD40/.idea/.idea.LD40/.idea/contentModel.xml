@@ -49,7 +49,6 @@
             <e p="BuildTurretPanel.cs" t="Include" />
             <e p="GameOverPanel.cs" t="Include" />
             <e p="InspectionPanel.cs" t="Include" />
-            <e p="TurretBuildUI.cs" t="Include" />
             <e p="UIHud.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
             <e p="UIStat.cs" t="Include" />
