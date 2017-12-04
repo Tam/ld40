@@ -270,8 +270,8 @@ namespace Turrets
             if (target == null) return false;
 
             RaycastHit hit;
-            Debug.DrawLine(muzzlePoint.transform.position, muzzlePoint.transform.TransformDirection(Vector3.right) * 100f, Color.cyan);
-            if (Physics.Raycast(muzzlePoint.transform.position, muzzlePoint.transform.TransformDirection(Vector3.right), out hit, 100f))
+            Debug.DrawLine(muzzlePoint.transform.position, muzzlePoint.transform.TransformDirection(Vector3.forward) * 100f, Color.cyan);
+            if (Physics.Raycast(muzzlePoint.transform.position, muzzlePoint.transform.TransformDirection(Vector3.forward), out hit, 100f))
             {
                 if (hit.transform.gameObject.GetInstanceID() == target.GetInstanceID())
                 {

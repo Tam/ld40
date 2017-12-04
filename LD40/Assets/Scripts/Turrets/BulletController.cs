@@ -39,7 +39,7 @@ namespace Turrets
 
             rb = GetComponent<Rigidbody>();
 
-            rb.AddForce(transform.TransformDirection(Vector3.right) * speed * Random.Range(0.9f, 1) * 100);
+            rb.AddForce(transform.TransformDirection(Vector3.forward) * speed * Random.Range(0.9f, 1) * 100);
             rb.AddTorque(Random.insideUnitSphere * randomSpin);
 
             Destroy(gameObject, 5f);
