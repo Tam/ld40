@@ -11,7 +11,7 @@ namespace UI
 		// Actions
 		// =====================================================================
 
-		public void Show()
+		public virtual void Show()
 		{
 			SetActive(true);
 			

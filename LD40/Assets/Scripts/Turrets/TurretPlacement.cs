@@ -4,31 +4,34 @@ namespace Turrets
 {
     public class TurretPlacement : MonoBehaviour
     {
+
+        // Variables
+        // =====================================================================
+        
+        private GlobalVars _globalVars;
+        
         GameObject PlacedTurret;
 
         public GameObject PlacementVector;
 
         private bool _mouseOver;
+        
+        // Unity
+        // =====================================================================
+
+        private void Start()
+        {
+            _globalVars = GlobalVars.instance;
+        }
 
         private void Update()
         {
-            if (_mouseOver)
+            if (_mouseOver && Input.GetMouseButtonDown(0) && PlacedTurret == null)
             {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    //Make Build Buttons Interactable
-                    //Send Which Placement Platform is requesting Building
-                    if (PlacedTurret == null)
-                    {
-                        GlobalVars.instance.uiManager.turretBuildUI.SetButtonInteractable(this, true);
-                    }
-                }
-            }
-        
-            if (Input.GetMouseButtonDown(1))
-            {
-                //Make Build buttons UnInteractable
-                GlobalVars.instance.uiManager.turretBuildUI.SetButtonInteractable(null, false);
+                //Make Build Buttons Interactable
+                //Send Which Placement Platform is requesting Building
+                if (PlacedTurret == null)
+                    _globalVars.uiManager.buildTurretPanel.Show(this);
             }
         }
 
@@ -42,6 +45,9 @@ namespace Turrets
             _mouseOver = false;
         }
 
+        // Actions
+        // =====================================================================
+        
         public void BuildTurret(GameObject _TurretToBuild)
         {
             PlacedTurret = Instantiate(_TurretToBuild, PlacementVector.transform.position, Quaternion.identity);

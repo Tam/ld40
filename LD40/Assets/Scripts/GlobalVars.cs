@@ -292,7 +292,7 @@ public class GlobalVars : MonoBehaviour
 	// Money
 	// ---------------------------------------------------------------------
 
-	private int _money = 100;
+	private int _money = 175;
 	public int money
 	{
 		get { return _money; }
@@ -321,7 +321,11 @@ public class GlobalVars : MonoBehaviour
 	/// The amount of money it costs to build a trap
 	/// </summary>
 	[Header("Misc")]
-	public int trapCost = 100;
+	public int trapCost = 75;
+
+	public int beanBagCost = 100;
+	public int waterCost = 150;
+	public int laserCost = 250;
 
 	
 	// Effects

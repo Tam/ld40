@@ -46,6 +46,7 @@
           </e>
           <e p="UI" t="Include">
             <e p="BasePanel.cs" t="Include" />
+            <e p="BuildTurretPanel.cs" t="Include" />
             <e p="GameOverPanel.cs" t="Include" />
             <e p="InspectionPanel.cs" t="Include" />
             <e p="TurretBuildUI.cs" t="Include" />

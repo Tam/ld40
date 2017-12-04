@@ -18,6 +18,7 @@ namespace UI
 
 		public InspectionPanel inspectionPanel;
 		public UpgradePanel upgradePanel;
+		public BuildTurretPanel buildTurretPanel;
 		public GameOverPanel gameOverPanel;
 
 		public TurretBuildUI turretBuildUI;
@@ -35,6 +36,7 @@ namespace UI
 			upgradePanel.Hide();
 			inspectionPanel.Hide();
 			gameOverPanel.Hide();
+			buildTurretPanel.Hide();
 			overlayButton.gameObject.SetActive(false);
 
 			globalVars.OnMoneyChangeCallback += OnMoneyChange;

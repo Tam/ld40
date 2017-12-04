@@ -82,8 +82,8 @@ namespace Mobs
             if (_fleeing || _attacking)
 				return;
 			
-			// 50% chance of attacking!
-			if (Random.value <= 0.5f)
+			// 25% chance of attacking!
+			if (Random.value <= 0.25f)
 			{
 				AttackTarget();
 				return;
