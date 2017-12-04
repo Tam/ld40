@@ -35,7 +35,7 @@ namespace Logic
 		private void Start()
 		{
 			// Increase the buzz every 5s
-			InvokeRepeating("MoreBuzz", 0f, 5f);
+//			InvokeRepeating("MoreBuzz", 0f, 5f);
 		}
 		
 		// Actions

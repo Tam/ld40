@@ -19,7 +19,7 @@ namespace UI
 				globalVars.uiManager.AddPanelToOverlayList(this);
 		}
 
-		public void Hide()
+		public virtual void Hide()
 		{
 			if (showWithOverlay && globalVars != null)
 				globalVars.uiManager.RemovePanelFromOverlayList(this);

@@ -27,8 +27,7 @@ namespace UI
 
 		public void OnMainMenuClick()
 		{
-			// TODO: Main Menu Button
-			Debug.Log("MAIN MENU");
+			SceneManager.LoadScene("MainMenu");
 		}
 
 		public void OnRestartClick()

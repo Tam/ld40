@@ -15,11 +15,13 @@ namespace UI
 
 		public Button overlayButton;
 		public Button buildTrapButton;
+		public Button repairButton;
 
 		public InspectionPanel inspectionPanel;
 		public UpgradePanel upgradePanel;
 		public BuildTurretPanel buildTurretPanel;
 		public GameOverPanel gameOverPanel;
+		public PauseMenuPanel pauseMenuPanel;
 
 		private readonly List<BasePanel> _panelsWithOverlay = new List<BasePanel>();
 
@@ -35,10 +37,21 @@ namespace UI
 			inspectionPanel.Hide();
 			gameOverPanel.Hide();
 			buildTurretPanel.Hide();
+			pauseMenuPanel.Hide();
 			overlayButton.gameObject.SetActive(false);
 
 			globalVars.OnMoneyChangeCallback += OnMoneyChange;
 			globalVars.TrapPlacement.OnPlacingChangeCallback += OnPlacingChange;
+		}
+
+		private void Update()
+		{
+			if (Input.GetKeyDown(KeyCode.Escape))
+			{
+				OnOverlayClick();
+				pauseMenuPanel.Show();
+			}
+
 		}
 
 		// Actions
@@ -80,6 +93,7 @@ namespace UI
 		private void OnMoneyChange(int money)
 		{
 			buildTrapButton.interactable = money >= globalVars.trapCost;
+			repairButton.interactable = money >= globalVars.repairCost;
 		}
 
 		private void OnPlacingChange(bool isPlacing)
@@ -106,6 +120,13 @@ namespace UI
 		public void OnBuildTrapButtonClick()
 		{
 			globalVars.TrapPlacement.GameobjectToPlaceID = 1;
+		}
+
+		public void OnRepairClick()
+		{
+			globalVars.DecreaseMoney(globalVars.repairCost);
+			globalVars.factoryAttackable.currentHealth =
+				globalVars.factoryAttackable.maxHealth;
 		}
 
 	}

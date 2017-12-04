@@ -50,6 +50,8 @@
             <e p="DatePanel.cs" t="Include" />
             <e p="GameOverPanel.cs" t="Include" />
             <e p="InspectionPanel.cs" t="Include" />
+            <e p="MainMenuSHIT.cs" t="Include" />
+            <e p="PauseMenuPanel.cs" t="Include" />
             <e p="QuotaPanel.cs" t="Include" />
             <e p="StatsPanel.cs" t="Include" />
             <e p="UIHud.cs" t="Include" />

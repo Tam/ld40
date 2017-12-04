@@ -27,6 +27,8 @@ public class GlobalVars : MonoBehaviour
 
 	public TrapPlacement TrapPlacement;
 
+	public FactoryAttackable factoryAttackable;
+
 	// Time Playing the game from start to finish.
 	[Space]
 	public float TimeElapsed;
@@ -322,6 +324,8 @@ public class GlobalVars : MonoBehaviour
 	/// </summary>
 	[Header("Misc")]
 	public int trapCost = 75;
+
+	public int repairCost = 300;
 
 	public int beanBagCost = 100;
 	public int waterCost = 150;
