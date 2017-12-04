@@ -144,7 +144,7 @@ MonoBehaviour:
   fear: 2
   speed: 12
   additionalDamage: 0
-  additionalFear: 2524.355
+  additionalFear: 6162.976
   impactEffect: {fileID: 0}
   gravityOnImpact: 1
   lifeAfterImpact: 3

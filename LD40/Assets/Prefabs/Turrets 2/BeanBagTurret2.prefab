@@ -417,7 +417,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1011788626693132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.059923, y: 0.1, z: -43.505264}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4080854132417334}
@@ -1376,7 +1376,7 @@ MonoBehaviour:
   level: 1
   turretHead: {fileID: 4224198032052538}
   muzzlePoint: {fileID: 4275231595170786}
-  targetOffset: {x: 0, y: 1.5, z: 0}
+  targetOffset: {x: 0, y: 1.75, z: 0}
   enemyTag: Protester
   range: 25
   turnSpeed: 12
@@ -1389,7 +1389,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1928277325448562, guid: 778a7a09a6f1f18498eab07798439d72,
     type: 2}
   projectilesPerShot: 5
-  fireRate: 0.25
+  fireRate: 1.5
   spread: 8
   particles: {fileID: 0}
   lineRenderer: {fileID: 0}

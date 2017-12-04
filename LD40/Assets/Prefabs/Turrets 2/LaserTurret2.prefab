@@ -1447,7 +1447,7 @@ MonoBehaviour:
   targetOffset: {x: 0, y: 1.5, z: 0}
   enemyTag: Protester
   range: 25
-  turnSpeed: 8
+  turnSpeed: 12.5
   findTargetFrequency: 1
   damagePerTick: 0
   fearPerTick: 0

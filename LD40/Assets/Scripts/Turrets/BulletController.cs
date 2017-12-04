@@ -63,6 +63,7 @@ namespace Turrets
 
         void OnCollisionEnter(Collision collision)
         {
+            
             if (gravityOnImpact)
             {
                 rb.useGravity = true;
@@ -105,7 +106,7 @@ namespace Turrets
                 }
             }
 
-            Destroy(gameObject);
+            
         }
 
 
