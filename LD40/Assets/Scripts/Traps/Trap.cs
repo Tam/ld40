@@ -164,7 +164,7 @@ namespace Traps
 				transform.position,
 				AttractRaduis
 			);
-
+			
 			int i = 0;
 			while (i < globflobsInRange.Length)
 			{

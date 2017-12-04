@@ -171,6 +171,8 @@ public class GlobalVars : MonoBehaviour
 		get { return _maxProtesters; }
 	}
 
+	public float protesterAttackDamage = 5f;
+	
 	// Default Spawn Positions for Protestors
 	public Transform[] ProtestorSpawns = new Transform[5];
 
@@ -321,6 +323,13 @@ public class GlobalVars : MonoBehaviour
 	[Header("Misc")]
 	public int trapCost = 100;
 
+	
+	// Effects
+	// =====================================================================
+
+	[Header("Effects")] 
+	public GameObject hitEffect;
+	
 
 	#region Old variables that need orgainizing
 	

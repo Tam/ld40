@@ -9,6 +9,7 @@ TagManager:
   - Turret
   - Trap
   - Terrain
+  - Fire
   layers:
   - Default
   - TransparentFX

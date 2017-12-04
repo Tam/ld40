@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 4103721890778810}
   - component: {fileID: 195064947811139566}
   - component: {fileID: 114955141447111346}
+  - component: {fileID: 135216993475727436}
   m_Layer: 0
   m_Name: Globflob
   m_TagString: GlobFlob
@@ -211,7 +212,7 @@ MeshCollider:
   m_GameObject: {fileID: 1158535999137966}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Convex: 0
   m_InflateMesh: 0
@@ -228,6 +229,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7369c250a1859340a4a44cff9b1b48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &135216993475727436
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1605118727164010}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135952471308327140
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -236,7 +249,7 @@ SphereCollider:
   m_GameObject: {fileID: 1070155673506440}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

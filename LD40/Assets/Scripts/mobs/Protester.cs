@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 namespace Mobs
 {
@@ -20,7 +22,10 @@ namespace Mobs
 		public float fearLimit = 20f;
 		private float currentFear;
 
+		private bool _attacking;
 		private bool _fleeing;
+
+		private float _stoppingDistance;
 
 		// Unity
 		// =====================================================================
@@ -30,6 +35,7 @@ namespace Mobs
 			_globalVars = GlobalVars.instance;
 			_agent = GetComponent<NavMeshAgent>();
 			currentHealth = maxHealth;
+			_stoppingDistance = _agent.stoppingDistance;
 		}
 
 		private void Start()
@@ -52,6 +58,14 @@ namespace Mobs
 					_globalVars.IncreaseCurrentMobsBy(MobTypes.Protester, 1);
 					_globalVars.IncreaseMaxMobsBy(MobTypes.Protester, 1);
 				}
+
+				if (_attacking)
+				{
+					_attacking = false;
+					_agent.stoppingDistance = _stoppingDistance;
+					PickAndGoToRandomTarget();
+				}
+				
 				FaceTarget();
 			}
 		}
@@ -64,10 +78,17 @@ namespace Mobs
 		/// </summary>
 		private void ChangeTarget()
 		{
-            // Don't change target if we're fleeing
-            if (_fleeing)
+            // Don't change target if we're fleeing or attacking
+            if (_fleeing || _attacking)
 				return;
 			
+			// 50% chance of attacking!
+			if (Random.value <= 0.5f)
+			{
+				AttackTarget();
+				return;
+			}
+
 			// A 75% chance of changing target
 			if (Random.value <= 0.75f)
 				PickAndGoToRandomTarget();
@@ -89,6 +110,28 @@ namespace Mobs
 			target.z += rand;
 
 			// Go there
+			_agent.SetDestination(target);
+		}
+
+		/// <summary>
+		/// Attack the protester attack target
+		/// </summary>
+		private void AttackTarget()
+		{
+			_attacking = true;
+			
+			Collider clrd = _globalVars.ProtesterAttackTarget.GetComponent<Collider>();
+
+			Vector3 target =
+				Helpers.RandomBetweenVectors(clrd.bounds.min, clrd.bounds.max);
+			target.y = 0f;
+			// Ensure the trigger the collider
+			target.x = Mathf.Clamp(target.x, clrd.bounds.min.x + 1f, clrd.bounds.max.x - 1f);
+//			target.z = clrd.gameObject.transform.position.z;
+			
+			// Set stopping distance to 0
+			_agent.stoppingDistance = 0f;
+			
 			_agent.SetDestination(target);
 		}
 

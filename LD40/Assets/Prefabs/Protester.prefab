@@ -92,7 +92,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4436663438413338}
   - component: {fileID: 33675509468434314}
-  - component: {fileID: 65904337279094512}
   - component: {fileID: 23985773607440766}
   m_Layer: 0
   m_Name: Cube
@@ -377,18 +376,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65904337279094512
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1614982284973592}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114161330703023768
 MonoBehaviour:
   m_ObjectHideFlags: 1
