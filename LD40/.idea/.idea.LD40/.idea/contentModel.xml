@@ -47,8 +47,11 @@
           <e p="UI" t="Include">
             <e p="BasePanel.cs" t="Include" />
             <e p="BuildTurretPanel.cs" t="Include" />
+            <e p="DatePanel.cs" t="Include" />
             <e p="GameOverPanel.cs" t="Include" />
             <e p="InspectionPanel.cs" t="Include" />
+            <e p="QuotaPanel.cs" t="Include" />
+            <e p="StatsPanel.cs" t="Include" />
             <e p="UIHud.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
             <e p="UIStat.cs" t="Include" />
