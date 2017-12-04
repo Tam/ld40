@@ -10,8 +10,8 @@ namespace UI
 
 		public Text numUnprocessedGlobflobs;
 		public Text svuTotal;
-		public Text monthlyQuota;
 		public Text money;
+		public Text monthlyQuota;
 		public Text buzz;
 		public Text protesters;
 		public Text globflobs;

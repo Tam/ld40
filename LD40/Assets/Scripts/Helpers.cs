@@ -19,5 +19,20 @@ public static class Helpers
 			Random.Range(v1.z, v2.z)
 		);
 	}
+
+	public static string DateSuffix(int num)
+	{
+		if (num >= 11 && num <= 13)
+			return "th";
+
+		switch (num % 10)
+		{
+			case 1: return "st";
+			case 2: return "nd";
+			case 3: return "rd";
+		}
+
+		return "th";
+	}
 	
 }

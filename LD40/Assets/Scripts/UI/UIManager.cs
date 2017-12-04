@@ -63,7 +63,7 @@ namespace UI
 		public void ShowGameOver(string reason)
 		{
 			// Show game over screen
-			gameOverPanel.scoreText.text = globalVars.score + "";
+			gameOverPanel.scoreText.text = Mathf.CeilToInt(globalVars.score * 100) + "";
 			gameOverPanel.reasonText.text = reason;
 			gameOverPanel.Show();
 			
