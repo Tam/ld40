@@ -6184,7 +6184,7 @@ MonoBehaviour:
         m_MethodName: OnBuildWaterClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1426990662938406, guid: f738b3f5142e10f448907ecdc3b395b1,
+          m_ObjectArgument: {fileID: 1823848401525156, guid: 0b97a2397780ed44bacf623d7ec54913,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -13385,7 +13385,7 @@ MonoBehaviour:
         m_MethodName: OnBuildBeanBagClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1896876849919396, guid: c83ffd896b3204440b028de535b557fd,
+          m_ObjectArgument: {fileID: 1011788626693132, guid: 8790c73b894d2e545892636647a64f57,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -14373,7 +14373,7 @@ MonoBehaviour:
         m_MethodName: OnBuildLaserClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1896876849919396, guid: d9f3bc90cc71d0948825c4664dd31e1c,
+          m_ObjectArgument: {fileID: 1916248289777814, guid: 3166564bcdfaf2044b111738a0dec429,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -17259,6 +17259,7 @@ GameObject:
   - component: {fileID: 2068722010}
   - component: {fileID: 2068722009}
   - component: {fileID: 2068722007}
+  - component: {fileID: 2068722008}
   m_Layer: 0
   m_Name: ProtesterGround
   m_TagString: Untagged
@@ -17300,6 +17301,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2068722008
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2068722006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &2068722009
 MeshFilter:
   m_ObjectHideFlags: 0

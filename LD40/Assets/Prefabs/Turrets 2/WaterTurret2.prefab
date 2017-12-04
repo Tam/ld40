@@ -552,7 +552,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1823848401525156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -17.782948, y: 0.5825485, z: -43.842712}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4123784948844866}
@@ -622,7 +622,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 77cbd08cf55cf474db157d597d1e2885, type: 2}
+  - {fileID: 2100000, guid: d69410ceee44d624baead579fac13012, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1410,10 +1410,10 @@ MonoBehaviour:
   targetOffset: {x: 0, y: 1.5, z: 0}
   enemyTag: Protester
   range: 25
-  turnSpeed: 8
-  findTargetFrequency: 1
+  turnSpeed: 12
+  findTargetFrequency: 0.5
   damagePerTick: 0
-  fearPerTick: 0
+  fearPerTick: 0.25
   damageUpgradeMultiplier: 1.25
   fearUpgradeMultiplier: 1.25
   fireType: 1
@@ -1535,7 +1535,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 18.45
+      scalar: 30
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1639,7 +1639,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.02
+      scalar: 3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1931,7 +1931,7 @@ ParticleSystem:
     serializedVersion: 5
     enabled: 1
     type: 4
-    angle: 3.88
+    angle: 6.63
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -2047,7 +2047,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 204.1
+      scalar: 500
       minScalar: 10
       maxCurve:
         serializedVersion: 2

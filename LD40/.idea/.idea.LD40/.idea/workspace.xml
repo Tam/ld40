@@ -137,7 +137,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameOverPanel.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameOverPanel.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/GameOverPanel.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
@@ -157,6 +157,29 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="TurretPlacement.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Turrets/TurretPlacement.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="800">
+              <caret line="50" column="28" lean-forward="false" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
+              <folding>
+                <marker date="1512394727546" expanded="true" signature="37:1452" ph="{...}" />
+                <marker date="1512394727546" expanded="true" signature="88:1450" ph="{...}" />
+                <marker date="1512394727546" expanded="true" signature="104:197" ph="/* Variables ... */" />
+                <marker date="1512394727546" expanded="true" signature="384:473" ph="/* Unity ... */" />
+                <marker date="1512394727546" expanded="true" signature="503:570" ph="{...}" />
+                <marker date="1512394727546" expanded="true" signature="601:966" ph="{...}" />
+                <marker date="1512394727546" expanded="true" signature="694:956" ph="{...}" />
+                <marker date="1512394727546" expanded="true" signature="725:829" ph="/* Make Build Buttons Interactable ... */" />
+                <marker date="1512394727546" expanded="true" signature="1003:1054" ph="{...}" />
+                <marker date="1512394727546" expanded="true" signature="1090:1142" ph="{...}" />
+                <marker date="1512394727546" expanded="true" signature="1152:1243" ph="/* Actions ... */" />
+                <marker date="1512394727546" expanded="true" signature="1311:1444" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="BasePanel.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/BasePanel.cs">
           <provider selected="true" editor-type-id="text-editor">
@@ -169,25 +192,6 @@
                 <marker date="1512413974422" expanded="true" signature="275:385" ph="{...}" />
                 <marker date="1512413974422" expanded="true" signature="415:553" ph="{...}" />
                 <marker date="1512413974422" expanded="true" signature="592:712" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StatsPanel.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/StatsPanel.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="35" selection-end-column="9" />
-              <folding>
-                <marker date="1512409872340" expanded="true" signature="6:40" ph="..." />
-                <marker date="1512409872340" expanded="true" signature="54:827" ph="{...}" />
-                <marker date="1512409872340" expanded="true" signature="97:825" ph="{...}" />
-                <marker date="1512409872340" expanded="true" signature="106:193" ph="/* Variables ... */" />
-                <marker date="1512409872340" expanded="true" signature="323:406" ph="/* Unity ... */" />
-                <marker date="1512409872340" expanded="true" signature="430:476" ph="{...}" />
-                <marker date="1512409872340" expanded="true" signature="505:819" ph="{...}" />
-                <marker date="1512409872340" expanded="true" signature="513:625" ph="/* Updating UI values ... */" />
               </folding>
             </state>
           </provider>
@@ -381,7 +385,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -484,12 +488,12 @@
       <workItem from="1512370907282" duration="15186000" />
       <workItem from="1512394726151" duration="38000" />
       <workItem from="1512394779071" duration="1642000" />
-      <workItem from="1512399010788" duration="7403000" />
+      <workItem from="1512399010788" duration="7514000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85824000" />
+    <option name="totallyTimeSpent" value="85935000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -501,7 +505,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -670,13 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="259" column="40" lean-forward="false" selection-start-line="259" selection-start-column="40" selection-end-line="259" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Turrets/TurretPlacement.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="28" column="81" lean-forward="false" selection-start-line="28" selection-start-column="81" selection-end-line="28" selection-end-column="81" />
         </state>
       </provider>
     </entry>
@@ -1132,6 +1129,27 @@
             <marker date="1512415107086" expanded="true" signature="433:517" ph="/* Events ... */" />
             <marker date="1512415107086" expanded="true" signature="550:597" ph="{...}" />
             <marker date="1512415107086" expanded="true" signature="629:725" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Turrets/TurretPlacement.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="50" column="28" lean-forward="false" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
+          <folding>
+            <marker date="1512394727546" expanded="true" signature="37:1452" ph="{...}" />
+            <marker date="1512394727546" expanded="true" signature="88:1450" ph="{...}" />
+            <marker date="1512394727546" expanded="true" signature="104:197" ph="/* Variables ... */" />
+            <marker date="1512394727546" expanded="true" signature="384:473" ph="/* Unity ... */" />
+            <marker date="1512394727546" expanded="true" signature="503:570" ph="{...}" />
+            <marker date="1512394727546" expanded="true" signature="601:966" ph="{...}" />
+            <marker date="1512394727546" expanded="true" signature="694:956" ph="{...}" />
+            <marker date="1512394727546" expanded="true" signature="725:829" ph="/* Make Build Buttons Interactable ... */" />
+            <marker date="1512394727546" expanded="true" signature="1003:1054" ph="{...}" />
+            <marker date="1512394727546" expanded="true" signature="1090:1142" ph="{...}" />
+            <marker date="1512394727546" expanded="true" signature="1152:1243" ph="/* Actions ... */" />
+            <marker date="1512394727546" expanded="true" signature="1311:1444" ph="{...}" />
           </folding>
         </state>
       </provider>
