@@ -61,26 +61,30 @@ namespace Traps
 				GlobflobsInRange.Remove(other.gameObject);
 		}
 
+		/////////////////////////////////////////
+		// Disabling upgrading because fuck it //
+		/////////////////////////////////////////
+		
 		void OnMouseOver()
 		{
-			if (isUIUp != true)
-			{
-				if (Input.GetMouseButtonUp(0))
-				{
-					MakeUIAppear();
-					isUIUp = true;
-				}
-			}
+//			if (isUIUp != true)
+//			{
+//				if (Input.GetMouseButtonUp(0))
+//				{
+//					MakeUIAppear();
+//					isUIUp = true;
+//				}
+//			}
 		}
 
-		void OnMouseExit()
-		{
-			if (isUIUp)
-			{
-//          MakeUIDisappear();
-				isUIUp = false;
-			}
-		}
+//		void OnMouseExit()
+//		{
+//			if (isUIUp)
+//			{
+////          MakeUIDisappear();
+//				isUIUp = false;
+//			}
+//		}
 		
 		// Actions
 		// =====================================================================
